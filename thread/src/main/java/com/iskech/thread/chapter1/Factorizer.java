@@ -8,10 +8,11 @@ import javax.servlet.GenericServlet;
 import javax.servlet.Servlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebServlet;
 import java.math.BigInteger;
 
-
-@ThreadSafe public class Factorizer extends GenericServlet implements Servlet {
+@WebServlet(name = "firstServlet", urlPatterns = "/firstServlet") @ThreadSafe public class Factorizer
+        extends GenericServlet implements Servlet {
     private final Computable<BigInteger, BigInteger[]> c = new Computable<BigInteger, BigInteger[]>() {
         @Override public BigInteger[] compute(BigInteger arg) {
             return factor(arg);
