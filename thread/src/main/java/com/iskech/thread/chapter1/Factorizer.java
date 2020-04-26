@@ -24,7 +24,7 @@ import java.math.BigInteger;
             BigInteger i = extractFromRequest(req);
             encodeIntoResponse(resp, cache.compute(i));
         } catch (InterruptedException e) {
-            encodeError(resp, "factorization interrupted");
+            encodeError(resp, "factorization interrupting");
         }
     }
 
