@@ -15,7 +15,9 @@ class PrintQueue {
 
     public synchronized void add(PrintJob j) {
         queue.add(j);
+        //唤醒所有正在线程等待的线程
         notifyAll(); // Tell waiters: print job added
+
     }
 
     public synchronized PrintJob remove()
@@ -23,6 +25,7 @@ class PrintQueue {
             throws InterruptedException {
         while (queue.isEmpty()) {
             wait();
+            //线程等待，等待时会将同步锁释放，线程等待为原子操作，
         } // Wait for a print job
 
         System.out.println("进入移除逻辑");

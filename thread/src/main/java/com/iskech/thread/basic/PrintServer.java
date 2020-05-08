@@ -1,29 +1,85 @@
 package com.iskech.thread.basic;
 
-public class PrintServer {
+import java.awt.*;
+
+public class PrintServer implements Runnable {
+
+    private long printServerThreadId;
+    private final PrintQueue requests = new PrintQueue();
 
     public PrintServer() {
-
-        new Thread(new CustomRunable()).start();
+        Thread thread = new Thread(this);
+        thread.start();
+        printServerThreadId = thread.getId();
     }
 
-    /**
-     * @author ：liujx
-     * @date ：Created in 2020/5/7 11:11
-     * @description：内部类定义runable实现，将run方法作用域隐藏
-     * @modified By：
-     * @version: V1.0
-     */
-    private class CustomRunable implements Runnable {
-        @Override public void run() {
-            System.out.println(Thread.currentThread().toString());
+    public void print(PrintJob job) {
+        requests.add(job);
+    }
+
+    @Override public void run() {
+        if (printServerThreadId != Thread.currentThread().getId()) {
+            return; // only allow this thread id to execute run
         }
+
+        while (true) {
+            try {
+                //printQueQue队列的移除方法判断队列是否为空若为空则线程等待避免了当打印队列为空时反复调用其remove方法
+                realPrint(requests.remove());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void realPrint(PrintJob job) {
+        System.out.println("Printing: " + job);
     }
 
     public static void main(String[] args) {
         PrintServer printServer = new PrintServer();
+        printServer.requests.add(new PrintJob() {
+            @Override public Graphics getGraphics() {
+                return null;
+            }
+
+            @Override public Dimension getPageDimension() {
+                return null;
+            }
+
+            @Override public int getPageResolution() {
+                return 0;
+            }
+
+            @Override public boolean lastPageFirst() {
+                return false;
+            }
+
+            @Override public void end() {
+
+            }
+        });
+        printServer.requests.add(new PrintJob() {
+            @Override public Graphics getGraphics() {
+                return null;
+            }
+
+            @Override public Dimension getPageDimension() {
+                return null;
+            }
+
+            @Override public int getPageResolution() {
+                return 0;
+            }
+
+            @Override public boolean lastPageFirst() {
+                return false;
+            }
+
+            @Override public void end() {
+
+            }
+        });
 
     }
-
 }
-

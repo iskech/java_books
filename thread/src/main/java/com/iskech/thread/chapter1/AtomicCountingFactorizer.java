@@ -21,7 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @ThreadSafe @WebServlet(name = "atomicServlet", urlPatterns = "/atomicServlet") public class AtomicCountingFactorizer
         extends GenericServlet implements Servlet {
-    private AtomicLong count = new AtomicLong(0L);
+    private final AtomicLong count = new AtomicLong(0);
 
     @Override public void service(ServletRequest req, ServletResponse resp) {
         BigInteger i = extractFromRequest(req);
@@ -35,6 +35,7 @@ import java.util.concurrent.atomic.AtomicLong;
             PrintWriter writer = resp.getWriter();
             //线程安全情况下请求的返回值应该为上一次请求返回值+1但若在偶数请求时又发起奇数请求则请求的返回值不一定为上一次请求的值+1
             //count线程不安全，
+
             writer.println("计算后的值：" + factors[0] + "线程名称：" + Thread.currentThread().getName());
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,6 +54,9 @@ import java.util.concurrent.atomic.AtomicLong;
 
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+        while (Thread.activeCount()>1){
+            Thread.yield();
         }
         return new BigInteger(value).add(new BigInteger(String.valueOf(count)));
     }
