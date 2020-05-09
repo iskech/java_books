@@ -24,6 +24,11 @@ public class Friendly {
         if (doYield) {
             Thread.yield();
         }
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //被拥抱后拥抱对方
         partner.hugBack();
     }
