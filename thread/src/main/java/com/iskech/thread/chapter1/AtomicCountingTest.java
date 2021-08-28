@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @author ：liujx
  * @date ：Created in 2020/4/27 15:27
- * @description：原子类型模拟并发计算测试
+ * @description：原子类型模拟并发计算测试2
  * @modified By：
  * @version: V1.0
  */
