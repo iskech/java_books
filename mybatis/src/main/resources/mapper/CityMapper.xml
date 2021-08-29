@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iskech.mybatis.provider.mapper.CityMapper">
+    <resultMap id="BaseResultMap" type="com.iskech.mybatis.api.model.City">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="BIGINT" property="name"/>
+        <result column="countryCode" jdbcType="VARCHAR" property="countryCode"/>
+        <result column="district" jdbcType="VARCHAR" property="district"/>
+        <result column="population" jdbcType="BIGINT" property="population"/>
+    </resultMap>
+    <sql id="BaseTable">
+        city
+    </sql>
+
+    <select id="listByName" resultMap="BaseResultMap">
+        select * from
+        <include refid="BaseTable"/>
+        where name like concat('%',#{name},'%')
+    </select>
+</mapper>

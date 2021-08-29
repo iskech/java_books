@@ -3,7 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
+    <!--properties
+    ?,settings?
+    ,typeAliases?
+    ,typeHandlers?
+    ,objectFactory?
+    ,objectWrapperFactory?
+    ,reflectorFactory?
+    ,plugins?
+    ,environments?
+    ,databaseIdProvider?
+    ,mappers?-->
+    <properties resource="db.properties"></properties>
     <!-- settings -->
     <settings>
         <!-- 打开延迟加载的开关 -->
@@ -13,19 +24,31 @@
         <!-- 打开全局缓存开关（二级缓存）默认值就是 true -->
         <setting name="cacheEnabled" value="true"/>
     </settings>
-
     <!-- 别名定义 -->
     <typeAliases>
         <package name="com.iskech.mybatis"/>
     </typeAliases>
 
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"></property>
+                <property name="url" value="${jdbc.url}"></property>
+                <property name="username" value="${jdbc.username}"></property>
+                <property name="password" value="${jdbc.password}"></property>
+            </dataSource>
+        </environment>
+    </environments>
+
     <!-- 加载映射文件 -->
     <mappers>
         <!-- 通过 resource 方法一次加载一个映射文件 -->
-
         <!-- 批量加载mapper -->
         <!--<package name="com.iskech.mybatis.provider.mapper"/>-->
         <mapper resource="mapper/OrderLogMapper.xml"/>
+        <mapper resource="mapper/CityMapper.xml"/>
     </mappers>
 </configuration>
 

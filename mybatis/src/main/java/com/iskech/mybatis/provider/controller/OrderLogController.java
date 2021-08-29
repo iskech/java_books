@@ -1,4 +1,4 @@
-package com.iskech.mybatis.provider;
+package com.iskech.mybatis.provider.controller;
 
 import com.iskech.mybatis.api.model.OrderLog;
 import com.iskech.mybatis.provider.service.OrderLogService;
