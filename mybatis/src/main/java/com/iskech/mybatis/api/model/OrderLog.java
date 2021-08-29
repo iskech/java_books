@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 /**
  * ---------------------------------------------------------------------------
  * 类名称   ：OrderLog.java
- * @author ：lijx
+ * @author ：iskech
  * ---------------------------------------------------------------------------
  */
 
@@ -56,7 +56,7 @@ public class OrderLog implements Serializable {
     private Integer status;
 
     /**
-     * 字段名称：询价类型（1跨越，2.云鸟，3.福佑，4.司机(外请个人) 5.平台司机）
+     *
      */
     private String inquiryType;
 
