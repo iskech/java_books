@@ -1,11 +1,15 @@
 package com.iskech.mybatis.customer.v1.test;
 
 
+import com.iskech.mybatis.customer.v1.api.model.City;
+import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
+import com.iskech.mybatis.customer.v1.sqlsession.ISqlSession;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactory;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class MybatisApiTest {
 
@@ -16,7 +20,15 @@ public class MybatisApiTest {
         ISqlSessionFactory sqlSessionFactory = new ISqlSessionFactoryBuilder().build(resourceAsStream);
 
         //通过SqlSessionFactory工厂获取 sqlSession实例
-       // SqlSession sqlSession = sqlSessionFactory.openSession();
+        ISqlSession sqlSession = sqlSessionFactory.openSession();
+
+        //sql会话获取代理mapper 代理mapper对象注册在 knownMappers map中
+        CityMapper cityMapperProxy = sqlSession.getMapper(CityMapper.class);
+        //statement= namespace.id 即为命名空间+sql id
+        //执行sql
+        List<City> cities = cityMapperProxy.listByName("Herat");
+
+       //
         /*/
 
 

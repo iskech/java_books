@@ -11,4 +11,8 @@ public class ISqlSessionFactory {
     public ISqlSessionFactory(IConfiguration iConfiguration) {
         this.iConfiguration=iConfiguration;
     }
+
+    public ISqlSession openSession() {
+        return new ISqlSession(iConfiguration);
+    }
 }
