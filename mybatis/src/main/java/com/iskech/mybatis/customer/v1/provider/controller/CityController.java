@@ -1,7 +1,7 @@
-package com.iskech.mybatis.provider.controller;
+package com.iskech.mybatis.customer.v1.provider.controller;
 
-import com.iskech.mybatis.api.model.City;
-import com.iskech.mybatis.provider.service.CityService;
+import com.iskech.mybatis.customer.v1.api.model.City;
+import com.iskech.mybatis.customer.v1.provider.service.CityService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

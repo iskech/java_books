@@ -1,6 +1,6 @@
-package com.iskech.mybatis.provider.test;
+package com.iskech.mybatis.customer.v1.test;
 
-import com.iskech.mybatis.provider.mapper.CityMapper;
+import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

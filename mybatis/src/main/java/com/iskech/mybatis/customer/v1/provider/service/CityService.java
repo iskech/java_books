@@ -1,8 +1,7 @@
-package com.iskech.mybatis.provider.service;
+package com.iskech.mybatis.customer.v1.provider.service;
 
-import com.iskech.mybatis.api.model.City;
-import com.iskech.mybatis.api.model.OrderLog;
-import com.iskech.mybatis.provider.mapper.CityMapper;
+import com.iskech.mybatis.customer.v1.api.model.City;
+import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

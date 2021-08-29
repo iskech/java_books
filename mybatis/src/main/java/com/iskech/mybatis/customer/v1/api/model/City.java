@@ -1,4 +1,4 @@
-package com.iskech.mybatis.api.model;
+package com.iskech.mybatis.customer.v1.api.model;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.iskech.mybatis.provider.mapper.CityMapper">
-    <resultMap id="BaseResultMap" type="com.iskech.mybatis.api.model.City">
+<mapper namespace="com.iskech.mybatis.customer.v1.provider.mapper.CityMapper">
+    <resultMap id="BaseResultMap" type="com.iskech.mybatis.customer.v1.api.model.City">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="BIGINT" property="name"/>
         <result column="countryCode" jdbcType="VARCHAR" property="countryCode"/>
@@ -12,7 +12,7 @@
         city
     </sql>
 
-    <select id="listByName" resultMap="BaseResultMap">
+    <select id="listByName" parameterType="string" resultMap="BaseResultMap">
         select * from
         <include refid="BaseTable"/>
         where name like concat('%',#{name},'%')

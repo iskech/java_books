@@ -1,8 +1,7 @@
 
-package com.iskech.mybatis.api.model;
+package com.iskech.mybatis.customer.v1.api.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

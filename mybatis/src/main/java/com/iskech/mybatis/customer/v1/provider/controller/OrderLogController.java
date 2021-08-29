@@ -1,7 +1,7 @@
-package com.iskech.mybatis.provider.controller;
+package com.iskech.mybatis.customer.v1.provider.controller;
 
-import com.iskech.mybatis.api.model.OrderLog;
-import com.iskech.mybatis.provider.service.OrderLogService;
+import com.iskech.mybatis.customer.v1.api.model.OrderLog;
+import com.iskech.mybatis.customer.v1.provider.service.OrderLogService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
