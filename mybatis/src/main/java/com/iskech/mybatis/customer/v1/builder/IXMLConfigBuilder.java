@@ -26,74 +26,32 @@ public class IXMLConfigBuilder {
         IConfiguration iConfiguration = new IConfiguration();
         //解析根节点
         IXNode root = ixPathParser.evalNode("/configuration");
-        //   List<IXNode> ixNodes = ixPathParser.evalNodes("");
         //解析环境节点
         IXNode environments = root.evalNode("environments");
         IEnviremation iEnviremation = environmentsElement(environments);
-        Map<String, IMappedStatement> iMappedStatementMap = mappersElement(root.evalNode("mappers"));
-
         iConfiguration.setIEnviremation(iEnviremation);
-        iConfiguration.setMappedStatementMap(iMappedStatementMap);
+        //解析mappers节点
+        mappersElement(root.evalNode("mappers"), iConfiguration);
         return iConfiguration;
 
     }
 
-    private Map<String, IMappedStatement> mappersElement(IXNode mappers) {
+    private void mappersElement(IXNode mappers, IConfiguration iConfiguration) {
         List<IXNode> mapperList = mappers.evalNodes("mapper");
-        HashMap<String, IMappedStatement> iMappedStatementHashMap = new HashMap<>();
         for (IXNode ixNode : mapperList) {
             String resource = ixNode.getStringAttribute("resource");
-            parseMapper(resource,iMappedStatementHashMap);
+            InputStream mapperInputStream = ClassLoader.getSystemClassLoader().getResourceAsStream(resource);
+            IXPathParser mapperPathParser = new IXPathParser(mapperInputStream);
+            IXMLMapperBuilder ixmlMapperBuilder = new IXMLMapperBuilder(mapperPathParser, iConfiguration, "mappers");
+            ixmlMapperBuilder.parse();
         }
-        return iMappedStatementHashMap;
-    }
-
-    private void parseMapper(String resource ,Map iMappedStatementHashMap) {
-        String namespace = "com.iskech.mybatis.customer.v1.provider.mapper.CityMapper";
-        String selectId = "listByName";
-        String paramType = "string";
-        String resultType = "com.iskech.mybatis.customer.v1.api.model.City";
-        String selectSql = "select * from city where name like ?";
-        IBounding iBounding = new IBounding();
-        iBounding.setSql(selectSql);
-        IMappedStatement iMappedStatement = new IMappedStatement();
-        iMappedStatement.setIbounding(iBounding);
-        iMappedStatement.setParameterType(paramType);
-        iMappedStatement.setResultType(resultType);
-        String key = namespace + "." + selectId;
-        iMappedStatement.setId(key);
-        iMappedStatementHashMap.put(key,iMappedStatement);
 
     }
 
-    private void parseMapper2(String resource ,Map iMappedStatementHashMap) {
-        IXNode root = ixPathParser.evalNode("/mapper");
-        //<mapper namespace="com.iskech.mybatis.provider.mapper.OrderLogMapper">
-        String namespace = root.getStringAttribute("namespace");
-        // <select id="listByCargoOrderCode" resultMap="BaseResultMap">
-        //解析 select update delete
-        List<IXNode> selectList = root.evalNodes("select");
-        IXNode select1 = selectList.get(0);
-        String selectId = select1.getStringAttribute("id");
-        String paramType = select1.getStringAttribute("parameterType");
-        String resultType = select1.getStringAttribute("resultType");
-        String selectSql = select1.getStringBody();
-
-        IBounding iBounding = new IBounding();
-        iBounding.setSql(selectSql);
-        IMappedStatement iMappedStatement = new IMappedStatement();
-        iMappedStatement.setIbounding(iBounding);
-        iMappedStatement.setParameterType(paramType);
-        iMappedStatement.setResultType(resultType);
-
-        String key = namespace + "." + selectId;
-        iMappedStatementHashMap.put(key,iMappedStatement);
-
-    }
 
     private IEnviremation environmentsElement(IXNode context) {
         List<IXNode> environmentList = context.evalNodes("environment");
-        IXNode dataSource = environmentList.get(0).evalNode("dataSource");
+        IXNode dataSource = environmentList.get(1).evalNode("dataSource");
         List<IXNode> propertyList = dataSource.evalNodes("property");
         IDataSource iDataSource = new IDataSource();
         IEnviremation iEnviremation = new IEnviremation();
