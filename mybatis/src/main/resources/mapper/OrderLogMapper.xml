@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.iskech.mybatis.provider.mapper.OrderLogMapper">
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<mapper namespace="com.iskech.mybatis.customer.v1.provider.mapper.OrderLogMapper">
     <resultMap id="BaseResultMap" type="com.iskech.mybatis.customer.v1.api.model.OrderLog">
         <id column="id" jdbcType="BIGINT" property="id"/>
         <result column="cargo_order_id" jdbcType="BIGINT" property="cargoOrderId"/>
@@ -25,7 +25,7 @@
 
     <select id="listByCargoOrderCode" resultMap="BaseResultMap">
         select * from
-        <include refid="BaseTable"/>
-        where cargo_order_code = #{cargoOrderCode}
+        vts_order.order_log
+        where cargo_order_code = ?
     </select>
 </mapper>
