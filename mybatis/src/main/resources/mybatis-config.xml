@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!--<!DOCTYPE configuration
+<!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">-->
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--properties
     ?,settings?
@@ -31,17 +31,8 @@
 
 
     <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"></transactionManager>
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"></property>
-                <property name="url" value="jdbc:mysql://localhost:3306/world?characterEncoding=UTF-8"></property>
-                <property name="username" value="iskech"></property>
-                <property name="password" value="123456"></property>
-            </dataSource>
-        </environment>
 
-        <environment id="development2">
+        <environment id="development">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"></property>
@@ -50,6 +41,17 @@
                 <property name="password" value="AtsB@2020Eky"></property>
             </dataSource>
         </environment>
+        <!--<environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"></property>
+                <property name="url" value="jdbc:mysql://localhost:3306/world?characterEncoding=UTF-8"></property>
+                <property name="username" value="iskech"></property>
+                <property name="password" value="123456"></property>
+            </dataSource>
+        </environment>-->
+
+
 
     </environments>
 

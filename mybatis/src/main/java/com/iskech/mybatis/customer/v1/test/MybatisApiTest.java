@@ -1,8 +1,8 @@
 package com.iskech.mybatis.customer.v1.test;
 
 
-import com.iskech.mybatis.customer.v1.api.model.City;
-import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
+import com.iskech.mybatis.customer.v1.api.model.OrderLog;
+import com.iskech.mybatis.customer.v1.provider.mapper.OrderLogMapper;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSession;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactory;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactoryBuilder;
@@ -23,20 +23,12 @@ public class MybatisApiTest {
         ISqlSession sqlSession = sqlSessionFactory.openSession();
 
         //sql会话获取代理mapper 代理mapper对象注册在 knownMappers map中
-        CityMapper cityMapperProxy = sqlSession.getMapper(CityMapper.class);
-        //statement= namespace.id 即为命名空间+sql id
+        OrderLogMapper cityMapperProxy = sqlSession.getMapper(OrderLogMapper.class);
         //执行sql
-        List<City> cities = cityMapperProxy.listByName("Herat");
+        List<OrderLog> cities = cityMapperProxy.listByCargoOrderCode("1");
 
-       //
-        /*/
+        System.out.println(cities);
 
-
-        HashMap<String, String> params = new HashMap<>();
-        params.put("name","Herat");
-        //statement= namespace.id 即为命名空间+sql id
-        //执行sql
-        List<City> cities = sqlSession.selectList("com.iskech.mybatis.provider.mapper.CityMapper.listByName", params);*/
 
     }
 }

@@ -1,6 +1,8 @@
 package com.iskech.mybatis.customer.v1.test;
 
+import com.iskech.mybatis.customer.v1.api.model.OrderLog;
 import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
+import com.iskech.mybatis.customer.v1.provider.mapper.OrderLogMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -8,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class MybatisMapperProxyTest {
 
@@ -19,8 +22,14 @@ public class MybatisMapperProxyTest {
         //通过SqlSessionFactory工厂获取 sqlSession实例
         SqlSession sqlSession = sqlSessionFactory.openSession();
         //sql会话获取代理mapper 代理mapper对象注册在 knownMappers map中
-        CityMapper cityMapperProxy = sqlSession.getMapper(CityMapper.class);
+       /* CityMapper cityMapperProxy = sqlSession.getMapper(CityMapper.class);
         //执行代理mapper实现方法
-        System.out.println(cityMapperProxy.listByName("Herat"));
+        System.out.println(cityMapperProxy.listByName("Herat"));*/
+
+        OrderLogMapper cityMapperProxy = sqlSession.getMapper(OrderLogMapper.class);
+        //执行sql
+        List<OrderLog> cities = cityMapperProxy.listByCargoOrderCode("1");
+
+        System.out.println(cities);
     }
 }

@@ -1,6 +1,9 @@
 package com.iskech.mybatis.customer.v1.mapping;
 
 import lombok.Data;
+import org.apache.ibatis.mapping.ResultMap;
+
+import java.util.List;
 
 /**
  * 映射mapper xml 信息
@@ -26,6 +29,11 @@ public class IMappedStatement {
      * resultType 返回结果类型
      */
     public String resultType;
+    /**
+     * 返回映射
+     */
+    private List<ResultMap> resultMaps;
+
 
 
 }
