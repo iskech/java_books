@@ -26,6 +26,6 @@
     <select id="listByCargoOrderCode" resultMap="BaseResultMap">
         select * from
         vts_order.order_log
-        where cargo_order_code = #{cargoOrderCode}
+        where cargo_order_code = ?
     </select>
 </mapper>
