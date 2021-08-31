@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE configuration
+<!--<!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">-->
 <configuration>
     <!--properties
     ?,settings?
@@ -41,7 +41,7 @@
                 <property name="password" value="AtsB@2020Eky"></property>
             </dataSource>
         </environment>
-        <!--<environment id="development">
+        <environment id="development2">
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"></property>
@@ -49,7 +49,7 @@
                 <property name="username" value="iskech"></property>
                 <property name="password" value="123456"></property>
             </dataSource>
-        </environment>-->
+        </environment>
 
 
 

@@ -51,7 +51,7 @@ public class IXMLConfigBuilder {
 
     private IEnviremation environmentsElement(IXNode context) {
         List<IXNode> environmentList = context.evalNodes("environment");
-        IXNode dataSource = environmentList.get(0).evalNode("dataSource");
+        IXNode dataSource = environmentList.get(1).evalNode("dataSource");
         List<IXNode> propertyList = dataSource.evalNodes("property");
         IDataSource iDataSource = new IDataSource();
         IEnviremation iEnviremation = new IEnviremation();
