@@ -4,6 +4,7 @@ import lombok.Data;
 import org.apache.ibatis.mapping.ResultMap;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 映射mapper xml 信息
@@ -18,22 +19,24 @@ public class IMappedStatement {
     /**
      * sql
      */
-    public IBounding ibounding;
+    private IBounding ibounding;
 
     /**
      * parameterType 入参类型
      */
-    public String parameterType;
+    private String parameterType;
 
     /**
      * resultType 返回结果类型
      */
-    public String resultType;
+    private String resultType;
     /**
-     * 返回映射
+     * resultMap属性 返回结果映射类型
      */
-    private List<ResultMap> resultMaps;
-
-
+    private List<IResultMap> resultMaps;
+    /**
+     * resultMap标签 返回结果集映射
+     */
+    private Map<String,IResultMapping> resultMappings;
 
 }

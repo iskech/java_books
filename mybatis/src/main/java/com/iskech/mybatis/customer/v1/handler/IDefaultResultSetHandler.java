@@ -1,3 +1,4 @@
+/*
 package com.iskech.mybatis.customer.v1.handler;
 
 
@@ -5,20 +6,32 @@ package com.iskech.mybatis.customer.v1.handler;
 import com.iskech.mybatis.customer.v1.base.IConfiguration;
 import com.iskech.mybatis.customer.v1.executor.IExecutor;
 import com.iskech.mybatis.customer.v1.mapping.*;
+import org.apache.ibatis.cache.CacheKey;
+import org.apache.ibatis.executor.result.DefaultResultContext;
 import org.apache.ibatis.executor.result.DefaultResultHandler;
+import org.apache.ibatis.executor.resultset.ResultSetWrapper;
+import org.apache.ibatis.mapping.ResultMap;
+import org.apache.ibatis.mapping.ResultMapping;
+import org.apache.ibatis.session.ResultHandler;
+import org.apache.ibatis.session.RowBounds;
 
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class IDefaultResultSetHandler {
     private final IExecutor executor;
     private final IConfiguration configuration;
     private final IMappedStatement mappedStatement;
-
+    // multiple resultsets
+    private final Map<String, IResultMapping> nextResultMaps = new HashMap<String, IResultMapping>();
+    // nested resultmaps
+    private final Map<CacheKey, Object> nestedResultObjects = new HashMap<CacheKey, Object>();
     public IDefaultResultSetHandler(IExecutor executor, IConfiguration configuration, IMappedStatement mappedStatement) {
         this.executor = executor;
         this.configuration = configuration;
@@ -85,7 +98,7 @@ public class IDefaultResultSetHandler {
                 handleRowValues(rsw, resultMap, null, IRowBounds.DEFAULT, parentMapping);
             } else {
                 if (resultHandler == null) {
-                    DefaultResultHandler defaultResultHandler = new IDefaultResultHandler(objectFactory);
+                    IDefaultResultHandler defaultResultHandler = new IDefaultResultHandler(objectFactory);
                     handleRowValues(rsw, resultMap, defaultResultHandler, rowBounds, null);
                     multipleResults.add(defaultResultHandler.getResultList());
                 } else {
@@ -98,4 +111,73 @@ public class IDefaultResultSetHandler {
         }
     }
 
+
+    private IResultSetWrapper getNextResultSet(Statement stmt) throws SQLException {
+        // Making this method tolerant of bad JDBC drivers
+        try {
+            if (stmt.getConnection().getMetaData().supportsMultipleResultSets()) {
+                // Crazy Standard JDBC way of determining if there are more results
+                if (!(!stmt.getMoreResults() && stmt.getUpdateCount() == -1)) {
+                    ResultSet rs = stmt.getResultSet();
+                    if (rs == null) {
+                        return getNextResultSet(stmt);
+                    } else {
+                        return new IResultSetWrapper(rs, configuration);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            // Intentionally ignored.
+        }
+        return null;
+    }
+
+    private void cleanUpAfterHandlingResultSet() {
+        nestedResultObjects.clear();
+    }
+
+    private List<Object> collapseSingleResultList(List<Object> multipleResults) {
+        return multipleResults.size() == 1 ? (List<Object>) multipleResults.get(0) : multipleResults;
+    }
+
+    public void handleRowValues(ResultSetWrapper rsw, ResultMap resultMap, ResultHandler<?> resultHandler, RowBounds rowBounds, ResultMapping parentMapping) throws SQLException {
+        if (resultMap.hasNestedResultMaps()) {
+
+            handleRowValuesForNestedResultMap(rsw, resultMap, resultHandler, rowBounds, parentMapping);
+        } else {
+            handleRowValuesForSimpleResultMap(rsw, resultMap, resultHandler, rowBounds, parentMapping);
+        }
+    }
+
+    private void handleRowValuesForNestedResultMap(ResultSetWrapper rsw, ResultMap resultMap, ResultHandler<?> resultHandler, RowBounds rowBounds, ResultMapping parentMapping) throws SQLException {
+        final DefaultResultContext<Object> resultContext = new DefaultResultContext<Object>();
+        skipRows(rsw.getResultSet(), rowBounds);
+        Object rowValue = previousRowValue;
+        while (shouldProcessMoreRows(resultContext, rowBounds) && rsw.getResultSet().next()) {
+            final ResultMap discriminatedResultMap = resolveDiscriminatedResultMap(rsw.getResultSet(), resultMap, null);
+            final CacheKey rowKey = createRowKey(discriminatedResultMap, rsw, null);
+            Object partialObject = nestedResultObjects.get(rowKey);
+            // issue #577 && #542
+            if (mappedStatement.isResultOrdered()) {
+                if (partialObject == null && rowValue != null) {
+                    nestedResultObjects.clear();
+                    storeObject(resultHandler, resultContext, rowValue, parentMapping, rsw.getResultSet());
+                }
+                rowValue = getRowValue(rsw, discriminatedResultMap, rowKey, null, partialObject);
+            } else {
+                rowValue = getRowValue(rsw, discriminatedResultMap, rowKey, null, partialObject);
+                if (partialObject == null) {
+                    storeObject(resultHandler, resultContext, rowValue, parentMapping, rsw.getResultSet());
+                }
+            }
+        }
+        if (rowValue != null && mappedStatement.isResultOrdered() && shouldProcessMoreRows(resultContext, rowBounds)) {
+            storeObject(resultHandler, resultContext, rowValue, parentMapping, rsw.getResultSet());
+            previousRowValue = null;
+        } else if (rowValue != null) {
+            previousRowValue = rowValue;
+        }
+    }
+
 }
+*/
