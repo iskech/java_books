@@ -64,7 +64,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
   public T getResult(ResultSet rs, String columnName) throws SQLException {
     T result;
     try {
-      result = getNullableResult(rs, columnName);
+      result = this. getNullableResult(rs, columnName);
     } catch (Exception e) {
       throw new RuntimeException("Error attempting to get column '" + columnName + "' from result set.  Cause: " + e, e);
     }

@@ -62,7 +62,7 @@ public class ResultHandler {
                 Object result = typeHandler.getResult(resultSet, column);
                 String setName = "set" + property.substring(0, 1).toUpperCase() + property.substring(1);
                 try {
-                    Method declaredMethod = resultClazz.getDeclaredMethod(setName, Long.class);
+                    Method declaredMethod = resultClazz.getDeclaredMethod(setName, resultMapping.getJavaType());
                     declaredMethod.invoke(resultObj, result);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();

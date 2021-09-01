@@ -51,10 +51,11 @@ public class IResultMapping {
     public static class Builder {
         private IResultMapping resultMapping = new IResultMapping();
 
-        public Builder(IConfiguration configuration, String property, String column, ITypeHandler<?> typeHandler) {
+        public Builder(IConfiguration configuration, String property, String column,Class<?> javaType, ITypeHandler<?> typeHandler) {
             this(configuration, property);
             resultMapping.column = column;
             resultMapping.typeHandler = typeHandler;
+            resultMapping.javaType = javaType;
         }
 
         public Builder(IConfiguration configuration, String property, String column, Class<?> javaType) {

@@ -3,7 +3,7 @@
 <mapper namespace="com.iskech.mybatis.customer.v1.provider.mapper.CityMapper">
     <resultMap id="BaseResultMap" type="com.iskech.mybatis.customer.v1.api.model.City">
         <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="name" jdbcType="BIGINT" property="name"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="countryCode" jdbcType="VARCHAR" property="countryCode"/>
         <result column="district" jdbcType="VARCHAR" property="district"/>
         <result column="population" jdbcType="BIGINT" property="population"/>

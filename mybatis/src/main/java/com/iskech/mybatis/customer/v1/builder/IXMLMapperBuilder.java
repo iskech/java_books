@@ -17,12 +17,15 @@ package com.iskech.mybatis.customer.v1.builder;
 
 import com.iskech.mybatis.customer.v1.base.IConfiguration;
 import com.iskech.mybatis.customer.v1.handler.ILongTypeHandler;
+import com.iskech.mybatis.customer.v1.handler.IStringTypeHandler;
+import com.iskech.mybatis.customer.v1.handler.ITypeHandler;
 import com.iskech.mybatis.customer.v1.mapping.IBounding;
 import com.iskech.mybatis.customer.v1.mapping.IMappedStatement;
 import com.iskech.mybatis.customer.v1.mapping.IResultMap;
 import com.iskech.mybatis.customer.v1.mapping.IResultMapping;
 import com.iskech.mybatis.customer.v1.parsing.IXNode;
 import com.iskech.mybatis.customer.v1.parsing.IXPathParser;
+import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.LongTypeHandler;
 import org.apache.ibatis.type.TypeHandler;
 import org.apache.ibatis.type.TypeHandlerRegistry;
@@ -73,13 +76,33 @@ public class IXMLMapperBuilder {
         String mapId = resultMap.get(0).getStringAttribute("id");
         String typeName = resultMap.get(0).getStringAttribute("type");
         IXNode idNode = resultMapNode.evalNode("id");
+        List<IXNode> resultSetNode = resultMapNode.evalNodes("result");
+        for (IXNode ixNode : resultSetNode) {
+            String column =ixNode.getStringAttribute("column");
+            String jdbcType =ixNode.getStringAttribute("jdbcType");
+            String property =ixNode.getStringAttribute("property");
+            ITypeHandler<?> typeHandler = null;
+            Class<?> javaType = null;
+            if (Objects.equals("VARCHAR",jdbcType)){
+               typeHandler =  new IStringTypeHandler();
+               javaType = String.class;
+            }
+            if (Objects.equals("BIGINT",jdbcType)){
+                typeHandler =  new ILongTypeHandler();
+                javaType  = Long.class;
+            }
+            if(Objects.isNull(typeHandler)){
+                continue;
+            }
+            IResultMapping resultMapping = new IResultMapping
+                    .Builder(configuration, property, column,javaType,typeHandler ).build();
+            iResultMappings.add(resultMapping);
+        }
         String idColumnName = idNode.getStringAttribute("column");
         String idJdbcType = idNode.getStringAttribute("jdbcType");
         String idProperty = idNode.getStringAttribute("property");
-        //new ITypeR
-
         IResultMapping buildIdMapping = new IResultMapping
-                .Builder(configuration, idProperty, idColumnName, new ILongTypeHandler()).build();
+                .Builder(configuration, idProperty, idColumnName,Long.class, new ILongTypeHandler()).build();
         iResultMappings.add(buildIdMapping);
         IResultMap.Builder builder = new IResultMap.Builder(
                 configuration,
