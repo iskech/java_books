@@ -3,13 +3,15 @@ package com.iskech.mybatis.customer.v1.executor;
 import com.iskech.mybatis.customer.v1.handler.ResultHandler;
 import com.iskech.mybatis.customer.v1.mapping.IMappedStatement;
 import com.iskech.mybatis.customer.v1.pool.IDataSource;
+import com.iskech.mybatis.customer.v1.pool.IPooledDataSource;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
 public class IExecutor {
-    private IDataSource iDataSource;
+    private DataSource iDataSource;
 
-    public IExecutor(IDataSource iDataSource) {
+    public IExecutor(DataSource iDataSource) {
         this.iDataSource = iDataSource;
     }
 
@@ -24,16 +26,13 @@ public class IExecutor {
             preparedStatement.setString(1, String.valueOf(args[0]));
             preparedStatement.execute();
             resultSet = preparedStatement.getResultSet();
-            // todo 解析 返回结果集
-         return (T) new ResultHandler(iMappedStatement).handleResultSets(preparedStatement);
+            //  解析 返回结果集
+            return (T) new ResultHandler(iMappedStatement).handleResultSets(preparedStatement);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            try {
-                connection.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
+            //归还连接对象
+            ((IPooledDataSource) iDataSource).backConnection(connection);
             try {
                 preparedStatement.close();
             } catch (SQLException throwables) {

@@ -7,8 +7,11 @@ import com.iskech.mybatis.customer.v1.mapping.IMappedStatement;
 import com.iskech.mybatis.customer.v1.parsing.IXNode;
 import com.iskech.mybatis.customer.v1.parsing.IXPathParser;
 import com.iskech.mybatis.customer.v1.pool.IDataSource;
+import com.iskech.mybatis.customer.v1.pool.IPooledDataSource;
 
+import javax.sql.DataSource;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,27 +56,38 @@ public class IXMLConfigBuilder {
         List<IXNode> environmentList = context.evalNodes("environment");
         IXNode dataSource = environmentList.get(1).evalNode("dataSource");
         List<IXNode> propertyList = dataSource.evalNodes("property");
-        IDataSource iDataSource = new IDataSource();
-        IEnviremation iEnviremation = new IEnviremation();
-        iEnviremation.setDateSource(iDataSource);
+        String driver = null;
+        String url = null;
+        String username = null;
+        String password = null;
         for (IXNode property : propertyList) {
             switch (property.getStringAttribute("name")) {
                 case "driver":
-                    iDataSource.setDriver(property.getStringAttribute("value"));
+                    driver = property.getStringAttribute("value");
                     break;
                 case "url":
-                    iDataSource.setUrl(property.getStringAttribute("value"));
+                    url = property.getStringAttribute("value");
                     break;
                 case "username":
-                    iDataSource.setUsername(property.getStringAttribute("value"));
+                    username = property.getStringAttribute("value");
                     break;
                 case "password":
-                    iDataSource.setPassword(property.getStringAttribute("value"));
+                    password = property.getStringAttribute("value");
                     break;
                 default:
                     break;
             }
         }
+        DataSource iDataSource = null;
+        try {
+            iDataSource = new IPooledDataSource(driver, url, username, password);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        IEnviremation iEnviremation = new IEnviremation();
+        iEnviremation.setDateSource(iDataSource);
 
 
         return iEnviremation;
