@@ -2,9 +2,7 @@ package com.iskech.mybatis.customer.v1.test;
 
 
 import com.iskech.mybatis.customer.v1.api.model.City;
-import com.iskech.mybatis.customer.v1.api.model.OrderLog;
 import com.iskech.mybatis.customer.v1.provider.mapper.CityMapper;
-import com.iskech.mybatis.customer.v1.provider.mapper.OrderLogMapper;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSession;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactory;
 import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactoryBuilder;

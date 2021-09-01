@@ -26,31 +26,29 @@ import java.sql.SQLException;
 /**
  * @author Clinton Begin
  */
-public class IObjectTypeHandler extends IBaseTypeHandler<Object> {
+public class IStringTypeHandler extends IBaseTypeHandler<String> {
 
   @Override
-  public void setNonNullParameter(PreparedStatement ps, int i, Object parameter, IJdbcType jdbcType)
+  public void setNonNullParameter(PreparedStatement ps, int i, String parameter, IJdbcType jdbcType)
       throws SQLException {
-    ps.setObject(i, parameter);
+    ps.setString(i, parameter);
   }
 
   @Override
-  public Object getNullableResult(ResultSet rs, String columnName)
+  public String getNullableResult(ResultSet rs, String columnName)
       throws SQLException {
-    return rs.getObject(columnName);
+    return rs.getString(columnName);
   }
 
   @Override
-  public Object getNullableResult(ResultSet rs, int columnIndex)
+  public String getNullableResult(ResultSet rs, int columnIndex)
       throws SQLException {
-    return rs.getObject(columnIndex);
+    return rs.getString(columnIndex);
   }
 
   @Override
-  public Object getNullableResult(CallableStatement cs, int columnIndex)
+  public String getNullableResult(CallableStatement cs, int columnIndex)
       throws SQLException {
-    return cs.getObject(columnIndex);
+    return cs.getString(columnIndex);
   }
-
-
 }

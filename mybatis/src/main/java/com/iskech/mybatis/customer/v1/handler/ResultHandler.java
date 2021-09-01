@@ -60,9 +60,9 @@ public class ResultHandler {
             ITypeHandler<?> typeHandler = resultMapping.getTypeHandler();
             try {
                 Object result = typeHandler.getResult(resultSet, column);
-                String setName = "set"+property.substring(0, 1).toUpperCase() + property.substring(1);
+                String setName = "set" + property.substring(0, 1).toUpperCase() + property.substring(1);
                 try {
-                    Method declaredMethod = resultClazz.getDeclaredMethod(setName,Long.class);
+                    Method declaredMethod = resultClazz.getDeclaredMethod(setName, Long.class);
                     declaredMethod.invoke(resultObj, result);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
