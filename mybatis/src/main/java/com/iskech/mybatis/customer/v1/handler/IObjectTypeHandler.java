@@ -16,6 +16,7 @@
 package com.iskech.mybatis.customer.v1.handler;
 
 import com.iskech.mybatis.customer.v1.mapping.IJdbcType;
+import org.apache.ibatis.type.JdbcType;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -25,14 +26,31 @@ import java.sql.SQLException;
 /**
  * @author Clinton Begin
  */
-public interface ITypeHandler<T> {
+public class IObjectTypeHandler extends IBaseTypeHandler<Object> {
 
-  void setParameter(PreparedStatement ps, int i, T parameter, IJdbcType jdbcType) throws SQLException;
+  @Override
+  public void setNonNullParameter(PreparedStatement ps, int i, Object parameter, IJdbcType jdbcType)
+      throws SQLException {
+    ps.setObject(i, parameter);
+  }
 
-  T getResult(ResultSet rs, String columnName) throws SQLException;
+  @Override
+  public Object getNullableResult(ResultSet rs, String columnName)
+      throws SQLException {
+    return rs.getObject(columnName);
+  }
 
-  T getResult(ResultSet rs, int columnIndex) throws SQLException;
+  @Override
+  public Object getNullableResult(ResultSet rs, int columnIndex)
+      throws SQLException {
+    return rs.getObject(columnIndex);
+  }
 
-  T getResult(CallableStatement cs, int columnIndex) throws SQLException;
+  @Override
+  public Object getNullableResult(CallableStatement cs, int columnIndex)
+      throws SQLException {
+    return cs.getObject(columnIndex);
+  }
+
 
 }

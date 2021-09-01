@@ -15,8 +15,9 @@
  */
 package com.iskech.mybatis.customer.v1.handler;
 
-import org.apache.ibatis.type.BaseTypeHandler;
-import org.apache.ibatis.type.JdbcType;
+
+
+import com.iskech.mybatis.customer.v1.mapping.IJdbcType;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -29,7 +30,7 @@ import java.sql.SQLException;
 public class ILongTypeHandler extends IBaseTypeHandler<Long> {
 
   @Override
-  public void setNonNullParameter(PreparedStatement ps, int i, Long parameter, JdbcType jdbcType)
+  public void setNonNullParameter(PreparedStatement ps, int i, Long parameter, IJdbcType jdbcType)
       throws SQLException {
     ps.setLong(i, parameter);
   }

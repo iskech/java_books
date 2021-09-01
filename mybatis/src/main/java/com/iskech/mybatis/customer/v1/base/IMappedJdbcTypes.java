@@ -1,5 +1,5 @@
 /**
- *    Copyright 2009-2015 the original author or authors.
+ *    Copyright 2009-2016 the original author or authors.
  *
  *    Licensed under the Apache License, Version 2.0 (the "License");
  *    you may not use this file except in compliance with the License.
@@ -13,26 +13,20 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.iskech.mybatis.customer.v1.handler;
+package com.iskech.mybatis.customer.v1.base;
 
 import com.iskech.mybatis.customer.v1.mapping.IJdbcType;
+import org.apache.ibatis.type.JdbcType;
 
-import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.lang.annotation.*;
 
 /**
- * @author Clinton Begin
+ * @author Eduardo Macarron
  */
-public interface ITypeHandler<T> {
-
-  void setParameter(PreparedStatement ps, int i, T parameter, IJdbcType jdbcType) throws SQLException;
-
-  T getResult(ResultSet rs, String columnName) throws SQLException;
-
-  T getResult(ResultSet rs, int columnIndex) throws SQLException;
-
-  T getResult(CallableStatement cs, int columnIndex) throws SQLException;
-
+@Documented
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface IMappedJdbcTypes {
+  IJdbcType[] value();
+  boolean includeNullJdbcType() default false;
 }

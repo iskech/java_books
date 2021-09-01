@@ -15,12 +15,9 @@
  */
 package com.iskech.mybatis.customer.v1.handler;
 
-import org.apache.ibatis.executor.result.ResultMapException;
-import org.apache.ibatis.session.Configuration;
-import org.apache.ibatis.type.JdbcType;
-import org.apache.ibatis.type.TypeException;
-import org.apache.ibatis.type.TypeHandler;
-import org.apache.ibatis.type.TypeReference;
+import com.iskech.mybatis.customer.v1.base.IConfiguration;
+import com.iskech.mybatis.customer.v1.mapping.IJdbcType;
+
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
@@ -33,22 +30,22 @@ import java.sql.SQLException;
  */
 public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
 
-  protected Configuration configuration;
+  protected IConfiguration configuration;
 
-  public void setConfiguration(Configuration c) {
+  public void setConfiguration(IConfiguration c) {
     this.configuration = c;
   }
 
   @Override
-  public void setParameter(PreparedStatement ps, int i, T parameter, JdbcType jdbcType) throws SQLException {
+  public void setParameter(PreparedStatement ps, int i, T parameter, IJdbcType jdbcType) throws SQLException {
     if (parameter == null) {
       if (jdbcType == null) {
-        throw new TypeException("JDBC requires that the JdbcType must be specified for all nullable parameters.");
+        throw new RuntimeException("JDBC requires that the JdbcType must be specified for all nullable parameters.");
       }
       try {
         ps.setNull(i, jdbcType.TYPE_CODE);
       } catch (SQLException e) {
-        throw new TypeException("Error setting null for parameter #" + i + " with JdbcType " + jdbcType + " . " +
+        throw new RuntimeException("Error setting null for parameter #" + i + " with JdbcType " + jdbcType + " . " +
                 "Try setting a different JdbcType for this parameter or a different jdbcTypeForNull configuration property. " +
                 "Cause: " + e, e);
       }
@@ -56,7 +53,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
       try {
         setNonNullParameter(ps, i, parameter, jdbcType);
       } catch (Exception e) {
-        throw new TypeException("Error setting non null for parameter #" + i + " with JdbcType " + jdbcType + " . " +
+        throw new RuntimeException("Error setting non null for parameter #" + i + " with JdbcType " + jdbcType + " . " +
                 "Try setting a different JdbcType for this parameter or a different configuration property. " +
                 "Cause: " + e, e);
       }
@@ -69,7 +66,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
     try {
       result = getNullableResult(rs, columnName);
     } catch (Exception e) {
-      throw new ResultMapException("Error attempting to get column '" + columnName + "' from result set.  Cause: " + e, e);
+      throw new RuntimeException("Error attempting to get column '" + columnName + "' from result set.  Cause: " + e, e);
     }
     if (rs.wasNull()) {
       return null;
@@ -84,7 +81,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
     try {
       result = getNullableResult(rs, columnIndex);
     } catch (Exception e) {
-      throw new ResultMapException("Error attempting to get column #" + columnIndex+ " from result set.  Cause: " + e, e);
+      throw new RuntimeException("Error attempting to get column #" + columnIndex+ " from result set.  Cause: " + e, e);
     }
     if (rs.wasNull()) {
       return null;
@@ -99,7 +96,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
     try {
       result = getNullableResult(cs, columnIndex);
     } catch (Exception e) {
-      throw new ResultMapException("Error attempting to get column #" + columnIndex+ " from callable statement.  Cause: " + e, e);
+      throw new RuntimeException("Error attempting to get column #" + columnIndex+ " from callable statement.  Cause: " + e, e);
     }
     if (cs.wasNull()) {
       return null;
@@ -108,7 +105,7 @@ public abstract class IBaseTypeHandler<T>  implements ITypeHandler<T> {
     }
   }
 
-  public abstract void setNonNullParameter(PreparedStatement ps, int i, T parameter, JdbcType jdbcType) throws SQLException;
+  public abstract void setNonNullParameter(PreparedStatement ps, int i, T parameter, IJdbcType jdbcType) throws SQLException;
 
   public abstract T getNullableResult(ResultSet rs, String columnName) throws SQLException;
 

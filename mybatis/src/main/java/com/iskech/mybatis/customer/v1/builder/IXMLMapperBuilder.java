@@ -76,6 +76,7 @@ public class IXMLMapperBuilder {
         String idColumnName = idNode.getStringAttribute("column");
         String idJdbcType = idNode.getStringAttribute("jdbcType");
         String idProperty = idNode.getStringAttribute("property");
+        //new ITypeR
 
         IResultMapping buildIdMapping = new IResultMapping
                 .Builder(configuration, idProperty, idColumnName, new ILongTypeHandler()).build();
