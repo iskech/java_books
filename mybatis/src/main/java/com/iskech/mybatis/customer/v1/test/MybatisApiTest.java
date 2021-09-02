@@ -10,6 +10,8 @@ import com.iskech.mybatis.customer.v1.sqlsession.ISqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MybatisApiTest {
 
@@ -25,11 +27,19 @@ public class MybatisApiTest {
         //sql会话获取代理mapper 代理mapper对象注册在 knownMappers map中
         CityMapper cityMapperProxy = sqlSession.getMapper(CityMapper.class);
         //执行sql
-        for (int index = 0; index < 150; index++) {
-            List<City> cities = cityMapperProxy.listByName("Almere");
-            System.out.println(cities);
-        }
 
+        //创建使用固定线程数的线程池
+        ExecutorService es2 = Executors.newFixedThreadPool(6);
+        for (int index = 0; index < 1500; index++) {
+            es2.submit(new Runnable() {
+                @Override
+                public void run() {
+                    List<City> cities = cityMapperProxy.listByName("Almere");
+                    System.out.println(cities);
+                }
+            });
+
+        }
         System.err.println("耗时:" + (System.currentTimeMillis() - startTime));
 
     }

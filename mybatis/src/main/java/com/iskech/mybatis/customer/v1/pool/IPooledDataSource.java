@@ -41,6 +41,8 @@ public class IPooledDataSource implements DataSource {
     protected int poolMaximumActiveConnections = 10;
     protected int poolMaximumIdleConnections = 5;
 
+    protected int poolTimeToWait = 20000;
+
 
     public IPooledDataSource(String driver, String url, String username, String password) throws SQLException, ClassNotFoundException {
         this.driver = driver;
@@ -62,15 +64,35 @@ public class IPooledDataSource implements DataSource {
     public Connection getConnection() throws SQLException {
         if (idleConnections.isEmpty()) {
             //空闲不存在 创建一个新的连接 添加至激活尾部并返回
-            Connection conn = DriverManager.getConnection(url, username, password);
-            activeConnections.add(conn);
-            return conn;
+            if (activeConnections.size() < poolMaximumActiveConnections) {
+                Connection conn = DriverManager.getConnection(url, username, password);
+                activeConnections.add(conn);
+                return conn;
+            } else {
+                try {
+                    Thread.sleep(poolTimeToWait);
+                    if (idleConnections.isEmpty()) {
+                        if (activeConnections.size() < poolMaximumActiveConnections) {
+                            Connection conn = DriverManager.getConnection(url, username, password);
+                            activeConnections.add(conn);
+                            return conn;
+                        }
+                    } else {
+                        Connection poll = idleConnections.poll();
+                        activeConnections.add(poll);
+                        return poll;
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
         } else {
-            //空闲存在弹出第一个 并添加至激活尾部 后返回
-            Connection poll = idleConnections.poll();
-            activeConnections.add(poll);
-            return poll;
+          Connection poll = idleConnections.poll();
+          activeConnections.add(poll);
+          return poll;
         }
+        return null;
     }
 
     public void backConnection(Connection connection) {
