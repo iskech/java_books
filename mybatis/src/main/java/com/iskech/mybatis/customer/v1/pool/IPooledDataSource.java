@@ -59,38 +59,53 @@ public class IPooledDataSource implements DataSource {
             idleConnections.add(iPooledConnection);
         }
     }
+    public Connection getConnection2() throws SQLException {
+        Connection conn = DriverManager.getConnection(url, username, password);
+        return conn;
+    }
 
 
     @Override
     public Connection getConnection() throws SQLException {
         IPooledConnection connection = null;
-        if (idleConnections.isEmpty()) {
-            //空闲不存在 创建一个新的连接 添加至激活尾部并返回
-            if (activeConnections.size() < poolMaximumActiveConnections) {
-                Connection conn = DriverManager.getConnection(url, username, password);
-                connection = new IPooledConnection(conn, this);
-            } else {
-                //尝试移除 链接超时链接 移除后创建新链接
-                IPooledConnection iPooledConnection = ((List<IPooledConnection>) activeConnections).get(0);
-                if((System.currentTimeMillis() - iPooledConnection.getLastUsedTimestamp() -poolMaximumActiveConnections)>0){
-                    activeConnections.remove(iPooledConnection);
+        while (Objects.isNull(connection)) {
+            if (idleConnections.isEmpty()) {
+                //空闲不存在 创建一个新的连接 添加至激活尾部并返回
+                if (activeConnections.size() < poolMaximumActiveConnections) {
                     Connection conn = DriverManager.getConnection(url, username, password);
                     connection = new IPooledConnection(conn, this);
-
+                } else {
+                    //尝试移除 链接超时链接 移除后创建新链接
+                    IPooledConnection iPooledConnection = ((List<IPooledConnection>) activeConnections).get(0);
+                    long checkoutTimestamp = iPooledConnection.getCheckoutTimestamp();
+                    if (checkoutTimestamp > poolMaximumActiveConnections) {
+                        activeConnections.remove(iPooledConnection);
+                        Connection conn = DriverManager.getConnection(url, username, password);
+                        connection = new IPooledConnection(conn, this);
+                    }else {
+                        //没有可移除超时链接 只能线程等待
+                        try {
+                            Thread.sleep(poolTimeToWait);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            System.out.println("线程池异常："+e.getMessage());
+                        }
+                    }
                 }
-                //没有可移除超时链接 只能线程等待
+            } else {
+                IPooledConnection poll = idleConnections.poll();
+                activeConnections.add(poll);
+                connection = poll;
             }
-        } else {
-            IPooledConnection poll = idleConnections.poll();
-            activeConnections.add(poll);
-            connection = poll;
         }
+        connection.setCheckoutTimestamp(System.currentTimeMillis());
         activeConnections.add(connection);
         return connection.getRealConnection();
     }
 
-    public void backConnection(IPooledConnection connection) {
-        idleConnections.add(connection);
+    public void backConnection(Connection connection) {
+        IPooledConnection iPooledConnection = new IPooledConnection(connection, this);
+        idleConnections.add(iPooledConnection);
     }
 
     @Override
