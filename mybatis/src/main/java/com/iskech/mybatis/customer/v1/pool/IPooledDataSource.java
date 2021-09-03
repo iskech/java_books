@@ -42,6 +42,7 @@ public class IPooledDataSource implements DataSource {
     protected int poolMaximumIdleConnections = 5;
 
     protected int poolTimeToWait = 20000;
+    protected int poolMaximumCheckoutTime = 20000;
 
 
     public IPooledDataSource(String driver, String url, String username, String password) throws SQLException, ClassNotFoundException {
@@ -59,6 +60,7 @@ public class IPooledDataSource implements DataSource {
             idleConnections.add(iPooledConnection);
         }
     }
+
     public Connection getConnection2() throws SQLException {
         Connection conn = DriverManager.getConnection(url, username, password);
         return conn;
@@ -69,35 +71,38 @@ public class IPooledDataSource implements DataSource {
     public Connection getConnection() throws SQLException {
         IPooledConnection connection = null;
         while (Objects.isNull(connection)) {
-            if (idleConnections.isEmpty()) {
-                //空闲不存在 创建一个新的连接 添加至激活尾部并返回
-                if (activeConnections.size() < poolMaximumActiveConnections) {
-                    Connection conn = DriverManager.getConnection(url, username, password);
-                    connection = new IPooledConnection(conn, this);
-                } else {
-                    //尝试移除 链接超时链接 移除后创建新链接
-                    IPooledConnection iPooledConnection = ((List<IPooledConnection>) activeConnections).get(0);
-                    long checkoutTimestamp = iPooledConnection.getCheckoutTimestamp();
-                    if (checkoutTimestamp > poolMaximumActiveConnections) {
-                        activeConnections.remove(iPooledConnection);
+            synchronized (this) {
+                if (idleConnections.isEmpty()) {
+                    //空闲不存在 创建一个新的连接 添加至激活尾部并返回
+                    if (activeConnections.size() < poolMaximumActiveConnections) {
                         Connection conn = DriverManager.getConnection(url, username, password);
                         connection = new IPooledConnection(conn, this);
-                    }else {
-                        //没有可移除超时链接 只能线程等待
-                        try {
-                            Thread.sleep(poolTimeToWait);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                            System.out.println("线程池异常："+e.getMessage());
+                    } else {
+                        //尝试移除 链接超时链接 移除后创建新链接
+                        IPooledConnection iPooledConnection = ((List<IPooledConnection>) activeConnections).get(0);
+                        long checkoutTimestamp = iPooledConnection.getCheckoutTimestamp();
+                        if ((System.currentTimeMillis() - checkoutTimestamp - poolMaximumCheckoutTime) > 0) {
+                            activeConnections.remove(iPooledConnection);
+                            Connection conn = DriverManager.getConnection(url, username, password);
+                            connection = new IPooledConnection(conn, this);
+                        } else {
+                            //没有可移除超时链接 只能线程等待
+                            try {
+                                Thread.sleep(poolTimeToWait);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                                System.out.println("线程池异常：" + e.getMessage());
+                            }
                         }
                     }
+                } else {
+                    IPooledConnection poll = idleConnections.poll();
+                    activeConnections.add(poll);
+                    connection = poll;
                 }
-            } else {
-                IPooledConnection poll = idleConnections.poll();
-                activeConnections.add(poll);
-                connection = poll;
             }
         }
+
         connection.setCheckoutTimestamp(System.currentTimeMillis());
         activeConnections.add(connection);
         return connection.getRealConnection();
