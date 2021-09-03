@@ -31,8 +31,8 @@ import java.util.logging.Logger;
 public class IPooledDataSource implements DataSource {
 
 
-    protected final Queue<Connection> idleConnections = new LinkedList<Connection>();
-    protected final Queue<Connection> activeConnections = new LinkedList<Connection>();
+    protected final Queue<IPooledConnection> idleConnections = new LinkedList<IPooledConnection>();
+    protected final Queue<IPooledConnection> activeConnections = new LinkedList<IPooledConnection>();
     private String driver;
     private String url;
     private String username;
@@ -55,47 +55,41 @@ public class IPooledDataSource implements DataSource {
         for (int index = 0; index < poolMaximumIdleConnections; index++) {
             //2. 获得数据库连接
             Connection conn = DriverManager.getConnection(url, username, password);
-            idleConnections.add(conn);
+            IPooledConnection iPooledConnection = new IPooledConnection(conn, this);
+            idleConnections.add(iPooledConnection);
         }
     }
 
 
     @Override
     public Connection getConnection() throws SQLException {
+        IPooledConnection connection = null;
         if (idleConnections.isEmpty()) {
             //空闲不存在 创建一个新的连接 添加至激活尾部并返回
             if (activeConnections.size() < poolMaximumActiveConnections) {
                 Connection conn = DriverManager.getConnection(url, username, password);
-                activeConnections.add(conn);
-                return conn;
+                connection = new IPooledConnection(conn, this);
             } else {
-                try {
-                    Thread.sleep(poolTimeToWait);
-                    if (idleConnections.isEmpty()) {
-                        if (activeConnections.size() < poolMaximumActiveConnections) {
-                            Connection conn = DriverManager.getConnection(url, username, password);
-                            activeConnections.add(conn);
-                            return conn;
-                        }
-                    } else {
-                        Connection poll = idleConnections.poll();
-                        activeConnections.add(poll);
-                        return poll;
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+                //尝试移除 链接超时链接 移除后创建新链接
+                IPooledConnection iPooledConnection = ((List<IPooledConnection>) activeConnections).get(0);
+                if((System.currentTimeMillis() - iPooledConnection.getLastUsedTimestamp() -poolMaximumActiveConnections)>0){
+                    activeConnections.remove(iPooledConnection);
+                    Connection conn = DriverManager.getConnection(url, username, password);
+                    connection = new IPooledConnection(conn, this);
 
+                }
+                //没有可移除超时链接 只能线程等待
+            }
         } else {
-          Connection poll = idleConnections.poll();
-          activeConnections.add(poll);
-          return poll;
+            IPooledConnection poll = idleConnections.poll();
+            activeConnections.add(poll);
+            connection = poll;
         }
-        return null;
+        activeConnections.add(connection);
+        return connection.getRealConnection();
     }
 
-    public void backConnection(Connection connection) {
+    public void backConnection(IPooledConnection connection) {
         idleConnections.add(connection);
     }
 

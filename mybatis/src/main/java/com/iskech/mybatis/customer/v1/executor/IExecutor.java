@@ -20,7 +20,7 @@ public class IExecutor {
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
         try {
-            connection = iDataSource.getConnection();
+            connection = iDataSource.getConnection().;
             preparedStatement = connection.prepareStatement(iMappedStatement.getIbounding().getSql());
             //设置预编译语句参数
             preparedStatement.setString(1, String.valueOf(args[0]));
