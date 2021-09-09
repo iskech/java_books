@@ -1,0 +1,12 @@
+{
+    "pages": [
+        "pages/login/login"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#cc3333",
+        "navigationBarTitleText": "授权登录",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

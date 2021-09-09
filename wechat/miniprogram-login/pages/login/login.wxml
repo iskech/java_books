@@ -1,0 +1,24 @@
+<view wx:if="{{!hasUserInfo}}">
+ 
+        <view class='header'>
+            <image src='/images/postman.png'></image>
+        </view>
+
+        <view class='content'>
+            <view>申请获取以下权限</view>
+            <text>获得你的注册手机号</text>
+        </view>
+        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        微信授权手机号
+        </button>
+</view>
+
+
+<view wx:else>
+    <view class='header'>
+        <image src='/images/swiming.png'></image>
+    </view>
+    <button open-type="logout" bindtap="logout">
+        退出
+    </button>
+</view>
