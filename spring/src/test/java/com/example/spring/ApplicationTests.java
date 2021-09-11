@@ -35,6 +35,7 @@ public class ApplicationTests {
         //资源加载解析
         reader.loadBeanDefinitions(res);
         //https://www.jianshu.com/p/5c781f264467
+        //https://zhuanlan.zhihu.com/p/29344811
         System.out.println(factory);
     }
 
