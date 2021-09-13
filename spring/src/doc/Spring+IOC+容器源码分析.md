@@ -2206,7 +2206,7 @@ public class NoBeanOverridingContextLoader extends ContextLoader {
 ```
 
 ```java
-public class MyContextLoaderListener extends org.springframework.web.context.ContextLoaderListener {
+public class MyContextLoaderListener extends com.example.spring.provider.spring1_5.web.context.ContextLoaderListener {
  
   @Override
   protected ContextLoader createContextLoader() {
@@ -2520,7 +2520,7 @@ public void cleanup() {
 
 ```xml
 <bean id="conversionService"
-  class="org.springframework.context.support.ConversionServiceFactoryBean">
+  class="com.example.spring.provider.spring1_5.context.support.ConversionServiceFactoryBean">
   <property name="converters">
     <list>
       <bean class="com.javadoop.learning.utils.StringToEnumConverterFactory"/>
@@ -2568,12 +2568,12 @@ Spring 中提供了继承自 AbstractBeanDefinition 的 `ChildBeanDefinition` �
 看如下一个例子:
 
 ```java
-<bean id="inheritedTestBean" abstract="true" class="org.springframework.beans.TestBean">
+<bean id="inheritedTestBean" abstract="true" class="com.example.spring.provider.spring1_5.beans.TestBean">
     <property name="name" value="parent"/>
     <property name="age" value="1"/>
 </bean>
 
-<bean id="inheritsWithDifferentClass" class="org.springframework.beans.DerivedTestBean"
+<bean id="inheritsWithDifferentClass" class="com.example.spring.provider.spring1_5.beans.DerivedTestBean"
         parent="inheritedTestBean" init-method="initialize">
         
     <property name="name" value="override"/>
@@ -2698,7 +2698,7 @@ public class MyValueCalculator {
 方法覆写，注意要实现 MethodReplacer 接口：
 
 ```java
-public class ReplacementComputeValue implements org.springframework.beans.factory.support.MethodReplacer {
+public class ReplacementComputeValue implements com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer {
 
     public Object reimplement(Object o, Method m, Object[] args) throws Throwable {
         // get the input value, work with it, and return a computed result

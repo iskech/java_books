@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+	<bean id="prototypeTest" class="com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean" singleton="false">
+		<property name="count"><value>10</value></property>
+	</bean>
+	
+	<bean id="poolTargetSource" class="com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource">
+		<property name="targetBeanName"><value>prototypeTest</value></property>
+		<property name="maxSize"><value>25</value></property>
+	</bean>
+	
+	<bean id="poolConfigAdvisor" class="com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject"><ref local="poolTargetSource" /></property>
+		<property name="targetMethod"><value>getPoolingConfigMixin</value></property>
+	</bean>
+	
+	<bean id="nop" class="com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor"/>
+
+	<!--
+		This will create a bean for each thread ("apartment")
+	-->
+	<bean id="pooled"  class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		<property name="targetSource"><ref local="poolTargetSource"/></property>
+		<property name="interceptorNames"><value>nop</value></property>
+	</bean>
+	
+	<bean id="pooledNoInterceptors"  class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		<property name="targetSource"><ref local="poolTargetSource"/></property>
+	</bean>
+	
+	<bean id="pooledWithMixin" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		<property name="targetSource"><ref local="poolTargetSource"/></property>
+		<property name="interceptorNames"><value>poolConfigAdvisor</value></property>
+		<!-- Necessary as have a mixin and want to avoid losing the class,
+			 because there's no target interface -->
+		<property name="proxyTargetClass"><value>true</value></property>
+	</bean>
+
+	<!-- Serialization tests using serializable target and advice -->
+	<bean id="serializableNop" class="com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor" />
+	
+	<bean id="prototypePerson" class="com.example.spring.provider.spring1_5.beans.SerializablePerson" singleton="false"/>
+
+	<bean id="personPoolTargetSource" class="com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource">
+		<property name="targetBeanName"><value>prototypePerson</value></property>
+		<property name="maxSize"><value>10</value></property>
+	</bean>
+	
+	<bean id="pooledPerson" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		<property name="targetSource"><ref local="personPoolTargetSource"/></property>
+		<property name="interceptorNames"><value>serializableNop</value></property>
+		
+	</bean>
+
+</beans>		

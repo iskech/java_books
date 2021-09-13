@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="dependingBean" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$DependingBean"
+			autowire="byName"/>
+
+	<bean id="bean1" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$PreparingBean1"/>
+
+	<bean id="bean2" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$PreparingBean2"/>
+
+	<bean id="abstractFactoryBean" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true"/>
+
+	<bean id="lazyFactoryBean" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean"
+		lazy-init="true"/>
+
+</beans>

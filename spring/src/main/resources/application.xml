@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xmlns="http://www.springframework.org/schema/beans"
-           xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean name="goHome" id="goHomeService" class="com.example.spring.provider.service.GoHomeImpl"/>
+    <bean name="goHomeController" id="goHomeController" class="com.example.spring.provider.service.GoHomeController"
 
-        <bean id="goHomeService" class="com.example.spring.provider.service.GoHomeImpl"/>
-    </beans>
+    >
+        <property name="go">
+            <bean parent="goHomeService"></bean>
+        </property>
+
+    </bean>
+    <bean id="myFactoryBean" class="com.example.spring.provider.service.MyBeanFactory"/>
 </beans>

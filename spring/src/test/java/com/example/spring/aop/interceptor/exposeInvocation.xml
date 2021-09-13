@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+	Tests for throws advice.
+-->
+<beans>
+	
+	<bean id="nopInterceptor" class="com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor"/>
+
+	<bean id="exposeInvocation" class="com.example.spring.provider.spring1_5.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="targetClass">
+			<value>com.example.spring.provider.spring1_5.aop.interceptor.ExposeInvocationInterceptor</value>
+		</property>
+		<property name="targetField"><value>INSTANCE</value></property>
+	</bean>
+	
+	<bean id="countingBeforeAdvice" class="com.example.spring.provider.spring1_5.aop.framework.CountingBeforeAdvice"/>
+
+	<bean id="proxy" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		<property name="target">
+			<bean class="com.example.spring.provider.spring1_5.aop.framework.InvocationCheckExposedInvocationTestBean" />
+		</property>
+		<property name="interceptorNames">
+			<value>exposeInvocation,countingBeforeAdvice,nopInterceptor</value>
+		</property>
+	</bean>
+	
+</beans>		
