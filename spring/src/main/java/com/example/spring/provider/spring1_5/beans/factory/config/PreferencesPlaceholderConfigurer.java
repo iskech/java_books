@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import java.util.Properties;
 import java.util.prefs.Preferences;

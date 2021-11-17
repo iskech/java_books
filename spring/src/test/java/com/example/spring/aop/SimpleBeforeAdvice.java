@@ -16,7 +16,7 @@
 
 package com.example.spring.aop;
 
-import com.example.spring.provider.spring1_5.aop.BeforeAdvice;
+import org.springframework.aop.BeforeAdvice;
 
 /**
  * Simple BeforeAdvice targeted for testing

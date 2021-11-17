@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.aop.Advice;
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.DynamicIntroductionAdvice;
-import com.example.spring.provider.spring1_5.aop.IntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.IntroductionInfo;
-import com.example.spring.provider.spring1_5.core.Ordered;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.DynamicIntroductionAdvice;
+import org.springframework.aop.IntroductionAdvisor;
+import org.springframework.aop.IntroductionInfo;
+import org.springframework.core.Ordered;
 
 import java.io.Serializable;
 import java.util.HashSet;

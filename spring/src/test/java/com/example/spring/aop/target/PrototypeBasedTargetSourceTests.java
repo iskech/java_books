@@ -16,13 +16,13 @@
 
 package com.example.spring.aop.target;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.SerializablePerson;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.TargetSource;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.SerializablePerson;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.util.SerializationTestUtils;
 
 import junit.framework.TestCase;
 
@@ -68,14 +68,14 @@ public class PrototypeBasedTargetSourceTests extends TestCase {
 		private TestBean thisFieldIsNotSerializable = new TestBean();
 
 		/**
-		 * @see com.example.spring.provider.spring1_5.aop.TargetSource#getTarget()
+		 * @see org.springframework.aop.TargetSource#getTarget()
 		 */
 		public Object getTarget() throws Exception {
 			return newPrototypeInstance();
 		}
 
 		/**
-		 * @see com.example.spring.provider.spring1_5.aop.TargetSource#releaseTarget(Object)
+		 * @see org.springframework.aop.TargetSource#releaseTarget(Object)
 		 */
 		public void releaseTarget(Object target) throws Exception {
 			// Do nothing

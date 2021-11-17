@@ -25,9 +25,9 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.TestBean;
 
 /**
  * @author Juergen Hoeller

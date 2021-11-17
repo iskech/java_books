@@ -18,12 +18,12 @@ package com.example.spring.aop.framework.adapter;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.SimpleBeforeAdviceImpl;
-import com.example.spring.provider.spring1_5.aop.framework.Advised;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.context.ApplicationContext;
-import com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.SimpleBeforeAdviceImpl;
+import org.springframework.aop.framework.Advised;
+import org.springframework.beans.ITestBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * TestCase for AdvisorAdapterRegistrationManager mechanism.

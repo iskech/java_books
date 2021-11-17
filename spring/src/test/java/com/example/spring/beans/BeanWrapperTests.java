@@ -32,8 +32,8 @@ import java.util.TreeSet;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.support.DerivedFromProtectedBaseBean;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.support.DerivedFromProtectedBaseBean;
+import org.springframework.util.StringUtils;
 
 /**
  * @author Rod Johnson

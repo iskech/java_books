@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
 import java.util.List;
 import java.util.Locale;
@@ -24,7 +24,7 @@ import java.util.Locale;
  * Used by RefreshablePagedListHolder.
  * @author Jean-Pierre PAWLAK
  * @author Juergen Hoeller
- * @see com.example.spring.provider.spring1_5.beans.support.RefreshablePagedListHolder#setSourceProvider
+ * @see org.springframework.beans.support.RefreshablePagedListHolder#setSourceProvider
  */
 public interface PagedListSourceProvider {
 
@@ -38,8 +38,8 @@ public interface PagedListSourceProvider {
 	 * @param filter object representing filter settings,
 	 * or null if no filter options are used
 	 * @return the loaded List
-	 * @see com.example.spring.provider.spring1_5.beans.support.RefreshablePagedListHolder#setLocale
-	 * @see com.example.spring.provider.spring1_5.beans.support.RefreshablePagedListHolder#setFilter
+	 * @see org.springframework.beans.support.RefreshablePagedListHolder#setLocale
+	 * @see org.springframework.beans.support.RefreshablePagedListHolder#setFilter
 	 */
 	public List loadList(Locale locale, Object filter);
 

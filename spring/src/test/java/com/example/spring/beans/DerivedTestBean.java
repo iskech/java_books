@@ -18,8 +18,8 @@ package com.example.spring.beans;
 
 import java.io.Serializable;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.DisposableBean;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.DisposableBean;
 
 /**
  * @author Juergen Hoeller

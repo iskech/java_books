@@ -18,10 +18,10 @@ package com.example.spring.aop.target;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.aop.interceptor.SideEffectBean;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Rod Johnson

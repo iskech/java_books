@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 import org.aopalliance.aop.Advice;
 
@@ -30,7 +30,7 @@ import org.aopalliance.aop.Advice;
  * a range of interfaces that is not necessarily known in advance.
  * Thus an IntroductionAdvisor can be used to specify which interfaces
  * will be exposed in an advised object.
- * @see com.example.spring.provider.spring1_5.aop.IntroductionInfo
+ * @see org.springframework.aop.IntroductionInfo
  * @author Rod Johnson
  * @since 1.1.1
  */

@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.core.io.Resource;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.core.io.Resource;
 
 /**
  * FactoryBean for Resource descriptors. Exposes a looked-up Resource object.
@@ -27,7 +27,7 @@ import com.example.spring.provider.spring1_5.core.io.Resource;
  *
  * @author Juergen Hoeller
  * @since 28.12.2003
- * @see com.example.spring.provider.spring1_5.context.ApplicationContext#getResource
+ * @see org.springframework.context.ApplicationContext#getResource
  */
 public class ResourceFactoryBean implements FactoryBean {
 

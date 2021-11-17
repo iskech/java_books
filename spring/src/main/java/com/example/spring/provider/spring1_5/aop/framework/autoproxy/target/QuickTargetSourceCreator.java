@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.target;
+package org.springframework.aop.framework.autoproxy.target;
 
-import com.example.spring.provider.spring1_5.aop.target.AbstractPrototypeBasedTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.PrototypeTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.ThreadLocalTargetSource;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
+import org.springframework.aop.target.AbstractPrototypeBasedTargetSource;
+import org.springframework.aop.target.CommonsPoolTargetSource;
+import org.springframework.aop.target.PrototypeTargetSource;
+import org.springframework.aop.target.ThreadLocalTargetSource;
+import org.springframework.beans.factory.BeanFactory;
 
 /**
  * Convenient TargetSourceCreator using bean name prefixes to create one of three
@@ -29,9 +29,9 @@ import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
  * <li>% ThreadLocalTargetSource
  * <li>! PrototypeTargetSource
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource
- * @see com.example.spring.provider.spring1_5.aop.target.ThreadLocalTargetSource
- * @see com.example.spring.provider.spring1_5.aop.target.PrototypeTargetSource
+ * @see org.springframework.aop.target.CommonsPoolTargetSource
+ * @see org.springframework.aop.target.ThreadLocalTargetSource
+ * @see org.springframework.aop.target.PrototypeTargetSource
  */
 public class QuickTargetSourceCreator extends AbstractPrototypeBasedTargetSourceCreator {
 

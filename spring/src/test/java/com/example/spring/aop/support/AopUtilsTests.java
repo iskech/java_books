@@ -24,17 +24,17 @@ import java.util.List;
 import junit.framework.TestCase;
 import org.aopalliance.aop.Advice;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
-import com.example.spring.provider.spring1_5.aop.interceptor.ExposeInvocationInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.target.EmptyTargetSource;
-import com.example.spring.provider.spring1_5.beans.DerivedTestBean;
-import com.example.spring.provider.spring1_5.beans.IOther;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.aop.Pointcut;
+import org.springframework.aop.interceptor.ExposeInvocationInterceptor;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.target.EmptyTargetSource;
+import org.springframework.beans.DerivedTestBean;
+import org.springframework.beans.IOther;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * @author Rod Johnson

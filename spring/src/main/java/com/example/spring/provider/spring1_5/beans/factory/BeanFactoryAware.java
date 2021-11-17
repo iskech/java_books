@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * Interface to be implemented by beans that wish to be aware of their owning
@@ -36,7 +36,7 @@ import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
  * @see BeanNameAware
  * @see InitializingBean
  * @see BeanFactory
- * @see com.example.spring.provider.spring1_5.context.ApplicationContextAware
+ * @see org.springframework.context.ApplicationContextAware
  */
 public interface BeanFactoryAware {
 	

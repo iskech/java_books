@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
-import com.example.spring.provider.spring1_5.aop.support.DefaultIntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.DelegatingIntroductionInterceptor;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.DisposableBean;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
+import org.springframework.aop.support.DelegatingIntroductionInterceptor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.DisposableBean;
 
 /**
  * Abstract superclass for pooling TargetSources that maintains a pool of

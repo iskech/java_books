@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.*;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractAutowireCapableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionRegistry;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionValidationException;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.StaticListableBeanFactory;
-import com.example.spring.provider.spring1_5.core.CollectionFactory;
-import com.example.spring.provider.spring1_5.util.Assert;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.BeanDefinitionValidationException;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.beans.factory.support.StaticListableBeanFactory;
+import org.springframework.core.CollectionFactory;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import java.util.*;
 
@@ -52,10 +52,10 @@ import java.util.*;
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @since 16 April 2001
- * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory
+ * @see org.springframework.beans.factory.ListableBeanFactory
  * @see StaticListableBeanFactory
  * @see PropertiesBeanDefinitionReader
- * @see com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionReader
+ * @see org.springframework.beans.factory.xml.XmlBeanDefinitionReader
  */
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory
     implements ConfigurableListableBeanFactory, BeanDefinitionRegistry {

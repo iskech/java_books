@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactory;
 
 /**
  * Sub-interface implemented by bean factories that can be part
@@ -28,7 +28,7 @@ import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
  *
  * @author Rod Johnson
  * @since 07-Jul-2003
- * @see com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory#setParentBeanFactory
+ * @see org.springframework.beans.factory.config.ConfigurableBeanFactory#setParentBeanFactory
  */
 public interface HierarchicalBeanFactory extends BeanFactory {
 	

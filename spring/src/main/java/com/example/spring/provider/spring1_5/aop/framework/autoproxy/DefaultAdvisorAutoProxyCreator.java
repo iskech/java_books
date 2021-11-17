@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy;
+package org.springframework.aop.framework.autoproxy;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryUtils;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory;
+import org.springframework.aop.Advisor;
+import org.springframework.beans.factory.BeanFactoryUtils;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.ListableBeanFactory;
 
 import java.util.LinkedList;
 import java.util.List;

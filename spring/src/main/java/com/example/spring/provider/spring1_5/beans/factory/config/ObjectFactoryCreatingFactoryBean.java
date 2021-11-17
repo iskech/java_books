@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.ObjectFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.AbstractFactoryBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.ObjectFactory;
+import org.springframework.beans.factory.config.AbstractFactoryBean;
 
 /**
  * <p>FactoryBean which returns a value which is an ObjectFactory that returns
@@ -38,7 +38,7 @@ import com.example.spring.provider.spring1_5.beans.factory.config.AbstractFactor
  *   &lt;bean id="myService" class="a.b.c.MyService" singleton="false">
  *   &lt;/bean>
  * 
- *   &lt;bean id="myServiceFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+ *   &lt;bean id="myServiceFactory" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
  *     &lt;property name="targetBeanName">&lt;idref local="myService"/>&lt;/property>
  *   &lt;/bean> 
  *  

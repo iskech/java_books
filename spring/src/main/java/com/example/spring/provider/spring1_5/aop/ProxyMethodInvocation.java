@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 import org.aopalliance.intercept.MethodInvocation;
 
@@ -27,8 +27,8 @@ import org.aopalliance.intercept.MethodInvocation;
  *
  * @author Juergen Hoeller
  * @since 1.1.3
- * @see com.example.spring.provider.spring1_5.aop.framework.ReflectiveMethodInvocation
- * @see com.example.spring.provider.spring1_5.aop.support.DelegatingIntroductionInterceptor
+ * @see org.springframework.aop.framework.ReflectiveMethodInvocation
+ * @see org.springframework.aop.support.DelegatingIntroductionInterceptor
  */
 public interface ProxyMethodInvocation extends MethodInvocation {
 

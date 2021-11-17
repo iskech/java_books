@@ -8,7 +8,7 @@
 	-->
 
 	<bean id="overrideOneMethod" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethod">
+		class="org.springframework.beans.factory.xml.OverrideOneMethod">
 		
 		<lookup-method name="getPrototypeDependency" bean="jenny" />
 		
@@ -25,7 +25,7 @@
 	</bean>
 	
 	<bean id="replaceVoidMethod" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethodSubclass">
+		class="org.springframework.beans.factory.xml.OverrideOneMethodSubclass">
 		
 		<lookup-method name="getPrototypeDependency" bean="jenny" />
 		
@@ -41,17 +41,17 @@
 	
 	
 	<bean id="reverseReplacer" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.ReverseMethodReplacer" />
+		class="org.springframework.beans.factory.xml.ReverseMethodReplacer" />
 	
 	<bean id="fixedReplacer" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.FixedMethodReplacer" />
+		class="org.springframework.beans.factory.xml.FixedMethodReplacer" />
 		
 	<bean id="doSomethingReplacer" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$DoSomethingReplacer" />
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$DoSomethingReplacer" />
 	
 	
 	<bean id="serializableReplacer" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.SerializableMethodReplacerCandidate">
+		class="org.springframework.beans.factory.xml.SerializableMethodReplacerCandidate">
 		
 		<!-- Arbitrary method replacer -->
 		<replaced-method name="replaceMe" replacer="reverseReplacer">
@@ -60,7 +60,7 @@
 		
 	</bean>
 	
-	<bean id="jenny" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="jenny" class="org.springframework.beans.TestBean"
 		singleton="false">	
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
@@ -70,7 +70,7 @@
 		</property>
 	</bean>
 	
-	<bean id="david" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="david" class="org.springframework.beans.TestBean"
 		singleton="true">	
 		<description>
 			Simple bean, without any collections.

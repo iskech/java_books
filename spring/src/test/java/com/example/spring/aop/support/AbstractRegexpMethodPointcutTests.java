@@ -20,7 +20,7 @@ import javax.servlet.ServletException;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * @author Rod Johnson

@@ -21,15 +21,15 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.context.ACATest;
-import com.example.spring.provider.spring1_5.context.AbstractApplicationContextTests;
-import com.example.spring.provider.spring1_5.context.BeanThatListens;
-import com.example.spring.provider.spring1_5.context.ConfigurableApplicationContext;
-import com.example.spring.provider.spring1_5.context.MessageSourceResolvable;
-import com.example.spring.provider.spring1_5.context.NoSuchMessageException;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.context.ACATest;
+import org.springframework.context.AbstractApplicationContextTests;
+import org.springframework.context.BeanThatListens;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.MessageSourceResolvable;
+import org.springframework.context.NoSuchMessageException;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Rod Johnson
@@ -77,7 +77,7 @@ public class StaticMessageSourceTests extends AbstractApplicationContextTests {
 	 * The underlying implementation uses a hashMap to cache messageFormats
 	 * once a message has been asked for.  This test is an attempt to
 	 * make sure the cache is being used properly.
-	 * @see com.example.spring.provider.spring1_5.context.support.AbstractMessageSource for more details.
+	 * @see org.springframework.context.support.AbstractMessageSource for more details.
 	 */
 	public void testGetMessageWithMessageAlreadyLookedFor() {
 		Object[] arguments = {
@@ -199,9 +199,9 @@ public class StaticMessageSourceTests extends AbstractApplicationContextTests {
 
 		Map m = new HashMap();
 		m.put("name", "Roderick");
-		parent.registerPrototype("rod", com.example.spring.provider.spring1_5.beans.TestBean.class, new MutablePropertyValues(m));
+		parent.registerPrototype("rod", org.springframework.beans.TestBean.class, new MutablePropertyValues(m));
 		m.put("name", "Albert");
-		parent.registerPrototype("father", com.example.spring.provider.spring1_5.beans.TestBean.class, new MutablePropertyValues(m));
+		parent.registerPrototype("father", org.springframework.beans.TestBean.class, new MutablePropertyValues(m));
 
 		parent.refresh();
 		parent.addListener(parentListener);

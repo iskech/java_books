@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.adapter;
+package org.springframework.aop.framework.adapter;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.Advisor;
+import org.springframework.aop.Advisor;
 
 /**
  * Interface allowing extension to the Spring AOP framework to allow

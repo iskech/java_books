@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.*;
+import org.springframework.aop.*;
 
 /**
  * Interface to be implemented by classes that hold the configuration
@@ -30,7 +30,7 @@ import com.example.spring.provider.spring1_5.aop.*;
  *
  * @author Rod Johnson
  * @since 13-Mar-2003
- * @see com.example.spring.provider.spring1_5.aop.framework.AdvisedSupport
+ * @see org.springframework.aop.framework.AdvisedSupport
  */
 public interface Advised {
 	
@@ -117,7 +117,7 @@ public interface Advised {
 	 * applies, and returned from the getAdvisors() method in this wrapped form.
 	 * @param advice advice to add to the tail of the chain
 	 * @see #addAdvice(int, Advice)
-	 * @see com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor
+	 * @see org.springframework.aop.support.DefaultPointcutAdvisor
 	 */
 	void addAdvice(Advice advice) throws AopConfigException;
 

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinition;
 
 /**
  * Holder for a BeanDefinition with name and aliases.
@@ -31,9 +31,9 @@ import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition
  *
  * @author Juergen Hoeller
  * @since 1.0.2
- * @see com.example.spring.provider.spring1_5.beans.factory.support.AbstractAutowireCapableBeanFactory#resolveValueIfNecessary
- * @see com.example.spring.provider.spring1_5.beans.factory.xml.DefaultXmlBeanDefinitionParser#parseBeanDefinition
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanNameAware
+ * @see org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#resolveValueIfNecessary
+ * @see org.springframework.beans.factory.xml.DefaultXmlBeanDefinitionParser#parseBeanDefinition
+ * @see org.springframework.beans.factory.BeanNameAware
  */
 public class BeanDefinitionHolder {
 

@@ -18,12 +18,12 @@ package com.example.spring.beans.factory.config;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.context.support.StaticApplicationContext;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.context.support.StaticApplicationContext;
 
 /**
  * This test will go away once a real lifecycle test is created for AppContexts

@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
+import org.springframework.beans.FatalBeanException;
 
 /**
  * Exception thrown when referring to an invalid bean property.

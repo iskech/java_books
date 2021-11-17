@@ -20,11 +20,11 @@ import java.lang.reflect.Method;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.beans.IOther;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.beans.IOther;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * $Id: MethodMatchersTests.java,v 1.6 2004/10/09 12:33:48 jhoeller Exp $

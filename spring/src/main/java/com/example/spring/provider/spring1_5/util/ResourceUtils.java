@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -40,11 +40,11 @@ import java.net.URLDecoder;
  *
  * @author Juergen Hoeller
  * @since 1.1.5
- * @see com.example.spring.provider.spring1_5.core.io.Resource
- * @see com.example.spring.provider.spring1_5.core.io.ClassPathResource
- * @see com.example.spring.provider.spring1_5.core.io.FileSystemResource
- * @see com.example.spring.provider.spring1_5.core.io.UrlResource
- * @see com.example.spring.provider.spring1_5.core.io.ResourceLoader
+ * @see org.springframework.core.io.Resource
+ * @see org.springframework.core.io.ClassPathResource
+ * @see org.springframework.core.io.FileSystemResource
+ * @see org.springframework.core.io.UrlResource
+ * @see org.springframework.core.io.ResourceLoader
  */
 public abstract class ResourceUtils {
 

@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.InvalidPropertyException;
-import com.example.spring.provider.spring1_5.beans.PropertyAccessor;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.InvalidPropertyException;
+import org.springframework.beans.PropertyAccessor;
 
 import java.beans.PropertyDescriptor;
 import java.beans.PropertyEditor;
@@ -48,8 +48,8 @@ import java.beans.PropertyEditor;
  * @author Rod Johnson
  * @since 13 April 2001
  * @see BeanWrapperImpl
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory
- * @see com.example.spring.provider.spring1_5.validation.DataBinder
+ * @see org.springframework.beans.factory.BeanFactory
+ * @see org.springframework.validation.DataBinder
  */
 public interface BeanWrapper extends PropertyAccessor {
 

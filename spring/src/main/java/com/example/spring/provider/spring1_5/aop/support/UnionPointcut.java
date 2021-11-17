@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.aop.Pointcut;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -44,14 +44,14 @@ class UnionPointcut implements Pointcut, Serializable {
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.Pointcut#getClassFilter()
+	 * @see org.springframework.aop.Pointcut#getClassFilter()
 	 */
 	public ClassFilter getClassFilter() {
 		return ClassFilters.union(a.getClassFilter(), b.getClassFilter());
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.Pointcut#getMethodMatcher()
+	 * @see org.springframework.aop.Pointcut#getMethodMatcher()
 	 */
 	public MethodMatcher getMethodMatcher() {
 		// Complicated: we need to consider both class filter and method matcher

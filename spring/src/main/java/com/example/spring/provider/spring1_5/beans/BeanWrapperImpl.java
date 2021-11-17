@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.NullValueInNestedPathException;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.*;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.support.ResourceArrayPropertyEditor;
-import com.example.spring.provider.spring1_5.util.Assert;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.NullValueInNestedPathException;
+import org.springframework.beans.propertyeditors.*;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.ResourceArrayPropertyEditor;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyDescriptor;
@@ -48,7 +48,7 @@ import java.util.*;
  * The caller is responsible for loading a target class.
  *
  * <p>Note: Auto-registers default property editors from the
- * <code>com.example.spring.provider.spring1_5.beans.propertyeditors</code> package, which apply
+ * <code>org.springframework.beans.propertyeditors</code> package, which apply
  * in addition to the JDK's standard PropertyEditors. Applications can call
  * BeanWrapper's <code>registerCustomEditor</code> method to register an editor
  * for the particular instance (i.e. they're not shared across the application).
@@ -74,21 +74,21 @@ import java.util.*;
  * @see CustomCollectionEditor
  * @see FileEditor
  * @see InputStreamEditor
- * @see com.example.spring.provider.spring1_5.jndi.JndiTemplateEditor
+ * @see org.springframework.jndi.JndiTemplateEditor
  * @see LocaleEditor
  * @see PropertiesEditor
  * @see PropertyValuesEditor
  * @see ResourceArrayPropertyEditor
- * @see com.example.spring.provider.spring1_5.core.io.ResourceEditor
+ * @see org.springframework.core.io.ResourceEditor
  * @see StringArrayPropertyEditor
- * @see com.example.spring.provider.spring1_5.transaction.interceptor.TransactionAttributeEditor
- * @see com.example.spring.provider.spring1_5.transaction.interceptor.TransactionAttributeSourceEditor
+ * @see org.springframework.transaction.interceptor.TransactionAttributeEditor
+ * @see org.springframework.transaction.interceptor.TransactionAttributeSourceEditor
  * @see URLEditor
  */
 public class BeanWrapperImpl implements BeanWrapper {
 
 	/** We'll create a lot of these objects, so we don't want a new logger every time */
-	private static final Log logger = LogFactory.getLog(com.example.spring.provider.spring1_5.beans.BeanWrapperImpl.class);
+	private static final Log logger = LogFactory.getLog(org.springframework.beans.BeanWrapperImpl.class);
 
 
 	//---------------------------------------------------------------------
@@ -209,7 +209,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 	 * @param nestedPath the nested path of the object
 	 * @param superBw the containing BeanWrapper (must not be null)
 	 */
-	private BeanWrapperImpl(Object object, String nestedPath, com.example.spring.provider.spring1_5.beans.BeanWrapperImpl superBw) {
+	private BeanWrapperImpl(Object object, String nestedPath, org.springframework.beans.BeanWrapperImpl superBw) {
 		this.defaultEditors = superBw.defaultEditors;
 		setWrappedInstance(object, nestedPath, superBw.getWrappedInstance());
 	}
@@ -445,13 +445,13 @@ public class BeanWrapperImpl implements BeanWrapper {
 	 * @param propertyPath property property path, which may be nested
 	 * @return a BeanWrapper for the target bean
 	 */
-	protected com.example.spring.provider.spring1_5.beans.BeanWrapperImpl getBeanWrapperForPropertyPath(String propertyPath) throws BeansException {
+	protected org.springframework.beans.BeanWrapperImpl getBeanWrapperForPropertyPath(String propertyPath) throws BeansException {
 		int pos = getNestedPropertySeparatorIndex(propertyPath, false);
 		// handle nested properties recursively
 		if (pos > -1) {
 			String nestedProperty = propertyPath.substring(0, pos);
 			String nestedPath = propertyPath.substring(pos + 1);
-			com.example.spring.provider.spring1_5.beans.BeanWrapperImpl nestedBw = getNestedBeanWrapper(nestedProperty);
+			org.springframework.beans.BeanWrapperImpl nestedBw = getNestedBeanWrapper(nestedProperty);
 			return nestedBw.getBeanWrapperForPropertyPath(nestedPath);
 		}
 		else {
@@ -467,7 +467,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 	 * @param nestedProperty property to create the BeanWrapper for
 	 * @return the BeanWrapper instance, either cached or newly created
 	 */
-	private com.example.spring.provider.spring1_5.beans.BeanWrapperImpl getNestedBeanWrapper(String nestedProperty) throws BeansException {
+	private org.springframework.beans.BeanWrapperImpl getNestedBeanWrapper(String nestedProperty) throws BeansException {
 		if (this.nestedBeanWrappers == null) {
 			this.nestedBeanWrappers = new HashMap();
 		}
@@ -481,12 +481,12 @@ public class BeanWrapperImpl implements BeanWrapper {
 		}
 
 		// lookup cached sub-BeanWrapper, create new one if not found
-		com.example.spring.provider.spring1_5.beans.BeanWrapperImpl nestedBw = (com.example.spring.provider.spring1_5.beans.BeanWrapperImpl) this.nestedBeanWrappers.get(canonicalName);
+		org.springframework.beans.BeanWrapperImpl nestedBw = (org.springframework.beans.BeanWrapperImpl) this.nestedBeanWrappers.get(canonicalName);
 		if (nestedBw == null || nestedBw.getWrappedInstance() != propertyValue) {
 			if (logger.isDebugEnabled()) {
 				logger.debug("Creating new nested BeanWrapper for property '" + canonicalName + "'");
 			}
-			nestedBw = new com.example.spring.provider.spring1_5.beans.BeanWrapperImpl(
+			nestedBw = new org.springframework.beans.BeanWrapperImpl(
 					propertyValue, this.nestedPath + canonicalName + NESTED_PROPERTY_SEPARATOR, this);
 			// inherit all type-specific PropertyEditors
 			if (this.customEditors != null) {
@@ -562,7 +562,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 
 
 	public Object getPropertyValue(String propertyName) throws BeansException {
-		com.example.spring.provider.spring1_5.beans.BeanWrapperImpl nestedBw = getBeanWrapperForPropertyPath(propertyName);
+		org.springframework.beans.BeanWrapperImpl nestedBw = getBeanWrapperForPropertyPath(propertyName);
 		PropertyTokenHolder tokens = getPropertyNameTokens(getFinalPath(nestedBw, propertyName));
 		return nestedBw.getPropertyValue(tokens);
 	}
@@ -652,7 +652,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 	}
 
 	public void setPropertyValue(String propertyName, Object value) throws BeansException {
-		com.example.spring.provider.spring1_5.beans.BeanWrapperImpl nestedBw = null;
+		org.springframework.beans.BeanWrapperImpl nestedBw = null;
 		try {
 			nestedBw = getBeanWrapperForPropertyPath(propertyName);
 		}
@@ -1028,7 +1028,7 @@ public class BeanWrapperImpl implements BeanWrapper {
 	 */
 	protected PropertyDescriptor getPropertyDescriptorInternal(String propertyName) throws BeansException {
 		Assert.state(this.object != null, "BeanWrapper does not hold a bean instance");
-		com.example.spring.provider.spring1_5.beans.BeanWrapperImpl nestedBw = getBeanWrapperForPropertyPath(propertyName);
+		org.springframework.beans.BeanWrapperImpl nestedBw = getBeanWrapperForPropertyPath(propertyName);
 		return nestedBw.cachedIntrospectionResults.getPropertyDescriptor(getFinalPath(nestedBw, propertyName));
 	}
 

@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 /**
  * Interface implemented by objects that can provide performance information

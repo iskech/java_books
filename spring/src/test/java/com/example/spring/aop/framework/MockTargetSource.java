@@ -16,7 +16,7 @@
 
 package com.example.spring.aop.framework;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
+import org.springframework.aop.TargetSource;
 
 /**
  * 
@@ -40,14 +40,14 @@ public class MockTargetSource implements TargetSource {
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.TargetSource#getTargetClass()
+	 * @see org.springframework.aop.TargetSource#getTargetClass()
 	 */
 	public Class getTargetClass() {
 		return target.getClass();
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.TargetSource#getTarget()
+	 * @see org.springframework.aop.TargetSource#getTarget()
 	 */
 	public Object getTarget() throws Exception {
 		++gets;
@@ -55,7 +55,7 @@ public class MockTargetSource implements TargetSource {
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.TargetSource#releaseTarget(Object)
+	 * @see org.springframework.aop.TargetSource#releaseTarget(Object)
 	 */
 	public void releaseTarget(Object pTarget) throws Exception {
 		if (pTarget != this.target)
@@ -73,7 +73,7 @@ public class MockTargetSource implements TargetSource {
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.TargetSource#isStatic()
+	 * @see org.springframework.aop.TargetSource#isStatic()
 	 */
 	public boolean isStatic() {
 		return false;

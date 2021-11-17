@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 import org.apache.commons.collections.map.IdentityMap;
 import org.apache.commons.collections.map.LinkedMap;

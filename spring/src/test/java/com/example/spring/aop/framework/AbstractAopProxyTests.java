@@ -31,31 +31,31 @@ import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.AfterReturningAdvice;
-import com.example.spring.provider.spring1_5.aop.DynamicIntroductionAdvice;
-import com.example.spring.provider.spring1_5.aop.MethodBeforeAdvice;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.ThrowsAdviceInterceptorTests;
-import com.example.spring.provider.spring1_5.aop.interceptor.ExposeInvocationInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.support.DefaultIntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.DelegatingIntroductionInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.DynamicMethodMatcherPointcutAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.NameMatchMethodPointcut;
-import com.example.spring.provider.spring1_5.aop.support.Pointcuts;
-import com.example.spring.provider.spring1_5.aop.support.StaticMethodMatcherPointcutAdvisor;
-import com.example.spring.provider.spring1_5.aop.target.HotSwappableTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource;
-import com.example.spring.provider.spring1_5.beans.IOther;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.SerializablePerson;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
-import com.example.spring.provider.spring1_5.util.StopWatch;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.AfterReturningAdvice;
+import org.springframework.aop.DynamicIntroductionAdvice;
+import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.aop.framework.adapter.ThrowsAdviceInterceptorTests;
+import org.springframework.aop.interceptor.ExposeInvocationInterceptor;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.interceptor.SerializableNopInterceptor;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.support.DelegatingIntroductionInterceptor;
+import org.springframework.aop.support.DynamicMethodMatcherPointcutAdvisor;
+import org.springframework.aop.support.NameMatchMethodPointcut;
+import org.springframework.aop.support.Pointcuts;
+import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
+import org.springframework.aop.target.HotSwappableTargetSource;
+import org.springframework.aop.target.SingletonTargetSource;
+import org.springframework.beans.IOther;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.Person;
+import org.springframework.beans.SerializablePerson;
+import org.springframework.beans.TestBean;
+import org.springframework.util.SerializationTestUtils;
+import org.springframework.util.StopWatch;
 
 /**
  * @author Rod Johnson
@@ -788,7 +788,7 @@ public abstract class AbstractAopProxyTests extends TestCase {
 		
 		class MyDi extends DelegatingIntroductionInterceptor implements TimeStamped {
 			/**
-			 * @see com.example.spring.provider.spring1_5.aop.framework.TimeStamped#getTimeStamp()
+			 * @see org.springframework.aop.framework.TimeStamped#getTimeStamp()
 			 */
 			public long getTimeStamp() {
 				throw new UnsupportedOperationException();

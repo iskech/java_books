@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
-import com.example.spring.provider.spring1_5.beans.support.ArgumentConvertingMethodInvoker;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.support.ArgumentConvertingMethodInvoker;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -55,7 +55,7 @@ import java.lang.reflect.InvocationTargetException;
  * which uses this class to call a static factory method:</p>
  *
  * <pre>
- * &lt;bean id="myObject" class="com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBean">
+ * &lt;bean id="myObject" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
  *   &lt;property name="staticMethod">&lt;value>com.whatever.MyClassFactory.getInstance&lt;/value>&lt;/property>
  * &lt;/bean></pre>
  *
@@ -63,12 +63,12 @@ import java.lang.reflect.InvocationTargetException;
  * Java system property. Somewhat verbose, but it works.
  *
  * <pre>
- * &lt;bean id="sysProps" class="com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBean">
+ * &lt;bean id="sysProps" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
  *   &lt;property name="targetClass">&lt;value>java.lang.System&lt;/value>&lt;/property>
  *   &lt;property name="targetMethod">&lt;value>getProperties&lt;/value>&lt;/property>
  * &lt;/bean>
  *
- * &lt;bean id="javaVersion" class="com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBean">
+ * &lt;bean id="javaVersion" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
  *   &lt;property name="targetObject">&lt;ref local='sysProps'/>&lt;/property>
  *   &lt;property name="targetMethod">&lt;value>getProperty&lt;/value>&lt;/property>
  *   &lt;property name="arguments">

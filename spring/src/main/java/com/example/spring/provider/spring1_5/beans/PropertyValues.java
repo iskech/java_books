@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
+import org.springframework.beans.PropertyValue;
 
 /**
  * Object containing 0 or more PropertyValue objects comprising one update.
@@ -53,6 +53,6 @@ public interface PropertyValues {
 	 * Return empty PropertyValues if there are no changes.
 	 * @see Object#equals
 	 */
-	com.example.spring.provider.spring1_5.beans.PropertyValues changesSince(com.example.spring.provider.spring1_5.beans.PropertyValues old);
+	org.springframework.beans.PropertyValues changesSince(org.springframework.beans.PropertyValues old);
 
 }

@@ -19,18 +19,18 @@ package com.example.spring.beans.factory.xml;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.AbstractListableBeanFactoryTests;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.DummyFactory;
-import com.example.spring.provider.spring1_5.beans.factory.LifecycleBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.AbstractListableBeanFactoryTests;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.DummyFactory;
+import org.springframework.beans.factory.LifecycleBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Juergen Hoeller

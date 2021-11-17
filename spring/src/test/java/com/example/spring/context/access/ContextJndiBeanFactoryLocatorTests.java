@@ -16,11 +16,11 @@
 
 package com.example.spring.context.access;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.access.JndiBeanFactoryLocator;
-import com.example.spring.provider.spring1_5.beans.factory.access.JndiBeanFactoryLocatorTests;
-import com.example.spring.provider.spring1_5.context.ApplicationContext;
-import com.example.spring.provider.spring1_5.mock.jndi.SimpleNamingContextBuilder;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.access.JndiBeanFactoryLocator;
+import org.springframework.beans.factory.access.JndiBeanFactoryLocatorTests;
+import org.springframework.context.ApplicationContext;
+import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 
 /**
  * @author Colin Sampaleanu

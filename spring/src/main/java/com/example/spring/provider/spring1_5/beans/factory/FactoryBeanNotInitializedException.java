@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanCreationException;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
+import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.FactoryBean;
 
 /**
  * Exception thrown if a FactoryBean is not fully initialized, for example

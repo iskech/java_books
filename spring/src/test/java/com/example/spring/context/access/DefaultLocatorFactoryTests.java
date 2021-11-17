@@ -18,7 +18,7 @@ package com.example.spring.context.access;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryLocator;
+import org.springframework.beans.factory.access.BeanFactoryLocator;
 
 /**
  * @author Colin Sampaleanu

@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.metadata;
+package org.springframework.aop.framework.autoproxy.metadata;
 
 /**
  * Tag attribute to identify beans for which the target should be a 

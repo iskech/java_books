@@ -4,7 +4,7 @@
 <beans>
 	
 	
-	<bean id="jenny" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="jenny" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
 		<property name="spouse">

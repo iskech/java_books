@@ -3,11 +3,11 @@
 
 <beans>
 	
-	<bean id="debugInterceptor" class="com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor">
+	<bean id="debugInterceptor" class="org.springframework.aop.interceptor.NopInterceptor">
 	</bean>
 	
 	<bean id="testBean" 
-			class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"
+			class="org.springframework.aop.framework.ProxyFactoryBean"
 	>	
 		
 		<!--
@@ -15,7 +15,7 @@
 			without a guard.
 		-->
 		<property name="target">
-			<bean class="com.example.spring.provider.spring1_5.beans.TestBean"
+			<bean class="org.springframework.beans.TestBean"
 				autowire="byType">	
 			
 			</bean>

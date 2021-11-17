@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core.io;
+package org.springframework.core.io;
 
 import java.io.File;
 import java.io.IOException;

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
+import org.springframework.aop.TargetSource;
+import org.springframework.aop.support.AopUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
@@ -50,8 +50,8 @@ import java.util.List;
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @see Proxy
- * @see com.example.spring.provider.spring1_5.aop.framework.AdvisedSupport
- * @see com.example.spring.provider.spring1_5.aop.framework.ProxyFactory
+ * @see org.springframework.aop.framework.AdvisedSupport
+ * @see org.springframework.aop.framework.ProxyFactory
  */
 final class JdkDynamicAopProxy implements AopProxy, InvocationHandler, Serializable {
 

@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.AutowireCapableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 /**
  * Configuration interface to be implemented by most listable bean factories.
@@ -34,7 +34,7 @@ import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBe
  *
  * @author Juergen Hoeller
  * @since 03.11.2003
- * @see com.example.spring.provider.spring1_5.context.support.AbstractApplicationContext#getBeanFactory
+ * @see org.springframework.context.support.AbstractApplicationContext#getBeanFactory
  */
 public interface ConfigurableListableBeanFactory
 		extends ListableBeanFactory, AutowireCapableBeanFactory, ConfigurableBeanFactory {
@@ -47,8 +47,8 @@ public interface ConfigurableListableBeanFactory
 	 * BeanFactoryAware (which bean factories are supposed to provide by default),
 	 * or ApplicationContext through ApplicationContextAware.
 	 * @param type the dependency type to ignore
-	 * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware
-	 * @see com.example.spring.provider.spring1_5.context.ApplicationContextAware
+	 * @see org.springframework.beans.factory.BeanFactoryAware
+	 * @see org.springframework.context.ApplicationContextAware
 	 */
 	void ignoreDependencyType(Class type);
 
@@ -61,7 +61,7 @@ public interface ConfigurableListableBeanFactory
 	 * be castable to a more specific implementation type, if necessary.
 	 * @param beanName name of the bean
 	 * @return the registered BeanDefinition
-	 * @throws com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException
+	 * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
 	 * if there is no bean with the given name
 	 * @throws BeansException in case of errors
 	 */

@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.core.NestedRuntimeException;
+import org.springframework.core.NestedRuntimeException;
 
 /**
  * Abstract superclass for all exceptions thrown in the beans package

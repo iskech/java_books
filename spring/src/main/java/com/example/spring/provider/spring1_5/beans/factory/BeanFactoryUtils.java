@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.HierarchicalBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
-import com.example.spring.provider.spring1_5.util.Assert;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.HierarchicalBeanFactory;
+import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.util.Assert;
 
 import java.util.*;
 

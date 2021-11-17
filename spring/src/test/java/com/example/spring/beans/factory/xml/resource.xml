@@ -5,7 +5,7 @@
 
 	<import resource="resourceImport.xml"/> 
 
-	<bean id="resource2" class="com.example.spring.provider.spring1_5.beans.ResourceTestBean">
+	<bean id="resource2" class="org.springframework.beans.ResourceTestBean">
 		<constructor-arg index="0">
 			<value>classpath:org/springframework/beans/factory/xml/test.properties</value>
 		</constructor-arg>

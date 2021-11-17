@@ -14,22 +14,22 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryLocator;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryReference;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.support.PathMatchingResourcePatternResolver;
-import com.example.spring.provider.spring1_5.core.io.support.ResourcePatternResolver;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.access.BeanFactoryLocator;
+import org.springframework.beans.factory.access.BeanFactoryReference;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -113,7 +113,7 @@ import java.util.Map;
  * &lt;beans>
  * 
  *   &lt;bean id="com.mycompany.myapp"
- *         class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *         class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;list>
  *         &lt;value>com/mycompany/myapp/util/applicationContext.xml&lt;/value>
@@ -141,7 +141,7 @@ import java.util.Map;
  * &lt;beans>
  * 
  *   &lt;bean id="com.mycompany.myapp.util" lazy-init="true"
- *         class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *         class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;value>com/mycompany/myapp/util/applicationContext.xml&lt;/value>
  *     &lt;/constructor-arg>
@@ -149,7 +149,7 @@ import java.util.Map;
  * 
  *   &lt;!-- child of above -->
  *   &lt;bean id="com.mycompany.myapp.dataaccess" lazy-init="true"
- *         class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *         class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;list>&lt;value>com/mycompany/myapp/dataaccess/applicationContext.xml&lt;/value>&lt;/list>
  *     &lt;/constructor-arg>
@@ -160,7 +160,7 @@ import java.util.Map;
  * 
  *   &lt;!-- child of above -->
  *   &lt;bean id="com.mycompany.myapp.services" lazy-init="true"
- *         class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *         class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;list>&lt;value>com/mycompany/myapp/dataaccess.services.xml&lt;/value>&lt;/value>
  *     &lt;/constructor-arg>
@@ -199,7 +199,7 @@ import java.util.Map;
  * 
  * &lt;beans>
  *   &lt;bean id="com.mycompany.myapp.util" lazy-init="true"
- *        class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *        class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;value>com/mycompany/myapp/util/applicationContext.xml&lt;/value>
  *     &lt;/constructor-arg>
@@ -215,7 +215,7 @@ import java.util.Map;
  * &lt;beans>
  *   &lt;!-- child of util -->
  *   &lt;bean id="com.mycompany.myapp.dataaccess" lazy-init="true"
- *        class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *        class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;list>&lt;value>com/mycompany/myapp/dataaccess/applicationContext.xml&lt;/value>&lt;/list>
  *     &lt;/constructor-arg>
@@ -234,7 +234,7 @@ import java.util.Map;
  * &lt;beans>
  *   &lt;!-- child of data-access -->
  *   &lt;bean id="com.mycompany.myapp.services" lazy-init="true"
- *        class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+ *        class="org.springframework.context.support.ClassPathXmlApplicationContext">
  *     &lt;constructor-arg>
  *       &lt;list>&lt;value>com/mycompany/myapp/dataaccess/services.xml&lt;/value>&lt;/list>
  *     &lt;/constructor-arg>
@@ -265,13 +265,13 @@ import java.util.Map;
  * </pre>
  *   
  * @author Colin Sampaleanu
- * @see com.example.spring.provider.spring1_5.context.access.DefaultLocatorFactory
+ * @see org.springframework.context.access.DefaultLocatorFactory
  */
 public class SingletonBeanFactoryLocator implements BeanFactoryLocator {
 
 	public static final String BEANS_REFS_XML_NAME = "classpath*:beanRefFactory.xml";
 
-	protected static final Log logger = LogFactory.getLog(com.example.spring.provider.spring1_5.beans.factory.access.SingletonBeanFactoryLocator.class);
+	protected static final Log logger = LogFactory.getLog(org.springframework.beans.factory.access.SingletonBeanFactoryLocator.class);
 
 	// the keyed singleton instances
 	private static Map instances = new HashMap();
@@ -324,7 +324,7 @@ public class SingletonBeanFactoryLocator implements BeanFactoryLocator {
 			//}
 			BeanFactoryLocator bfl = (BeanFactoryLocator) instances.get(selector);
 			if (bfl == null) {
-				bfl = new com.example.spring.provider.spring1_5.beans.factory.access.SingletonBeanFactoryLocator(selector);
+				bfl = new org.springframework.beans.factory.access.SingletonBeanFactoryLocator(selector);
 				instances.put(selector, bfl);
 			}
 			return bfl;

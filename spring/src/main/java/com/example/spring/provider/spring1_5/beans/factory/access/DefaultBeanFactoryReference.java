@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryReference;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.access.BeanFactoryReference;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 /**
  * Default implementation of BeanFactoryReference, wrapping a newly

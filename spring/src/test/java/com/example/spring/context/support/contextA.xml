@@ -6,15 +6,15 @@
 	<import resource="import1.xml"/>
 	<import resource="classpath:org/springframework/context/support/import2.xml"/>
 
-	<bean class="com.example.spring.provider.spring1_5.context.support.FactoryBeanAndApplicationListener"/>
+	<bean class="org.springframework.context.support.FactoryBeanAndApplicationListener"/>
 
-	<bean name="service" class="com.example.spring.provider.spring1_5.context.support.Service">
+	<bean name="service" class="org.springframework.context.support.Service">
 		<property name="resources"><value>/org/springframework/context/support/context*.xml</value></property>
   </bean>
 
-	<bean name="transactionManager" class="com.example.spring.provider.spring1_5.transaction.CountingTxManager"/>
+	<bean name="transactionManager" class="org.springframework.transaction.CountingTxManager"/>
 
-	<bean name="wrappedAssemblerOne" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean name="wrappedAssemblerOne" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager"><ref bean="transactionManager"/></property>
 		<property name="target"><ref bean="assemblerOne"/></property>
 		<property name="proxyTargetClass"><value>true</value></property>
@@ -25,7 +25,7 @@
 		</property>
 	</bean>
 
-	<bean name="wrappedAssemblerTwo" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean name="wrappedAssemblerTwo" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager"><ref bean="transactionManager"/></property>
 		<property name="target"><ref bean="assemblerTwo"/></property>
 		<property name="proxyTargetClass"><value>true</value></property>

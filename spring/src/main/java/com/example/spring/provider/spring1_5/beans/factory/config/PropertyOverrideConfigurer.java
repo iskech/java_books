@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyResourceConfigurer;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.factory.config.PropertyResourceConfigurer;
 
 import java.util.*;
 

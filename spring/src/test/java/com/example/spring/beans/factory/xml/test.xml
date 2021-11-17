@@ -7,13 +7,13 @@
 		Tests for list and map handling in an XML bean definition file.
 	</description>
 
-	<bean id="validEmptyWithDescription" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="validEmptyWithDescription" class="org.springframework.beans.TestBean">
 		<description>
 			I have no properties and I'm happy without them.
 		</description>
 	</bean>
 
-	<bean id="rod" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="rod" class="org.springframework.beans.TestBean">
 		<property name="name"><value><!-- a comment -->Rod</value></property>
 		<property name="age"><value>31</value></property>
 		<property name="spouse"><ref bean="father"/></property>
@@ -25,45 +25,45 @@
 		<!-- Should inherit age -->
 	</bean>
 
-	<bean id="kerry" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="kerry" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Ker<!-- a comment -->ry</value></property>
 		<property name="age"><value>34</value></property>
 		<property name="spouse"><ref local="rod"/></property>
 		<property name="touchy"><value></value></property>
 	</bean>
 
-	<bean id="kathy" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false">
+	<bean id="kathy" class="org.springframework.beans.TestBean" singleton="false">
 		<property name="name"><value>Kathy</value></property>
 		<property name="age"><value>28</value></property>
 		<property name="spouse"><ref bean="father"/></property>
 	</bean>
 
-	<bean id="typeMismatch" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false">
+	<bean id="typeMismatch" class="org.springframework.beans.TestBean" singleton="false">
 		<property name="name"><value>typeMismatch</value></property>
 		<property name="age"><value>34x</value></property>
 		<property name="spouse"><ref local="rod"/></property>
 	</bean>
 
 	<!-- Test of lifecycle callbacks -->
-	<bean id="mustBeInitialized" class="com.example.spring.provider.spring1_5.beans.factory.MustBeInitialized">
+	<bean id="mustBeInitialized" class="org.springframework.beans.factory.MustBeInitialized">
 	</bean>
 
-	<bean id="lifecycle" class="com.example.spring.provider.spring1_5.beans.factory.LifecycleBean"
+	<bean id="lifecycle" class="org.springframework.beans.factory.LifecycleBean"
 		  init-method="declaredInitMethod">
 		<property name="initMethodDeclared"><value>true</value></property>
 	</bean>
 
 	<!-- Factory beans are automatically treated differently -->
-	<bean id="singletonFactory"	class="com.example.spring.provider.spring1_5.beans.factory.DummyFactory">
+	<bean id="singletonFactory"	class="org.springframework.beans.factory.DummyFactory">
 	</bean>
 
-	<bean id="prototypeFactory"	class="com.example.spring.provider.spring1_5.beans.factory.DummyFactory">
+	<bean id="prototypeFactory"	class="org.springframework.beans.factory.DummyFactory">
 		<property name="singleton"><value>false</value></property>
 	</bean>
 
 	<!-- Check that the circular reference resolution mechanism doesn't break
 	     repeated references to the same FactoryBean -->
-	<bean id="factoryReferencer" class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyReferencer">
+	<bean id="factoryReferencer" class="org.springframework.beans.factory.xml.DummyReferencer">
 		<property name="testBean1"><ref bean="singletonFactory"/></property>
 		<property name="testBean2"><ref local="singletonFactory"/></property>
 		<property name="dummyFactory"><ref bean="&amp;singletonFactory"/></property>
@@ -71,19 +71,19 @@
 
 	<!-- Check that the circular reference resolution mechanism doesn't break
 	     prototype instantiation -->
-	<bean id="prototypeReferencer" class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyReferencer" singleton="false">
+	<bean id="prototypeReferencer" class="org.springframework.beans.factory.xml.DummyReferencer" singleton="false">
 		<property name="testBean1"><ref local="kathy"/></property>
 		<property name="testBean2"><ref bean="kathy"/></property>
 	</bean>
 
-	<bean id="listenerVeto" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="listenerVeto" class="org.springframework.beans.TestBean">
 		<property name="name"><value>listenerVeto</value></property>
 		<property name="age"><value>66</value></property>
 	</bean>
 
-	<bean id="validEmpty" class="com.example.spring.provider.spring1_5.beans.TestBean"/>
+	<bean id="validEmpty" class="org.springframework.beans.TestBean"/>
 
-	<bean id="commentsInValue" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="commentsInValue" class="org.springframework.beans.TestBean">
 	  <property name="name"><value>this is<!-- don't mind me --> a <![CDATA[<!--comment-->]]></value></property>
 	</bean>
 

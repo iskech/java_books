@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.jndi;
+package org.springframework.jndi;
 
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.util.StringUtils;
 
 import javax.naming.NamingException;
 

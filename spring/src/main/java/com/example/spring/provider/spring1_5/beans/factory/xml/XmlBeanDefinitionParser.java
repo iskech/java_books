@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.xml;
+package org.springframework.beans.factory.xml;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.core.io.Resource;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.Resource;
 import org.w3c.dom.Document;
 
 /**

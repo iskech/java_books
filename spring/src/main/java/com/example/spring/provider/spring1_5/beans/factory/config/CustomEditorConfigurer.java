@@ -14,15 +14,15 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanFactoryPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.core.Ordered;
-import com.example.spring.provider.spring1_5.util.ClassUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.core.Ordered;
+import org.springframework.util.ClassUtils;
 
 import java.beans.PropertyEditor;
 import java.util.Iterator;
@@ -36,7 +36,7 @@ import java.util.Map;
  * beans for PropertyEditor instances:
  *
  * <pre>
- * &lt;bean id="customEditorConfigurer" class="com.example.spring.provider.spring1_5.beans.factory.config.CustomEditorConfigurer"&gt;
+ * &lt;bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer"&gt;
  *   &lt;property name="customEditors"&gt;
  *     &lt;map&gt;
  *       &lt;entry key="java.util.Date"&gt;

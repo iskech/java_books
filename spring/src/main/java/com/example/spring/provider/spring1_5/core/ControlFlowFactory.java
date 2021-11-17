@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -32,7 +32,7 @@ import java.io.StringWriter;
 public abstract class ControlFlowFactory {
 	
 	public static ControlFlow createControlFlow() {
-		return com.example.spring.provider.spring1_5.core.JdkVersion.getMajorJavaVersion() >= com.example.spring.provider.spring1_5.core.JdkVersion.JAVA_14 ?
+		return org.springframework.core.JdkVersion.getMajorJavaVersion() >= org.springframework.core.JdkVersion.JAVA_14 ?
 				(ControlFlow) new Jdk14ControlFlow() :
 				(ControlFlow) new Jdk13ControlFlow();
 	}

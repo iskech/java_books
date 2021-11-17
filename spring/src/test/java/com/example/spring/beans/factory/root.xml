@@ -6,19 +6,19 @@
 	<!--
 		Just included for the count: not to mean anything in particular
 	-->
-	<bean id="something" class="com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor"/>
+	<bean id="something" class="org.springframework.aop.support.DefaultPointcutAdvisor"/>
 
-	<bean id="indexedBean" class="com.example.spring.provider.spring1_5.beans.IndexedTestBean"/>
+	<bean id="indexedBean" class="org.springframework.beans.IndexedTestBean"/>
 
 	<!-- Overridden by next factory -->
-	<bean id="test" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="test" class="org.springframework.beans.TestBean">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>25</value></property>
 	</bean>
 
-	<bean id="testFactory1" class="com.example.spring.provider.spring1_5.beans.factory.DummyFactory"/>
+	<bean id="testFactory1" class="org.springframework.beans.factory.DummyFactory"/>
 
-	<bean id="testFactory2" class="com.example.spring.provider.spring1_5.beans.factory.DummyFactory">
+	<bean id="testFactory2" class="org.springframework.beans.factory.DummyFactory">
 		<property name="singleton"><value>false</value></property>
 	</bean>
 

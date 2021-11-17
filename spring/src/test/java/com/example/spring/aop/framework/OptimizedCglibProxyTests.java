@@ -18,12 +18,12 @@ package com.example.spring.aop.framework;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.aop.interceptor.ExposeInvocationInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.target.HotSwappableTargetSource;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.aop.interceptor.ExposeInvocationInterceptor;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.target.HotSwappableTargetSource;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * We have to override some methods here, as the superclass ones use dynamic
@@ -54,7 +54,7 @@ public class OptimizedCglibProxyTests extends CglibProxyTests {
 	/**
 	 * Inherited version checks identity with original object. We change that,
 	 * after the ////////////////// line
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AbstractAopProxyTests#testStaticMethodPointcut()
+	 * @see org.springframework.aop.framework.AbstractAopProxyTests#testStaticMethodPointcut()
 	 */
 	public void testStaticMethodPointcut() throws Throwable {
 		TestBean tb = new TestBean();
@@ -78,7 +78,7 @@ public class OptimizedCglibProxyTests extends CglibProxyTests {
 	
 	/**
 	 * We override this to get rid of the dynamic TargetSource
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AbstractAopProxyTests#testDeclaredException()
+	 * @see org.springframework.aop.framework.AbstractAopProxyTests#testDeclaredException()
 	 */
 	public void testDeclaredException() throws Throwable {
 		final Exception expectedException = new Exception();
@@ -109,7 +109,7 @@ public class OptimizedCglibProxyTests extends CglibProxyTests {
 	
 	/**
 	 * Another override to get rid of dynamic TargetSource
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AbstractAopProxyTests#testDynamicMethodPointcutThatAppliesStaticallyOnlyToSetters()
+	 * @see org.springframework.aop.framework.AbstractAopProxyTests#testDynamicMethodPointcutThatAppliesStaticallyOnlyToSetters()
 	 */
 	public void testDynamicMethodPointcutThatAppliesStaticallyOnlyToSetters() throws Throwable {
 		TestBean tb = new TestBean();
@@ -133,7 +133,7 @@ public class OptimizedCglibProxyTests extends CglibProxyTests {
 	
 	/**
 	 * We can't do this
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AbstractAopProxyTests#testExistingProxyChangesTarget()
+	 * @see org.springframework.aop.framework.AbstractAopProxyTests#testExistingProxyChangesTarget()
 	 */
 	public void testExistingProxyChangesTarget() throws Throwable {
 		TestBean tb1 = new TestBean();
@@ -173,7 +173,7 @@ public class OptimizedCglibProxyTests extends CglibProxyTests {
 	/**
 	 * Overriden to remove comparisons with target 
 	 * FOR OLD FIELD_COPY APPROACH
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AbstractAopProxyTests#testTargetCanGetProxy()
+	 * @see org.springframework.aop.framework.AbstractAopProxyTests#testTargetCanGetProxy()
 	 */
 	/*
 	 public void testTargetCanGetProxy() {

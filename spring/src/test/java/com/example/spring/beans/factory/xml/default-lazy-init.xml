@@ -4,17 +4,17 @@
 <beans default-lazy-init="true">
 
 	<bean id="lazy-and-bad"
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$BadInitializer"
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$BadInitializer"
 		init-method="init2"
 	/>
 
 	<bean id="init-and-ib"
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$InitAndIB"
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$InitAndIB"
 		lazy-init="false"
 		init-method="customInit"
 		destroy-method="customDestroy"
 	/>
 
-	<bean id="prototype" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false"/>
+	<bean id="prototype" class="org.springframework.beans.TestBean" singleton="false"/>
 
 </beans>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 /**
  * Filter that restricts matching of a pointcut or introduction to
@@ -24,7 +24,7 @@ package com.example.spring.provider.spring1_5.aop;
  * of an IntroductionAdvice.
  *
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.Pointcut
+ * @see org.springframework.aop.Pointcut
  */
 public interface ClassFilter {
 	

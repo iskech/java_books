@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.aop.Pointcut;
 
 /**
  * Convenient superclass when we want to force subclasses to implement the
@@ -30,7 +30,7 @@ import com.example.spring.provider.spring1_5.aop.Pointcut;
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @see #setClassFilter
- * @see com.example.spring.provider.spring1_5.aop.ClassFilter#TRUE
+ * @see org.springframework.aop.ClassFilter#TRUE
  */
 public abstract class StaticMethodMatcherPointcut extends StaticMethodMatcher implements Pointcut {
 
@@ -39,7 +39,7 @@ public abstract class StaticMethodMatcherPointcut extends StaticMethodMatcher im
 	/**
 	 * Set the ClassFilter to use for this pointcut.
 	 * Default is <code>ClassFilter.TRUE</code>.
-	 * @see com.example.spring.provider.spring1_5.aop.ClassFilter#TRUE
+	 * @see org.springframework.aop.ClassFilter#TRUE
 	 */
 	public void setClassFilter(ClassFilter classFilter) {
 		this.classFilter = classFilter;

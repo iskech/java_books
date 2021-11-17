@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
+import org.springframework.beans.FatalBeanException;
 
 /**
  * Exception thrown if a bean factory could not be loaded by a bootstrap class.

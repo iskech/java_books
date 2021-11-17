@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
 /**
  * Interface to be implemented by beans that want to release resources
@@ -28,8 +28,8 @@ package com.example.spring.provider.spring1_5.beans.factory;
  *
  * @author Juergen Hoeller
  * @since 12.08.2003
- * @see com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition#getDestroyMethodName
- * @see com.example.spring.provider.spring1_5.context.ConfigurableApplicationContext#close
+ * @see org.springframework.beans.factory.support.RootBeanDefinition#getDestroyMethodName
+ * @see org.springframework.context.ConfigurableApplicationContext#close
  */
 public interface DisposableBean {
 

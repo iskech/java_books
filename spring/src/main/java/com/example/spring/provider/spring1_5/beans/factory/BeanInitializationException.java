@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * Exception that a bean implementation is suggested to throw if its own

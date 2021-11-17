@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
+import org.springframework.aop.TargetSource;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
 
 import java.io.NotSerializableException;
 import java.io.ObjectStreamException;
@@ -41,7 +41,7 @@ import java.io.Serializable;
  * @author Juergen Hoeller
  * @author Rod Johnson
  * @since 1.1.4
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory#getBean
+ * @see org.springframework.beans.factory.BeanFactory#getBean
  * @see LazyInitTargetSource
  * @see PrototypeTargetSource
  * @see ThreadLocalTargetSource

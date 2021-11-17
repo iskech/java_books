@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.*;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.support.DefaultIntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor;
-import com.example.spring.provider.spring1_5.aop.target.EmptyTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.aop.*;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.target.EmptyTargetSource;
+import org.springframework.aop.target.SingletonTargetSource;
+import org.springframework.util.StringUtils;
 
 import java.io.ObjectStreamException;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ import java.util.List;
  * This class is used to hold snapshots of proxies.
  *
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.framework.AopProxy
+ * @see org.springframework.aop.framework.AopProxy
  */
 public class AdvisedSupport extends ProxyConfig implements Advised {
 	
@@ -129,7 +129,7 @@ public class AdvisedSupport extends ProxyConfig implements Advised {
 	 * Set the given object as target.
 	 * Will create a SingletonTargetSource for the object.
 	 * @see #setTargetSource
-	 * @see com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource
+	 * @see org.springframework.aop.target.SingletonTargetSource
 	 */
 	public void setTarget(Object target) {
 		setTargetSource(new SingletonTargetSource(target));

@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
@@ -161,7 +161,7 @@ public abstract class ClassUtils {
 	 * if necesssary, and concatenating the specified resource name to this.
 	 * <br/>As such, this function may be used to build a path suitable for
 	 * loading a resource file that is in the same package as a class file,
-	 * although {link com.example.spring.provider.spring1_5.core.io.ClassPathResource} is usually
+	 * although {link org.springframework.core.io.ClassPathResource} is usually
 	 * even more convenient.
 	 * @param clazz the Class whose package will be used as the base
 	 * @param resourceName the resource name to append. A leading slash is optional.

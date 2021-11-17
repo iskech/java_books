@@ -18,9 +18,9 @@ package com.example.spring.aop.target;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Juergen Hoeller

@@ -25,17 +25,17 @@ import java.util.prefs.Preferences;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.ManagedList;
-import com.example.spring.provider.spring1_5.beans.factory.support.ManagedMap;
-import com.example.spring.provider.spring1_5.beans.factory.support.ManagedSet;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.context.support.StaticApplicationContext;
-import com.example.spring.provider.spring1_5.core.JdkVersion;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.support.ChildBeanDefinition;
+import org.springframework.beans.factory.support.ManagedList;
+import org.springframework.beans.factory.support.ManagedMap;
+import org.springframework.beans.factory.support.ManagedSet;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.context.support.StaticApplicationContext;
+import org.springframework.core.JdkVersion;
 
 /**
  * @author Juergen Hoeller

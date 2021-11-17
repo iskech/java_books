@@ -27,7 +27,7 @@ public class MustBeInitialized implements InitializingBean {
 	private boolean inited; 
 	
 	/**
-	 * @see com.example.spring.provider.spring1_5.beans.factory.InitializingBean#afterPropertiesSet()
+	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
 	 */
 	public void afterPropertiesSet() throws Exception {
 		this.inited = true;

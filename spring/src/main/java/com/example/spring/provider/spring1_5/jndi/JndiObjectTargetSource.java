@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.jndi;
+package org.springframework.jndi;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
+import org.springframework.aop.TargetSource;
 
 import javax.naming.NamingException;
 
@@ -31,12 +31,12 @@ import javax.naming.NamingException;
  * <p>Example:
  *
  * <pre>
- * &lt;bean id="queueConnectionFactoryTarget" class="com.example.spring.provider.spring1_5.jndi.JndiObjectTargetSource"&gt;
+ * &lt;bean id="queueConnectionFactoryTarget" class="org.springframework.jndi.JndiObjectTargetSource"&gt;
  *   &lt;property name="jndiName"&gt;&lt;value&gt;JmsQueueConnectionFactory&lt;/value&gt;&lt;/property&gt;
  *   &lt;property name="lookupOnStartup"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
  * &lt;/bean&gt;
  *
- * &lt;bean id="queueConnectionFactory" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"&gt;
+ * &lt;bean id="queueConnectionFactory" class="org.springframework.aop.framework.ProxyFactoryBean"&gt;
  *   &lt;property name="proxyInterfaces"&gt;&lt;value&gt;javax.jms.QueueConnectionFactory&lt;/value&gt;&lt;/property&gt;
  *   &lt;property name="targetSource"&gt;&lt;ref bean="queueConnectionFactoryTarget"/&gt;&lt;/property&gt;
  * &lt;/bean&gt;</pre>
@@ -54,7 +54,7 @@ import javax.naming.NamingException;
  * @since 1.1
  * @see #setLookupOnStartup
  * @see #setCache
- * @see com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean#setTargetSource
+ * @see org.springframework.aop.framework.ProxyFactoryBean#setTargetSource
  * @see JndiObjectFactoryBean#setProxyInterface
  */
 public class JndiObjectTargetSource extends JndiObjectLocator implements TargetSource {

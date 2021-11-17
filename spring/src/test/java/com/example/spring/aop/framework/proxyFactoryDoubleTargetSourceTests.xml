@@ -8,31 +8,31 @@
 
 <beans>
 	
-	<bean id="eveTargetSource" class="com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource">
+	<bean id="eveTargetSource" class="org.springframework.aop.target.SingletonTargetSource">
 		<constructor-arg>
-			<bean class="com.example.spring.provider.spring1_5.beans.TestBean">
+			<bean class="org.springframework.beans.TestBean">
 				<property name="name"><value>Eve</value></property>
 			</bean>
 		</constructor-arg>
 	</bean>
 	
-	<bean id="adam" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="adam" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Adam</value></property>
 	</bean>
 	
-	<bean id="adamTargetSource" class="com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource">
+	<bean id="adamTargetSource" class="org.springframework.aop.target.SingletonTargetSource">
 		<constructor-arg>
 			<ref local="adam"/>
 		</constructor-arg>
 	</bean>
 	
 	<bean id="countingBeforeAdvice"
-		class="com.example.spring.provider.spring1_5.aop.framework.CountingBeforeAdvice"
+		class="org.springframework.aop.framework.CountingBeforeAdvice"
 	/>
 	
 	<bean id="doubleTarget"
-		class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<!-- this is the one used and NOT the one set by targetSource -->
 		<property name="interceptorNames"><value>countingBeforeAdvice,adamTargetSource</value></property>
 		
@@ -41,8 +41,8 @@
 	
 	<!-- but this is also possible -->
 	<bean id="arbitraryTarget"
-		class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+		class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<!-- this is the one used and NOT the one set by targetSource -->
 		<property name="interceptorNames"><value>adam</value></property>
 		<property name="targetSource"><ref local="eveTargetSource"/></property>

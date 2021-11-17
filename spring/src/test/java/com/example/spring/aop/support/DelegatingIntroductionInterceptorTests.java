@@ -18,22 +18,15 @@ package com.example.spring.aop.support;
 
 import java.io.Serializable;
 
+import com.example.spring.aop.framework.TimeStamped;
+import com.example.spring.beans.factory.access.TestBean;
 import junit.framework.TestCase;
 import org.aopalliance.intercept.MethodInterceptor;
-import org.easymock.MockControl;
 
-import com.example.spring.provider.spring1_5.aop.IntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.IntroductionInterceptor;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.aop.framework.TimeStamped;
-import com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor;
-import com.example.spring.provider.spring1_5.beans.INestedTestBean;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.NestedTestBean;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.SerializablePerson;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.IntroductionAdvisor;
+import org.springframework.aop.IntroductionInterceptor;
+import org.springframework.aop.framework.ProxyFactory;
+
 
 /**
  * @author Rod Johnson
@@ -43,7 +36,7 @@ public class DelegatingIntroductionInterceptorTests extends TestCase {
 
 	public void testNullTarget() throws Exception {
 		try {
-			IntroductionInterceptor ii = new DelegatingIntroductionInterceptor(null);
+			IntroductionInterceptor ii = new org.springframework.aop.support.DelegatingIntroductionInterceptor(null);
 			fail("Shouldn't accept null target");
 		}
 		catch (IllegalArgumentException ex) {
@@ -63,7 +56,7 @@ public class DelegatingIntroductionInterceptorTests extends TestCase {
 		tsControl.setReturnValue(timestamp, 1);
 		tsControl.replay();
 
-		factory.addAdvisor(0, new DefaultIntroductionAdvisor(new DelegatingIntroductionInterceptor(ts)));
+		factory.addAdvisor(0, new org.springframework.aop.support.DefaultIntroductionAdvisor(new DelegatingIntroductionInterceptor(ts)));
 		
 		TimeStamped tsp = (TimeStamped) factory.getProxy();
 		assertTrue(tsp.getTimeStamp() == timestamp);

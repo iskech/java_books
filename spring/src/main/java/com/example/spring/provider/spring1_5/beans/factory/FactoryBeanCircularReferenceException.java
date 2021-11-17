@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanCreationException;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBeanNotInitializedException;
+import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.FactoryBeanNotInitializedException;
 
 /**
  * Exception thrown if a FactoryBean is involved in a circular reference.

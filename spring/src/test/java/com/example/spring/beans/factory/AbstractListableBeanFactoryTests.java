@@ -16,7 +16,7 @@
 
 package com.example.spring.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * @author Rod Johnson
@@ -50,13 +50,13 @@ public abstract class AbstractListableBeanFactoryTests extends AbstractBeanFacto
 
 	public void assertTestBeanCount(int count) {
 		String[] defNames = getListableBeanFactory().getBeanDefinitionNames(TestBean.class);
-		assertTrue("We should have " + count + " beans for class com.example.spring.provider.spring1_5.beans.TestBean, not " +
+		assertTrue("We should have " + count + " beans for class org.springframework.beans.TestBean, not " +
 				defNames.length, defNames.length == count);
 
 		int countIncludingFactoryBeans = count + 2;
 		String[] names = getListableBeanFactory().getBeanNamesForType(TestBean.class);
 		assertTrue("We should have " + countIncludingFactoryBeans +
-				" beans for class com.example.spring.provider.spring1_5.beans.TestBean, not " + names.length,
+				" beans for class org.springframework.beans.TestBean, not " + names.length,
 				names.length == countIncludingFactoryBeans);
 	}
 

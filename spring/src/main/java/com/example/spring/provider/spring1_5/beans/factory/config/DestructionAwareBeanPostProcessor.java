@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Subinterface of BeanPostProcessor that adds a before-destruction callback.
@@ -27,7 +27,7 @@ import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProces
  *
  * @author Juergen Hoeller
  * @since 1.0.1
- * @see com.example.spring.provider.spring1_5.web.struts.ActionServletAwareProcessor
+ * @see org.springframework.web.struts.ActionServletAwareProcessor
  */
 public interface DestructionAwareBeanPostProcessor extends BeanPostProcessor {
 
@@ -40,8 +40,8 @@ public interface DestructionAwareBeanPostProcessor extends BeanPostProcessor {
 	 * @param bean the new bean instance
 	 * @param beanName the name of the bean
 	 * @throws BeansException in case of errors
-	 * @see com.example.spring.provider.spring1_5.beans.factory.DisposableBean
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition#setDestroyMethodName
+	 * @see org.springframework.beans.factory.DisposableBean
+	 * @see org.springframework.beans.factory.support.AbstractBeanDefinition#setDestroyMethodName
 	 */
 	void postProcessBeforeDestruction(Object bean, String beanName) throws BeansException;
 

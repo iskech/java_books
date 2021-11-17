@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.intercept.MethodInterceptor;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.IntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.aop.PointcutAdvisor;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapterRegistry;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.IntroductionAdvisor;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.aop.PointcutAdvisor;
+import org.springframework.aop.framework.adapter.AdvisorAdapterRegistry;
+import org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

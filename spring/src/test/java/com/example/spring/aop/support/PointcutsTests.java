@@ -18,9 +18,9 @@ package com.example.spring.aop.support;
 
 import java.lang.reflect.Method;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.Pointcut;
+import org.springframework.beans.TestBean;
 
 import junit.framework.TestCase;
 

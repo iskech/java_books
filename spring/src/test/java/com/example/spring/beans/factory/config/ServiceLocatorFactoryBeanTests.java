@@ -18,10 +18,10 @@ package com.example.spring.beans.factory.config;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
-import com.example.spring.provider.spring1_5.context.support.StaticApplicationContext;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.context.support.StaticApplicationContext;
 
 /**
  * @author Colin Sampaleanu

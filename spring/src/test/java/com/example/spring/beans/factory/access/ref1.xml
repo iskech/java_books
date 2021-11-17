@@ -11,7 +11,7 @@
 
   <!-- this definition could be inside one beanRefFactory.xml file -->
   <bean id="a.qualified.name.of.some.sort"
-  	    class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+  	    class="org.springframework.context.support.ClassPathXmlApplicationContext">
     <constructor-arg>
       <value>org/springframework/beans/factory/access/beans1.xml</value>
    	</constructor-arg>
@@ -21,7 +21,7 @@
 	perhaps coming from another component jar -->
   
   <bean id="another.qualified.name"
-  	    class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+  	    class="org.springframework.context.support.ClassPathXmlApplicationContext">
     <constructor-arg>
       <list><value>org/springframework/beans/factory/access/beans2.xml</value></list>
    	</constructor-arg>

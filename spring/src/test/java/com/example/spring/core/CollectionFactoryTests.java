@@ -12,27 +12,32 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */ 
+ *//*
+
 
 package com.example.spring.core;
 
 import java.util.Map;
 
-import junit.framework.TestCase;
 
 
+
+*/
 /**
  * CollectionFactoryTests
  * 
  * @author Darren Davison
  * @since 1.1.3
- */
+ *//*
+
 public class CollectionFactoryTests extends TestCase {
     
-    /**
+    */
+/**
      * initial capacity of 0 works with JDK1.4 classes, but not the commons
      * collections (which will be used under the hood in a JDK1.3 platform)
-     */
+     *//*
+
     public void testLinkedMapWithZeroCapacity() {
         try {
             Map m = CollectionFactory.createLinkedMapIfPossible(0);
@@ -49,3 +54,4 @@ public class CollectionFactoryTests extends TestCase {
         }
     }
 }
+*/

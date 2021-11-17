@@ -20,12 +20,12 @@ import net.sf.cglib.core.CodeGenerationException;
 import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInterceptor;
 
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.support.NameMatchMethodPointcutAdvisor;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.context.ApplicationContextException;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.support.NameMatchMethodPointcutAdvisor;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.context.ApplicationContextException;
 
 /**
  * Additional and overridden tests for the CGLIB proxy.

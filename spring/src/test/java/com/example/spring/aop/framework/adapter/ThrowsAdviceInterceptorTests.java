@@ -26,8 +26,8 @@ import junit.framework.TestCase;
 import org.aopalliance.intercept.MethodInvocation;
 import org.easymock.MockControl;
 
-import com.example.spring.provider.spring1_5.aop.ThrowsAdvice;
-import com.example.spring.provider.spring1_5.aop.framework.MethodCounter;
+import org.springframework.aop.ThrowsAdvice;
+import org.springframework.aop.framework.MethodCounter;
 
 /**
  * @author Rod Johnson

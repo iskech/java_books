@@ -26,11 +26,11 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 
 /**
  * @author Juergen Hoeller

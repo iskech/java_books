@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
 /**
  * Definition for sorting bean instances by a property.

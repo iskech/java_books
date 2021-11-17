@@ -20,14 +20,14 @@ import junit.framework.TestCase;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.DefaultIntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor;
-import com.example.spring.provider.spring1_5.beans.IOther;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.transaction.interceptor.TransactionInterceptor;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.beans.IOther;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.transaction.interceptor.TransactionInterceptor;
 
 /**
  * Also tests AdvisedSupport superclass.

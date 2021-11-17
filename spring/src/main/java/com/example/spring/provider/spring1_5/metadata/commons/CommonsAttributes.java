@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.metadata.commons;
+package org.springframework.metadata.commons;
 
-import com.example.spring.provider.spring1_5.metadata.Attributes;
+import org.springframework.metadata.Attributes;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -41,7 +41,7 @@ import java.util.Collection;
  *
  * <p>You need to perform the attribute compilation step before compiling your source.
  *
- * <p>See build.xml in the tests for package com.example.spring.provider.spring1_5.aop.autoproxy.metadata
+ * <p>See build.xml in the tests for package org.springframework.aop.autoproxy.metadata
  * for an example of the required Ant scripting. The header of this build script
  * includes some quick, and hopefully useful, hints on using Commons Attributes.
  * The source files in the same package (TxClass and TxClassWithClassAttribute)

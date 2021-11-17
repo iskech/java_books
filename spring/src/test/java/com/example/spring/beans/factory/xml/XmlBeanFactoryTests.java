@@ -30,31 +30,31 @@ import javax.servlet.ServletException;
 import junit.framework.AssertionFailedError;
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.DerivedTestBean;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.IndexedTestBean;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.ResourceTestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.BeanCreationException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanIsAbstractException;
-import com.example.spring.provider.spring1_5.beans.factory.DisposableBean;
-import com.example.spring.provider.spring1_5.beans.factory.DummyFactory;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
-import com.example.spring.provider.spring1_5.beans.factory.UnsatisfiedDependencyException;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
-import com.example.spring.provider.spring1_5.core.io.FileSystemResource;
-import com.example.spring.provider.spring1_5.core.io.UrlResource;
-import com.example.spring.provider.spring1_5.util.FileCopyUtils;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
-import com.example.spring.provider.spring1_5.util.StopWatch;
+import org.springframework.beans.DerivedTestBean;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.IndexedTestBean;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.ResourceTestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanIsAbstractException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.DummyFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.UnsatisfiedDependencyException;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.MethodReplacer;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.util.SerializationTestUtils;
+import org.springframework.util.StopWatch;
 
 /**
  * Miscellaneous tests for XML bean definitions.
@@ -780,7 +780,7 @@ public class XmlBeanFactoryTests extends TestCase {
 			reader.loadBeanDefinitions(new ClassPathResource("classNotFound.xml", getClass()));
 			assertTrue(bf.getBeanDefinition("classNotFound") instanceof RootBeanDefinition);
 			assertEquals(((RootBeanDefinition) bf.getBeanDefinition("classNotFound")).getBeanClassName(),
-					"com.example.spring.provider.spring1_5.beans.TestBeana");
+					"org.springframework.beans.TestBeana");
 		}
 		catch (BeanDefinitionStoreException ex) {
 			fail("Should not have thrown BeanDefinitionStoreException");

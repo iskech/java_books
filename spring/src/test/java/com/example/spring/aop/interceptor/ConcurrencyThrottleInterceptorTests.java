@@ -20,10 +20,10 @@ import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * @author Juergen Hoeller

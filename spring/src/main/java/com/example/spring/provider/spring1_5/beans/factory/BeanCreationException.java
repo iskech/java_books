@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
+import org.springframework.beans.FatalBeanException;
 
 /**
  * Exception thrown when a BeanFactory encounters an error when

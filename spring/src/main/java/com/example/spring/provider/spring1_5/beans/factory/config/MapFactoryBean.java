@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeanUtils;
-import com.example.spring.provider.spring1_5.beans.factory.config.AbstractFactoryBean;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.config.AbstractFactoryBean;
 
 import java.util.HashMap;
 import java.util.Map;

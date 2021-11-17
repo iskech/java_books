@@ -19,10 +19,10 @@ package com.example.spring.aop.support;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.core.NestedRuntimeException;
+import org.springframework.aop.ClassFilter;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.core.NestedRuntimeException;
 
 /**
  * @author Rod Johnson

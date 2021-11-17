@@ -16,7 +16,7 @@
 
 package com.example.spring.aop.framework;
 
-import com.example.spring.provider.spring1_5.aop.support.DefaultIntroductionAdvisor;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
 
 /**
  * Advisor for use with a LockMixin. Applies to all classes.

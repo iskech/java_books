@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.ChildBeanDefinition;
+import org.springframework.beans.factory.support.RootBeanDefinition;
 
 /**
  * Interface for registries that hold bean definitions,

@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.AutowireCapableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition;
-import com.example.spring.provider.spring1_5.util.ClassUtils;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.support.ChildBeanDefinition;
+import org.springframework.util.ClassUtils;
 
 import java.lang.reflect.Constructor;
 import java.util.Iterator;
@@ -112,7 +112,7 @@ public abstract class AbstractBeanDefinition implements BeanDefinition {
 	 * bean definition.
 	 * @param original the original bean definition to copy from
 	 */
-	protected AbstractBeanDefinition(com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition original) {
+	protected AbstractBeanDefinition(org.springframework.beans.factory.support.AbstractBeanDefinition original) {
 		this.beanClass = original.beanClass;
 
 		setAbstract(original.isAbstract());
@@ -148,7 +148,7 @@ public abstract class AbstractBeanDefinition implements BeanDefinition {
 	 * given bean definition.
 	 * </ul>
 	 */
-	public void overrideFrom(com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition other) {
+	public void overrideFrom(org.springframework.beans.factory.support.AbstractBeanDefinition other) {
 		if (other.beanClass != null) {
 			this.beanClass = other.beanClass;
 		}

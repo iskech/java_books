@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.xml;
+package org.springframework.beans.factory.xml;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinitionHolder;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.RuntimeBeanReference;
-import com.example.spring.provider.spring1_5.beans.factory.support.*;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionParser;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.ResourceLoader;
-import com.example.spring.provider.spring1_5.util.ResourceUtils;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.config.RuntimeBeanReference;
+import org.springframework.beans.factory.support.*;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionParser;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.util.ResourceUtils;
+import org.springframework.util.StringUtils;
 import org.w3c.dom.*;
 
 import java.io.IOException;

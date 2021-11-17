@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import net.sf.cglib.core.CodeGenerationException;
 import net.sf.cglib.proxy.*;
@@ -23,7 +23,7 @@ import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
+import org.springframework.aop.support.AopUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -647,7 +647,7 @@ public class Cglib2AopProxy implements AopProxy, Serializable {
 		 * Gives a marginal performance improvement versus using reflection to
 		 * invoke the target.
 		 *
-		 * @see com.example.spring.provider.spring1_5.aop.framework.ReflectiveMethodInvocation#invokeJoinpoint
+		 * @see org.springframework.aop.framework.ReflectiveMethodInvocation#invokeJoinpoint
 		 */
 		protected Object invokeJoinpoint() throws Throwable {
 			return this.methodProxy.invoke(this.target, this.arguments);

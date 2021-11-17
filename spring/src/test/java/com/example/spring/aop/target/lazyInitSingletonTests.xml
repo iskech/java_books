@@ -3,16 +3,16 @@
 
 <beans>
 
-	<bean id="target" class="com.example.spring.provider.spring1_5.beans.TestBean" lazy-init="true">
+	<bean id="target" class="org.springframework.beans.TestBean" lazy-init="true">
 		<property name="age"><value>10</value></property>
 	</bean>
 
 	<!--
 		This will create a proxy that lazily fetches its target bean (with name "target").
 	-->
-	<bean id="proxy" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="targetSource">
-			<bean class="com.example.spring.provider.spring1_5.aop.target.LazyInitTargetSource">
+			<bean class="org.springframework.aop.target.LazyInitTargetSource">
 				<property name="targetBeanName"><idref local="target"/></property>
 			</bean>
 		</property>

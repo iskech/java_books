@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.metadata;
+package org.springframework.metadata;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

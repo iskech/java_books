@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.config.AbstractFactoryBean;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.util.DefaultPropertiesPersister;
-import com.example.spring.provider.spring1_5.util.PropertiesPersister;
+import org.springframework.beans.factory.config.AbstractFactoryBean;
+import org.springframework.core.io.Resource;
+import org.springframework.util.DefaultPropertiesPersister;
+import org.springframework.util.PropertiesPersister;
 
 import java.io.IOException;
 import java.io.InputStream;

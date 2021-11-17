@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 /**
  * Utility class for diagnostic purposes, to analyze the

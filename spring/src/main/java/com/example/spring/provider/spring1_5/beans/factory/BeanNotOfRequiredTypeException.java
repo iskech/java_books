@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
+import org.springframework.beans.BeansException;
 
 /**
  * Thrown when a bean doesn't match the required type.

@@ -14,15 +14,15 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy;
+package org.springframework.aop.framework.autoproxy;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.core.ControlFlow;
-import com.example.spring.provider.spring1_5.core.ControlFlowFactory;
-import com.example.spring.provider.spring1_5.core.OrderComparator;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.TargetSource;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.core.ControlFlow;
+import org.springframework.core.ControlFlowFactory;
+import org.springframework.core.OrderComparator;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -97,8 +97,8 @@ public abstract class AbstractAdvisorAutoProxyCreator extends AbstractAutoProxyC
 
 	/**
 	 * Sort advisors based on ordering.
-	 * @see com.example.spring.provider.spring1_5.core.Ordered
-	 * @see com.example.spring.provider.spring1_5.core.OrderComparator
+	 * @see org.springframework.core.Ordered
+	 * @see org.springframework.core.OrderComparator
 	 */
 	protected List sortAdvisors(List advisors) {
 		Collections.sort(advisors, new OrderComparator());
@@ -110,7 +110,7 @@ public abstract class AbstractAdvisorAutoProxyCreator extends AbstractAutoProxyC
 	 * when our own infrastructure (such as this class) depends on advisors that depend
 	 * on beans... We use a ControlFlow object to check that we didn't arrived at this
 	 * call via this classes findCandidateAdvisors() method.
-	 * @see com.example.spring.provider.spring1_5.core.ControlFlow
+	 * @see org.springframework.core.ControlFlow
 	 */
 	protected boolean shouldSkip(Object bean, String name) {
 		// TODO consider pulling this test into AbstractBeanFactory.applyPostProcessors(),

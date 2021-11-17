@@ -1,8 +1,8 @@
 package com.example.spring.context.support;
 
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.context.ApplicationEvent;
-import com.example.spring.provider.spring1_5.context.ApplicationListener;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.ApplicationListener;
 
 /**
  * @author Juergen Hoeller

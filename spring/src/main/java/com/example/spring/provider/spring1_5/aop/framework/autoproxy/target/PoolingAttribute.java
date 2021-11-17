@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.target;
+package org.springframework.aop.framework.autoproxy.target;
 
 /**
  * Simple pooling attribute that can drive automatic creation of a TargetSource.

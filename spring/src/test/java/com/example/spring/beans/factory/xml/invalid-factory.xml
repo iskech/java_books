@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="invalidFactory"	class="com.example.spring.provider.spring1_5.beans.factory.DummyFactory" singleton="false">
+	<bean id="invalidFactory"	class="org.springframework.beans.factory.DummyFactory" singleton="false">
 		<property name="singleton"><value>false</value></property>
 	</bean>
 	

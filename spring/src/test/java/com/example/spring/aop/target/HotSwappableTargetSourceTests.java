@@ -18,16 +18,16 @@ package com.example.spring.aop.target;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.framework.Advised;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean;
-import com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.SerializablePerson;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.framework.Advised;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.interceptor.SerializableNopInterceptor;
+import org.springframework.aop.interceptor.SideEffectBean;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
+import org.springframework.beans.Person;
+import org.springframework.beans.SerializablePerson;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * @author Rod Johnson

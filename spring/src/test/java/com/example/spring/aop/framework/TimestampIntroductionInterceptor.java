@@ -16,7 +16,7 @@
 
 package com.example.spring.aop.framework;
 
-import com.example.spring.provider.spring1_5.aop.support.DelegatingIntroductionInterceptor;
+import org.springframework.aop.support.DelegatingIntroductionInterceptor;
 
 public class TimestampIntroductionInterceptor extends DelegatingIntroductionInterceptor
 	implements TimeStamped {

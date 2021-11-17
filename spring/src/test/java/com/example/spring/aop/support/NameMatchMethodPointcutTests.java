@@ -18,13 +18,13 @@ package com.example.spring.aop.support;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.framework.Advised;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.SerializablePerson;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.framework.Advised;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.interceptor.SerializableNopInterceptor;
+import org.springframework.beans.Person;
+import org.springframework.beans.SerializablePerson;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * 

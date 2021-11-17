@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
 import java.util.ArrayList;
 

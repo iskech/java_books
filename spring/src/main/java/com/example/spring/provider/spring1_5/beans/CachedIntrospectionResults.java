@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.FatalBeanException;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
@@ -55,7 +55,7 @@ import java.util.WeakHashMap;
  */
 final class CachedIntrospectionResults {
 
-	private static final Log logger = LogFactory.getLog(com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults.class);
+	private static final Log logger = LogFactory.getLog(org.springframework.beans.CachedIntrospectionResults.class);
 
 	/**
 	 * Map keyed by class containing CachedIntrospectionResults.
@@ -69,19 +69,19 @@ final class CachedIntrospectionResults {
 	 * Object references are atomic, so we can live with doing the occasional
 	 * unnecessary lookup at startup only.
 	 */
-	static com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults forClass(Class clazz) throws BeansException {
-		com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults results = null;
+	static org.springframework.beans.CachedIntrospectionResults forClass(Class clazz) throws BeansException {
+		org.springframework.beans.CachedIntrospectionResults results = null;
 		Object value = classCache.get(clazz);
 		if (value instanceof Reference) {
 			Reference ref = (Reference) value;
-			results = (com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults) ref.get();
+			results = (org.springframework.beans.CachedIntrospectionResults) ref.get();
 		}
 		else {
-			results = (com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults) value;
+			results = (org.springframework.beans.CachedIntrospectionResults) value;
 		}
 		if (results == null) {
 			// can throw BeansException
-			results = new com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults(clazz);
+			results = new org.springframework.beans.CachedIntrospectionResults(clazz);
 			boolean cacheSafe = isCacheSafe(clazz);
 			if (logger.isDebugEnabled()) {
 				logger.debug("Class [" + clazz.getName() + "] is " + (!cacheSafe ? "not " : "") + "cache-safe");
@@ -111,7 +111,7 @@ final class CachedIntrospectionResults {
 	 * @return whether the given class is thread-safe
 	 */
 	private static boolean isCacheSafe(Class clazz) {
-		ClassLoader cur = com.example.spring.provider.spring1_5.beans.CachedIntrospectionResults.class.getClassLoader();
+		ClassLoader cur = org.springframework.beans.CachedIntrospectionResults.class.getClassLoader();
 		ClassLoader target = clazz.getClassLoader();
 		if (target == null || cur == target) {
 			return true;

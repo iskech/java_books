@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
 /**
  * Config interface for a pooling target source.

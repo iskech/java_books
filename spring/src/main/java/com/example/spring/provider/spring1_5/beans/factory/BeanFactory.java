@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.DisposableBean;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
 
 /**
  * The root interface for accessing a Spring IoC container.
@@ -48,7 +48,7 @@ import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
  * and its subinterfaces.
  *
  * <p>Normally a BeanFactory will load bean definitions stored in a configuration
- * source (such as an XML document), and use the com.example.spring.provider.spring1_5.beans package
+ * source (such as an XML document), and use the org.springframework.beans package
  * to configure the beans. However, an implementation could simply return Java
  * objects it creates as necessary directly in Java code. There are no constraints
  * on how the definitions could be stored: LDAP, RDBMS, XML, properties file etc.
@@ -84,11 +84,11 @@ import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
  * @see BeanFactoryAware#setBeanFactory
  * @see InitializingBean#afterPropertiesSet
  * @see DisposableBean#destroy
- * @see com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor#postProcessBeforeInitialization
- * @see com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
- * @see com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition#getInitMethodName
- * @see com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition#getDestroyMethodName
- * @see com.example.spring.provider.spring1_5.context.ApplicationContextAware#setApplicationContext
+ * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessBeforeInitialization
+ * @see org.springframework.beans.factory.config.BeanPostProcessor#postProcessAfterInitialization
+ * @see org.springframework.beans.factory.support.RootBeanDefinition#getInitMethodName
+ * @see org.springframework.beans.factory.support.RootBeanDefinition#getDestroyMethodName
+ * @see org.springframework.context.ApplicationContextAware#setApplicationContext
  */
 public interface BeanFactory {
 

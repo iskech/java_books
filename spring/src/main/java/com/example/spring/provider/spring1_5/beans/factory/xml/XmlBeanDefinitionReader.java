@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.xml;
+package org.springframework.beans.factory.xml;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeanUtils;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionRegistry;
-import com.example.spring.provider.spring1_5.beans.factory.xml.BeansDtdResolver;
-import com.example.spring.provider.spring1_5.beans.factory.xml.DefaultXmlBeanDefinitionParser;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionParser;
-import com.example.spring.provider.spring1_5.core.io.Resource;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.support.AbstractBeanDefinitionReader;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.xml.BeansDtdResolver;
+import org.springframework.beans.factory.xml.DefaultXmlBeanDefinitionParser;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionParser;
+import org.springframework.core.io.Resource;
 import org.w3c.dom.Document;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.ErrorHandler;
@@ -54,7 +54,7 @@ import java.io.InputStream;
  * @see XmlBeanDefinitionParser
  * @see DefaultXmlBeanDefinitionParser
  * @see BeanDefinitionRegistry
- * @see com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory
+ * @see org.springframework.beans.factory.support.DefaultListableBeanFactory
  */
 public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 
@@ -185,7 +185,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 		/**
 		 * We can't use the enclosing class' logger as it's protected and inherited.
 		 */
-		private final static Log logger = LogFactory.getLog(com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionReader.class);
+		private final static Log logger = LogFactory.getLog(org.springframework.beans.factory.xml.XmlBeanDefinitionReader.class);
 
 		public void error(SAXParseException ex) throws SAXException {
 			throw ex;

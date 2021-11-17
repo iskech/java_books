@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.metadata;
+package org.springframework.aop.framework.autoproxy.metadata;
 
-import com.example.spring.provider.spring1_5.aop.framework.autoproxy.target.AbstractPoolingTargetSourceCreator;
-import com.example.spring.provider.spring1_5.aop.framework.autoproxy.target.PoolingAttribute;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.metadata.Attributes;
+import org.springframework.aop.framework.autoproxy.target.AbstractPoolingTargetSourceCreator;
+import org.springframework.aop.framework.autoproxy.target.PoolingAttribute;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.metadata.Attributes;
 
 import java.util.Collection;
 

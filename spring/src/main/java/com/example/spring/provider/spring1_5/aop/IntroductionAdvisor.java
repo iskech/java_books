@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 /**
  * Superinterface for advisors that perform one or more AOP <b>introductions</b>.
@@ -27,7 +27,7 @@ package com.example.spring.provider.spring1_5.aop;
  *
  * @author Rod Johnson
  * @since 04-Apr-2003
- * @see com.example.spring.provider.spring1_5.aop.IntroductionInterceptor
+ * @see org.springframework.aop.IntroductionInterceptor
  */
 public interface IntroductionAdvisor extends Advisor, IntroductionInfo {
 	

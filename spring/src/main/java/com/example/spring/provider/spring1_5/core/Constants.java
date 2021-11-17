@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -80,13 +80,13 @@ public class Constants {
 	 * @param code name of the field
 	 * @return long value if successful
 	 * @see #asObject
-	 * @throws com.example.spring.provider.spring1_5.core.ConstantException if the field name wasn't found
+	 * @throws org.springframework.core.ConstantException if the field name wasn't found
 	 * or if the type wasn't compatible with Number
 	 */
-	public Number asNumber(String code) throws com.example.spring.provider.spring1_5.core.ConstantException {
+	public Number asNumber(String code) throws org.springframework.core.ConstantException {
 		Object o = asObject(code);
 		if (!(o instanceof Number)) {
-			throw new com.example.spring.provider.spring1_5.core.ConstantException(this.className, code, "not a Number");
+			throw new org.springframework.core.ConstantException(this.className, code, "not a Number");
 		}
 		return (Number) o;
 	}
@@ -97,9 +97,9 @@ public class Constants {
 	 * @return String string value if successful.
 	 * Works even if it's not a string (invokes toString()).
 	 * @see #asObject
-	 * @throws com.example.spring.provider.spring1_5.core.ConstantException if the field name wasn't found
+	 * @throws org.springframework.core.ConstantException if the field name wasn't found
 	 */
-	public String asString(String code) throws com.example.spring.provider.spring1_5.core.ConstantException {
+	public String asString(String code) throws org.springframework.core.ConstantException {
 		return asObject(code).toString();
 	}
 
@@ -107,13 +107,13 @@ public class Constants {
 	 * Parse the given string (upper or lower case accepted) and return 
 	 * the appropriate value if it's the name of a constant field in the
 	 * class we're analysing.
-	 * @throws com.example.spring.provider.spring1_5.core.ConstantException if there's no such field
+	 * @throws org.springframework.core.ConstantException if there's no such field
 	 */
-	public Object asObject(String code) throws com.example.spring.provider.spring1_5.core.ConstantException {
+	public Object asObject(String code) throws org.springframework.core.ConstantException {
 		code = code.toUpperCase();
 		Object val = this.fieldCache.get(code);
 		if (val == null) {
-			throw new com.example.spring.provider.spring1_5.core.ConstantException(this.className, code, "not found");
+			throw new org.springframework.core.ConstantException(this.className, code, "not found");
 		}
 		return val;
 	}
@@ -152,9 +152,9 @@ public class Constants {
 	 * @param value constant value to look up
 	 * @param namePrefix prefix of the constant names to search
 	 * @return the name of the constant field
-	 * @throws com.example.spring.provider.spring1_5.core.ConstantException if the value wasn't found
+	 * @throws org.springframework.core.ConstantException if the value wasn't found
 	 */
-	public String toCode(Object value, String namePrefix) throws com.example.spring.provider.spring1_5.core.ConstantException {
+	public String toCode(Object value, String namePrefix) throws org.springframework.core.ConstantException {
 		namePrefix = namePrefix.toUpperCase();
 		for (Iterator it = this.fieldCache.entrySet().iterator(); it.hasNext();) {
 			Map.Entry entry = (Map.Entry) it.next();
@@ -163,7 +163,7 @@ public class Constants {
 				return key;
 			}
 		}
-		throw new com.example.spring.provider.spring1_5.core.ConstantException(this.className, namePrefix, value);
+		throw new org.springframework.core.ConstantException(this.className, namePrefix, value);
 	}
 
 	/**
@@ -172,10 +172,10 @@ public class Constants {
 	 * @param value constant value to look up
 	 * @param propertyName the name of the bean property
 	 * @return the name of the constant field
-	 * @throws com.example.spring.provider.spring1_5.core.ConstantException if the value wasn't found
+	 * @throws org.springframework.core.ConstantException if the value wasn't found
 	 * @see #propertyToConstantNamePrefix
 	 */
-	public String toCodeForProperty(Object value, String propertyName) throws com.example.spring.provider.spring1_5.core.ConstantException {
+	public String toCodeForProperty(Object value, String propertyName) throws org.springframework.core.ConstantException {
 		return toCode(value, propertyToConstantNamePrefix(propertyName));
 	}
 

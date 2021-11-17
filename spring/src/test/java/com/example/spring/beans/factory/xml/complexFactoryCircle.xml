@@ -5,11 +5,11 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"/>
 
-	<bean id="transactionManager" class="com.example.spring.provider.spring1_5.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource"><ref local="dataSource"/></property>
 	</bean>
 
-	<bean id="proxy1" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean id="proxy1" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager"><ref local="transactionManager"/></property>
 		<property name="target"><ref local="target1"/></property>
 		<property name="transactionAttributes">
@@ -19,12 +19,12 @@
 		</property>
 	</bean>
 
-	<bean id="target1" class="com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorDependenciesBean"
+	<bean id="target1" class="org.springframework.beans.factory.xml.ConstructorDependenciesBean"
 		autowire="constructor"/>
 
-	<bean id="toBeFoundByType" class="com.example.spring.provider.spring1_5.beans.TestBean"/>
+	<bean id="toBeFoundByType" class="org.springframework.beans.TestBean"/>
 
-	<bean id="proxy2" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean id="proxy2" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager"><ref local="transactionManager"/></property>
 		<property name="target"><ref local="target2"/></property>
 		<property name="transactionAttributes">
@@ -34,9 +34,9 @@
 		</property>
 	</bean>
 
-	<bean id="target2" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean">
+	<bean id="target2" class="org.springframework.beans.factory.xml.DependenciesBean">
 		<property name="spouse">
-			<bean class="com.example.spring.provider.spring1_5.beans.TestBean">
+			<bean class="org.springframework.beans.TestBean">
 				<property name="someSet">
 					<set>
 						<ref local="proxy1"/>

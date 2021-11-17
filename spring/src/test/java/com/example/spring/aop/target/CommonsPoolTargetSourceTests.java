@@ -18,12 +18,12 @@ package com.example.spring.aop.target;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.framework.Advised;
-import com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.framework.Advised;
+import org.springframework.aop.interceptor.SideEffectBean;
+import org.springframework.beans.Person;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * Tests for pooling invoker interceptor

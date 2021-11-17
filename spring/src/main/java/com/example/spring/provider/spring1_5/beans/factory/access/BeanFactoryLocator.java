@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryReference;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.access.BeanFactoryReference;
 
 /**
  * <p>An interface for a class used to lookup/use, and optionally allow the
@@ -42,9 +42,9 @@ import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryRef
  * SingletonBeanFactoryLocator may be used to demand load these contexts.
  * 
  * @author Colin Sampaleanu
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory
- * @see com.example.spring.provider.spring1_5.context.access.DefaultLocatorFactory
- * @see com.example.spring.provider.spring1_5.context.ApplicationContext
+ * @see org.springframework.beans.factory.BeanFactory
+ * @see org.springframework.context.access.DefaultLocatorFactory
+ * @see org.springframework.context.ApplicationContext
  */
 public interface BeanFactoryLocator {
 

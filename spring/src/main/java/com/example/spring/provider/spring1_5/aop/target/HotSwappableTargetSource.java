@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.util.Assert;
+import org.springframework.aop.TargetSource;
+import org.springframework.util.Assert;
 
 import java.io.Serializable;
 

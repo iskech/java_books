@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.BeanUtils;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractAutowireCapableBeanFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;

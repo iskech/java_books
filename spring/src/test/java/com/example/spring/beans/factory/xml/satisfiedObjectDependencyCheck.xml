@@ -3,12 +3,12 @@
 
 <beans>
 
-	<bean id="a" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean"
+	<bean id="a" class="org.springframework.beans.factory.xml.DependenciesBean"
 		dependency-check="objects">
 		<property name="spouse"><ref local="kerry"/></property>
 	</bean>
 	
-	<bean id="kerry" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="kerry" class="org.springframework.beans.TestBean"
 		dependency-check="none">
 	</bean>
 

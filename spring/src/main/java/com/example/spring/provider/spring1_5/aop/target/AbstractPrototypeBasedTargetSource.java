@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanFactory;
 
 /**
  * Base class for dynamic TargetSources that can create new prototype bean
@@ -30,7 +30,7 @@ import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
  * 
  * @author Rod Johnson
  * @author Juergen Hoeller
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory#getBean
+ * @see org.springframework.beans.factory.BeanFactory#getBean
  * @see PrototypeTargetSource
  * @see ThreadLocalTargetSource
  * @see CommonsPoolTargetSource

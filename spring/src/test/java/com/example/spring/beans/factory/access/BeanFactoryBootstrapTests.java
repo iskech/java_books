@@ -22,10 +22,10 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 /**
  * 
@@ -53,7 +53,7 @@ public class BeanFactoryBootstrapTests extends TestCase {
 		System.setProperties(null);
 		Properties p = new Properties();
 		p.put(BeanFactoryBootstrap.BEAN_FACTORY_BEAN_NAME + ".class",
-		"com.example.spring.provider.spring1_5.beans.factory.support.xxxxXmlBeanFactory");
+		"org.springframework.beans.factory.support.xxxxXmlBeanFactory");
 		
 		System.setProperties(p);
 		BeanFactoryBootstrap.reinitialize();
@@ -124,7 +124,7 @@ public class BeanFactoryBootstrapTests extends TestCase {
 	public void testDummyBeanFactory() throws Exception {
 		Properties p = new Properties();
 		p.put(BeanFactoryBootstrap.BEAN_FACTORY_BEAN_NAME + ".class",
-		"com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryBootstrapTests$DummyBeanFactory");
+		"org.springframework.beans.factory.access.BeanFactoryBootstrapTests$DummyBeanFactory");
 		
 		
 		System.setProperties(p);

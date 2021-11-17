@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.InvalidPropertyException;
+import org.springframework.beans.InvalidPropertyException;
 
 /**
  * Exception thrown on an attempt to set the value of a property

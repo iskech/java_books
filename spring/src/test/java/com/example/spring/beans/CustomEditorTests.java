@@ -29,10 +29,10 @@ import java.util.StringTokenizer;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomBooleanEditor;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomDateEditor;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomNumberEditor;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.beans.propertyeditors.CustomBooleanEditor;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 
 /**
  * @author Juergen Hoeller

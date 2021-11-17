@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBeanNotInitializedException;
-import com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory;
+import org.springframework.beans.factory.FactoryBeanNotInitializedException;
+import org.springframework.beans.factory.ListableBeanFactory;
 
 /**
  * Interface to be implemented by objects used within a BeanFactory
@@ -40,9 +40,9 @@ import com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory;
  * @author Rod Johnson
  * @author Juergen Hoeller
  * @since 08.03.2003
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory
- * @see com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean
- * @see com.example.spring.provider.spring1_5.jndi.JndiObjectFactoryBean
+ * @see org.springframework.beans.factory.BeanFactory
+ * @see org.springframework.aop.framework.ProxyFactoryBean
+ * @see org.springframework.jndi.JndiObjectFactoryBean
  */
 public interface FactoryBean {
 

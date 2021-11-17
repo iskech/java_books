@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.PropertiesEditor;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.propertyeditors.PropertiesEditor;
 
 import java.beans.PropertyEditorSupport;
 import java.util.Properties;

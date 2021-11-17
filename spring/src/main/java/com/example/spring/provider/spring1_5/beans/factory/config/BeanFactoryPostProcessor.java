@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyResourceConfigurer;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.PropertyResourceConfigurer;
 
 /**
  * Allows for custom modification of an application context's bean definitions,

@@ -8,7 +8,7 @@ package com.example.spring.beans.factory.xml;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
-import com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer;
+import org.springframework.beans.factory.support.MethodReplacer;
 
 /**
  * 
@@ -17,7 +17,7 @@ import com.example.spring.provider.spring1_5.beans.factory.support.MethodReplace
 public class ReverseMethodReplacer implements MethodReplacer, Serializable {
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer#reimplement(Object, Method, Object[])
+	 * @see org.springframework.beans.factory.support.MethodReplacer#reimplement(Object, Method, Object[])
 	 */
 	public Object reimplement(Object o, Method m, Object[] args) throws Throwable {
 		String s = (String) args[0];

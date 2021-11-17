@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException;
-import com.example.spring.provider.spring1_5.beans.factory.access.BootstrapException;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
+import org.springframework.beans.factory.access.BootstrapException;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
 
 /**
  * One singleton to rule them all. Reads System properties, which
@@ -48,13 +48,13 @@ public class BeanFactoryBootstrap {
 
 	public static final String BEAN_FACTORY_BEAN_NAME = "bootstrapBeanFactory";
 
-	private static com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryBootstrap instance;
+	private static org.springframework.beans.factory.access.BeanFactoryBootstrap instance;
 
 	private static BeansException startupException;
 
 	private static void initializeSingleton() {
 		try {
-			instance = new com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryBootstrap();
+			instance = new org.springframework.beans.factory.access.BeanFactoryBootstrap();
 		}
 		catch (BeansException ex) {
 			startupException = ex;
@@ -72,7 +72,7 @@ public class BeanFactoryBootstrap {
 	 * @return BeanFactoryBootstrap
 	 * @throws BeansException
 	 */
-	public static com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryBootstrap getInstance() throws BeansException {
+	public static org.springframework.beans.factory.access.BeanFactoryBootstrap getInstance() throws BeansException {
 		if (startupException != null)
 			throw startupException;
 		// Really an assertion

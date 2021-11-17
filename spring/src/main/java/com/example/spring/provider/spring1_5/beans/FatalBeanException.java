@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
+import org.springframework.beans.BeansException;
 
 /**
  * Thrown on an unrecoverable problem encountered in the

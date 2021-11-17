@@ -18,7 +18,7 @@ package com.example.spring.aop.framework;
 
 import java.lang.reflect.Method;
 
-import com.example.spring.provider.spring1_5.aop.AfterReturningAdvice;
+import org.springframework.aop.AfterReturningAdvice;
 
 /**
  * Simple before advice example that we can use for counting checks.

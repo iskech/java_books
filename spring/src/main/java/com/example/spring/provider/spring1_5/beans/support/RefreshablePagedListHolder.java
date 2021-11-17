@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
-import com.example.spring.provider.spring1_5.beans.BeanUtils;
-import com.example.spring.provider.spring1_5.beans.support.PagedListHolder;
-import com.example.spring.provider.spring1_5.beans.support.PagedListSourceProvider;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.beans.support.PagedListSourceProvider;
 
 import java.util.Locale;
 
@@ -70,7 +70,7 @@ import java.util.Locale;
  * @author Juergen Hoeller
  * @since 24.05.2003
  * @see PagedListSourceProvider
- * @see com.example.spring.provider.spring1_5.beans.propertyeditors.LocaleEditor
+ * @see org.springframework.beans.propertyeditors.LocaleEditor
  */
 public class RefreshablePagedListHolder extends PagedListHolder {
 

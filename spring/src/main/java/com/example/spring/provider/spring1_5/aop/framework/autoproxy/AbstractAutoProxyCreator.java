@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy;
+package org.springframework.aop.framework.autoproxy;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyConfig;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapterRegistry;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.core.Ordered;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.TargetSource;
+import org.springframework.aop.framework.ProxyConfig;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.framework.adapter.AdvisorAdapterRegistry;
+import org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.target.SingletonTargetSource;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.core.Ordered;
 
 import java.util.*;
 
@@ -126,7 +126,7 @@ public abstract class AbstractAutoProxyCreator extends ProxyConfig
 	/**
 	 * Specify the AdvisorAdapterRegistry to use.
 	 * Default is the global AdvisorAdapterRegistry.
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry
+	 * @see org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry
 	 */
 	public void setAdvisorAdapterRegistry(AdvisorAdapterRegistry advisorAdapterRegistry) {
 		this.advisorAdapterRegistry = advisorAdapterRegistry;

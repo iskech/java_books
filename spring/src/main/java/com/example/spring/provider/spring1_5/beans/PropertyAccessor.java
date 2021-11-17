@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
-import com.example.spring.provider.spring1_5.beans.PropertyValues;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.PropertyValues;
 
 import java.util.Map;
 

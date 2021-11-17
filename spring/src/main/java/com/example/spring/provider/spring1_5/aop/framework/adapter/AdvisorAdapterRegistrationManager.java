@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.adapter;
+package org.springframework.aop.framework.adapter;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * BeanPostProcessor implementation that "registers" instances of any
@@ -40,7 +40,7 @@ public class AdvisorAdapterRegistrationManager implements BeanPostProcessor {
 	/**
 	 * Specify the AdvisorAdapterRegistry to use.
 	 * Default is the global AdvisorAdapterRegistry.
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry
+	 * @see org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry
 	 */
 	public void setAdvisorAdapterRegistry(AdvisorAdapterRegistry advisorAdapterRegistry) {
 		this.advisorAdapterRegistry = advisorAdapterRegistry;

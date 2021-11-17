@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Extension of the BeanFactory interface to be implemented by bean
@@ -47,10 +47,10 @@ import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProces
  * @author Juergen Hoeller
  * @since 04.12.2003
  * @see BeanFactory
- * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory
- * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware
- * @see com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory
- * @see com.example.spring.provider.spring1_5.context.ConfigurableApplicationContext#getBeanFactory
+ * @see org.springframework.beans.factory.ListableBeanFactory
+ * @see org.springframework.beans.factory.BeanFactoryAware
+ * @see org.springframework.beans.factory.config.ConfigurableListableBeanFactory
+ * @see org.springframework.context.ConfigurableApplicationContext#getBeanFactory
  */
 public interface AutowireCapableBeanFactory extends BeanFactory {
 
@@ -118,7 +118,7 @@ public interface AutowireCapableBeanFactory extends BeanFactory {
 	 * property values meant to be used for existing bean instances.
 	 * @param existingBean the existing bean instance
 	 * @param beanName the name of the bean definition in the bean factory
-	 * @throws com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException
+	 * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
 	 * if there is no bean with the given name
 	 * @throws BeansException if applying the property values failed
 	 */

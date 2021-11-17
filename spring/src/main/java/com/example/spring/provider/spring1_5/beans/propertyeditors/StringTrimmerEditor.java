@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.util.StringUtils;
 
 import java.beans.PropertyEditorSupport;
 
@@ -25,9 +25,9 @@ import java.beans.PropertyEditorSupport;
  * Optionally allows transforming an empty string into a null value.
  * Needs to be explictly registered, e.g. for command binding.
  * @author Juergen Hoeller
- * @see com.example.spring.provider.spring1_5.validation.DataBinder#registerCustomEditor
- * @see com.example.spring.provider.spring1_5.web.servlet.mvc.BaseCommandController#initBinder
- * @see com.example.spring.provider.spring1_5.web.bind.BindInitializer#initBinder
+ * @see org.springframework.validation.DataBinder#registerCustomEditor
+ * @see org.springframework.web.servlet.mvc.BaseCommandController#initBinder
+ * @see org.springframework.web.bind.BindInitializer#initBinder
  */
 public class StringTrimmerEditor extends PropertyEditorSupport {
 

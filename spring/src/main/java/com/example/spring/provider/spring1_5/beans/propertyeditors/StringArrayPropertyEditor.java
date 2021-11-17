@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.util.StringUtils;
 
 import java.beans.PropertyEditorSupport;
 

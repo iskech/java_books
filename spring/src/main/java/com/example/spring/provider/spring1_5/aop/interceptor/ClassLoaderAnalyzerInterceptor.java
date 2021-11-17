@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.interceptor;
+package org.springframework.aop.interceptor;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.util.ClassLoaderUtils;
+import org.springframework.util.ClassLoaderUtils;
 
 import java.io.Serializable;
 
@@ -28,7 +28,7 @@ import java.io.Serializable;
  * Trivial classloader analyzer interceptor.
  * @author Rod Johnson
  * @author Dmitriy Kopylenko
- * @see com.example.spring.provider.spring1_5.util.ClassLoaderUtils
+ * @see org.springframework.util.ClassLoaderUtils
  */
 public class ClassLoaderAnalyzerInterceptor implements MethodInterceptor, Serializable {
 

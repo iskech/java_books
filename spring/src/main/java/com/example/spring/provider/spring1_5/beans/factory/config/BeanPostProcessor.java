@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanFactoryPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 /**
  * Allows for custom modification of new bean instances, e.g.
@@ -48,7 +48,7 @@ public interface BeanPostProcessor {
 	 * @param beanName the beanName of the bean
 	 * @return the bean instance to use, either the original or a wrapped one
 	 * @throws BeansException in case of errors
-	 * @see com.example.spring.provider.spring1_5.beans.factory.InitializingBean#afterPropertiesSet
+	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet
 	 */
 	Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException;
 
@@ -61,7 +61,7 @@ public interface BeanPostProcessor {
 	 * @param beanName the beanName of the bean
 	 * @return the bean instance to use, either the original or a wrapped one
 	 * @throws BeansException in case of errors
-	 * @see com.example.spring.provider.spring1_5.beans.factory.InitializingBean#afterPropertiesSet
+	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet
 	 */
 	Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException;
 

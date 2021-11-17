@@ -1,8 +1,8 @@
 package com.iskech.thread;
 
-import com.example.spring.provider.spring1_5.boot.SpringApplication;
-import com.example.spring.provider.spring1_5.boot.autoconfigure.SpringBootApplication;
-import com.example.spring.provider.spring1_5.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan
 @SpringBootApplication public class ThreadApplication {

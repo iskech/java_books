@@ -22,7 +22,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.core.io.Resource;
+import org.springframework.core.io.Resource;
 
 /**
  * @author Oliver Hutchison

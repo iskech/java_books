@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 import org.aopalliance.aop.Advice;
 

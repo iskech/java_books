@@ -28,9 +28,9 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
 
 /**
  * Simple test bean used for testing bean factories,

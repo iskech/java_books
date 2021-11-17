@@ -10,24 +10,24 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"/>
 
-	<bean id="transactionManager" class="com.example.spring.provider.spring1_5.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource"><ref local="dataSource"/></property>
 	</bean>
 		
-	<bean id="dao" class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyDao" autowire="constructor"/>
+	<bean id="dao" class="org.springframework.beans.factory.xml.DummyDao" autowire="constructor"/>
 
-	<bean id="boPrototype" autowire="constructor" class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyBoImpl"
+	<bean id="boPrototype" autowire="constructor" class="org.springframework.beans.factory.xml.DummyBoImpl"
 		singleton="false"
 	/>
 	
-	<bean id="prototypeTargetSource" class="com.example.spring.provider.spring1_5.aop.target.PrototypeTargetSource">
+	<bean id="prototypeTargetSource" class="org.springframework.aop.target.PrototypeTargetSource">
 		<property name="targetBeanName"><value>boPrototype</value></property>
 	</bean>
 
-	<bean id="prototypeBenchmark" class="com.example.spring.provider.spring1_5.transaction.interceptor.TransactionProxyFactoryBean">
+	<bean id="prototypeBenchmark" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 		<property name="transactionManager"><ref local="transactionManager"/></property>
 		<property name="target"><ref local="prototypeTargetSource"/></property>
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.factory.xml.DummyBo</value></property>
+		<property name="proxyInterfaces"><value>org.springframework.beans.factory.xml.DummyBo</value></property>
 		<property name="transactionAttributes">
 			<props>
 				<prop key="placeOrder">PROPAGATION_REQUIRED</prop>
@@ -35,6 +35,6 @@
 		</property>
 	</bean>
 
-	<bean id="boSingleton" autowire="constructor" class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyBoImpl"/>
+	<bean id="boSingleton" autowire="constructor" class="org.springframework.beans.factory.xml.DummyBoImpl"/>
 
 </beans>

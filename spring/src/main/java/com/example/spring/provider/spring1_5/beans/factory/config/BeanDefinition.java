@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanFactoryPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 /**
  * A BeanDefinition describes a bean instance, which has property values,
@@ -36,8 +36,8 @@ import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceh
  * @see ConfigurableListableBeanFactory#getBeanDefinition
  * @see BeanFactoryPostProcessor
  * @see PropertyPlaceholderConfigurer
- * @see com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition
- * @see com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition
+ * @see org.springframework.beans.factory.support.RootBeanDefinition
+ * @see org.springframework.beans.factory.support.ChildBeanDefinition
  */
 public interface BeanDefinition {
 
@@ -48,7 +48,7 @@ public interface BeanDefinition {
 	 * @deprecated Use BeanFactory's <code>getType</code> method instead,
 	 * which properly resolves child bean definitions and
 	 * asks FactoryBeans for the type of object they create.
-	 * @see com.example.spring.provider.spring1_5.beans.factory.BeanFactory#getType
+	 * @see org.springframework.beans.factory.BeanFactory#getType
 	 */
 	Class getBeanClass();
 

@@ -18,8 +18,8 @@ package com.example.spring.beans.factory.xml;
 
 import java.io.Serializable;
 
-import com.example.spring.provider.spring1_5.beans.IndexedTestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.IndexedTestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * Simple bean used to check constructor dependency checking.

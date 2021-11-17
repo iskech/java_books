@@ -24,7 +24,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 
 /**
  * @author Juergen Hoeller

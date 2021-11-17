@@ -8,11 +8,11 @@
 	
 	<bean id="prototypeTarget" class="java.util.Date" singleton="false"/>
 
-	<bean id="prototype" class="com.example.spring.provider.spring1_5.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+	<bean id="prototype" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
 		<property name="targetBeanName"><idref local="prototypeTarget"/></property>
 	</bean>
 
-	<bean id="testBean" class="com.example.spring.provider.spring1_5.beans.factory.config.ObjectFactoryCreatingFactoryBeanTests$TestBean">
+	<bean id="testBean" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBeanTests$TestBean">
 		<property name="objectFactory"><ref local="prototype"/></property>
 	</bean>
   

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionValidationException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionValidationException;
 
 /**
  * Bean definition for beans who inherit settings from their parent.

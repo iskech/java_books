@@ -20,8 +20,8 @@ import junit.framework.TestCase;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Juergen Hoeller

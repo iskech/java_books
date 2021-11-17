@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="jenny" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="jenny" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
 		<property name="spouse">
@@ -12,7 +12,7 @@
 		</property>
 	</bean>
 	
-	<bean id="david" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="david" class="org.springframework.beans.TestBean">
 		<description>
 			Simple bean, without any collections.
 		</description>
@@ -23,7 +23,7 @@
 		<property name="age"><value>27</value></property>
 	</bean>
 	
-	<bean id="rod" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="rod" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Rod</value></property>
 		<property name="age"><value>32</value></property>
 		<property name="friends">
@@ -35,7 +35,7 @@
 		</property>
 	</bean>
 	
-	<bean id="pJenny" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false">
+	<bean id="pJenny" class="org.springframework.beans.TestBean" singleton="false">
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
 		<property name="spouse">
@@ -44,12 +44,12 @@
 		</property>
 	</bean>
 
-	<bean id="pDavid" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false">
+	<bean id="pDavid" class="org.springframework.beans.TestBean" singleton="false">
 		<property name="name"><value>David</value></property>
 		<property name="age"><value>27</value></property>
 	</bean>
 
-	<bean id="pRod" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false">
+	<bean id="pRod" class="org.springframework.beans.TestBean" singleton="false">
 		<property name="name"><value>Rod</value></property>
 		<property name="age"><value>32</value></property>
 		<property name="friends">
@@ -63,7 +63,7 @@
 	<!--
 		Try setting a collection property to a single value
 	-->
-	<bean id="loner" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="loner" class="org.springframework.beans.TestBean">
 		<property name="name"><value>loner</value></property>
 		<property name="age"><value>26</value></property>
 		<property name="friends">
@@ -73,7 +73,7 @@
 		</property>
 	</bean>
 	
-	<bean id="jumble" class="com.example.spring.provider.spring1_5.beans.factory.xml.MixedCollectionBean">
+	<bean id="jumble" class="org.springframework.beans.factory.xml.MixedCollectionBean">
 		<property name="jumble">
 			<list>
 				<ref local="david"/>
@@ -84,15 +84,15 @@
 		</property>
 	</bean>
 	
-	<bean id="verbose" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="verbose" class="org.springframework.beans.TestBean">
 		<property name="name"><value>verbose</value></property>
 	</bean>
 	
-	<bean id="verbose2" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="verbose2" class="org.springframework.beans.TestBean">
 		<property name="name"><idref local="verbose"/></property>
 	</bean>
 
-	<bean id="verbose3" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="verbose3" class="org.springframework.beans.TestBean">
 		<property name="name"><idref bean="verbose"/></property>
 	</bean>
 
@@ -100,36 +100,36 @@
 		Check automatic creation of alias, to allow for
 		names that are illegal as XML ids
 	-->
-	<bean id="aliased" class="com.example.spring.provider.spring1_5.beans.TestBean" name="myalias">
+	<bean id="aliased" class="org.springframework.beans.TestBean" name="myalias">
 		<property name="name"><value>aliased</value></property>
 	</bean>
 	
-	<bean id="multiAliased" class="com.example.spring.provider.spring1_5.beans.TestBean" name="alias1,alias2">
+	<bean id="multiAliased" class="org.springframework.beans.TestBean" name="alias1,alias2">
 		<property name="name"><value>aliased</value></property>
 	</bean>
 
-	<bean class="com.example.spring.provider.spring1_5.beans.TestBean" name="aliasWithoutId1,aliasWithoutId2,aliasWithoutId3">
+	<bean class="org.springframework.beans.TestBean" name="aliasWithoutId1,aliasWithoutId2,aliasWithoutId3">
 		<property name="name"><value>aliased</value></property>
 	</bean>
 
-	<bean class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean class="org.springframework.beans.TestBean">
 		<property name="name"><null/></property>
 	</bean>
 
-	<bean class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyReferencer"/>
+	<bean class="org.springframework.beans.factory.xml.DummyReferencer"/>
 
-	<bean class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyReferencer"/>
+	<bean class="org.springframework.beans.factory.xml.DummyReferencer"/>
 
-	<bean class="com.example.spring.provider.spring1_5.beans.factory.xml.DummyReferencer"/>
+	<bean class="org.springframework.beans.factory.xml.DummyReferencer"/>
 
-	<bean id="emptyMap" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="emptyMap" class="org.springframework.beans.factory.HasMap">
 		<property name="map">
 			<map>
 			</map>
 		</property>
 	</bean>
 	
-	<bean id="literalMap" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="literalMap" class="org.springframework.beans.factory.HasMap">
 		<property name="map">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -139,7 +139,7 @@
 		</property>
 	</bean>
 	
-	<bean id="mixedMap" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="mixedMap" class="org.springframework.beans.factory.HasMap">
 		<property name="map">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -149,7 +149,7 @@
 		</property>
 	</bean>
 	
-	<bean id="pMixedMap" class="com.example.spring.provider.spring1_5.beans.factory.HasMap" singleton="false">
+	<bean id="pMixedMap" class="org.springframework.beans.factory.HasMap" singleton="false">
 		<property name="map">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -158,7 +158,7 @@
 		</property>
 	</bean>
 
-	<bean id="mixedMapWithList" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="mixedMapWithList" class="org.springframework.beans.factory.HasMap">
 		<property name="map">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -187,7 +187,7 @@
 		</property>
 	</bean>
 	
-	<bean id="emptySet" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="emptySet" class="org.springframework.beans.factory.HasMap">
 		<property name="set">
 			<set>
 			</set>
@@ -195,7 +195,7 @@
 	</bean>
 
 
-	<bean id="set" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="set" class="org.springframework.beans.factory.HasMap">
 		<property name="set">
 			<set>
 				<value>bar</value>
@@ -205,7 +205,7 @@
 		</property>
 	</bean>
 
-	<bean id="emptyProps" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="emptyProps" class="org.springframework.beans.factory.HasMap">
 		<property name="props">
 			<props>
 			</props>
@@ -213,7 +213,7 @@
 	</bean>
 	
 	
-	<bean id="props" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="props" class="org.springframework.beans.factory.HasMap">
 		<property name="props">
 			<props>
 				<prop key="foo">bar</prop>
@@ -222,7 +222,7 @@
 		</property>
 	</bean>
 	
-	<bean id="propsViaMap" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="propsViaMap" class="org.springframework.beans.factory.HasMap">
 		<property name="props">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -231,7 +231,7 @@
 		</property>
 	</bean>
 
-	<bean id="objectArray" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="objectArray" class="org.springframework.beans.factory.HasMap">
 		<property name="objectArray">
 			<list>
 				<value>one</value>
@@ -240,7 +240,7 @@
 		</property>
 	</bean>
 	
-	<bean id="classArray" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="classArray" class="org.springframework.beans.factory.HasMap">
 		<property name="classArray">
 			<list>
 				<value>java.lang.String</value>
@@ -249,7 +249,7 @@
 		</property>
 	</bean>
 	
-	<bean id="integerArray" class="com.example.spring.provider.spring1_5.beans.factory.HasMap">
+	<bean id="integerArray" class="org.springframework.beans.factory.HasMap">
 		<property name="integerArray">
 			<list>
 				<value>0</value>
@@ -259,7 +259,7 @@
 		</property>
 	</bean>
 
-	<bean id="listFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.ListFactoryBean">
+	<bean id="listFactory" class="org.springframework.beans.factory.config.ListFactoryBean">
 		<property name="sourceList">
 			<list>
 				<value>bar</value>
@@ -271,7 +271,7 @@
 		</property>
 	</bean>
 
-	<bean id="pListFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.ListFactoryBean">
+	<bean id="pListFactory" class="org.springframework.beans.factory.config.ListFactoryBean">
 		<property name="sourceList">
 			<list>
 				<value>bar</value>
@@ -286,7 +286,7 @@
 		</property>
 	</bean>
 
-	<bean id="setFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.SetFactoryBean">
+	<bean id="setFactory" class="org.springframework.beans.factory.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<value>bar</value>
@@ -298,7 +298,7 @@
 		</property>
 	</bean>
 
-	<bean id="pSetFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.SetFactoryBean">
+	<bean id="pSetFactory" class="org.springframework.beans.factory.config.SetFactoryBean">
 		<property name="sourceSet">
 			<set>
 				<value>bar</value>
@@ -313,7 +313,7 @@
 		</property>
 	</bean>
 
-	<bean id="mapFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.MapFactoryBean">
+	<bean id="mapFactory" class="org.springframework.beans.factory.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="foo"><value>bar</value></entry>
@@ -325,7 +325,7 @@
 		</property>
 	</bean>
 
-	<bean id="pMapFactory" class="com.example.spring.provider.spring1_5.beans.factory.config.MapFactoryBean">
+	<bean id="pMapFactory" class="org.springframework.beans.factory.config.MapFactoryBean">
 		<property name="sourceMap">
 			<map>
 				<entry key="foo"><value>bar</value></entry>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -36,7 +36,7 @@ import java.util.regex.PatternSyntaxException;
  *
  * @author Dmitriy Kopylenko
  * @since 1.1
- * @see com.example.spring.provider.spring1_5.aop.support.AbstractRegexpMethodPointcut
+ * @see org.springframework.aop.support.AbstractRegexpMethodPointcut
  */
 public class JdkRegexpMethodPointcut extends AbstractRegexpMethodPointcut {
 	

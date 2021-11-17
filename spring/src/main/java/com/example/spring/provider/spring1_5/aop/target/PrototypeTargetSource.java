@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
+import org.springframework.beans.BeansException;
 
 /**
  * TargetSource that creates a new instance of the target bean for each request.

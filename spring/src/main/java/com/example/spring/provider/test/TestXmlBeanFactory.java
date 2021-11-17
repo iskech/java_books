@@ -2,8 +2,8 @@ package com.example.spring.provider.test;
 
 import com.example.spring.provider.service.GoHomeController;
 
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
 
 public class TestXmlBeanFactory {
 

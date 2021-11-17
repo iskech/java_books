@@ -14,20 +14,20 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.access;
+package org.springframework.beans.factory.access;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryLocator;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryReference;
-import com.example.spring.provider.spring1_5.beans.factory.access.BootstrapException;
-import com.example.spring.provider.spring1_5.beans.factory.access.DefaultBeanFactoryReference;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
-import com.example.spring.provider.spring1_5.jndi.JndiTemplate;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.access.BeanFactoryLocator;
+import org.springframework.beans.factory.access.BeanFactoryReference;
+import org.springframework.beans.factory.access.BootstrapException;
+import org.springframework.beans.factory.access.DefaultBeanFactoryReference;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jndi.JndiTemplate;
+import org.springframework.util.StringUtils;
 
 import javax.naming.NamingException;
 
@@ -42,7 +42,7 @@ import javax.naming.NamingException;
  * @author Rod Johnson
  * @author Colin Sampaleanu
  * @see DefaultListableBeanFactory
- * @see com.example.spring.provider.spring1_5.context.access.ContextJndiBeanFactoryLocator
+ * @see org.springframework.context.access.ContextJndiBeanFactoryLocator
  */
 public class JndiBeanFactoryLocator implements BeanFactoryLocator {
 

@@ -3,7 +3,7 @@
 
 <beans>
 	
-	<bean id="classNotFound" class="com.example.spring.provider.spring1_5.beans.TestBeana"/>
+	<bean id="classNotFound" class="org.springframework.beans.TestBeana"/>
 
 </beans>		
 	

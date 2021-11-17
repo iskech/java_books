@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 /**
  * A TargetSource is used to obtain the current "target" of  an AOP invocation,

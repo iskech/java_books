@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.apache.oro.text.regex.*;
 
@@ -35,7 +35,7 @@ import org.apache.oro.text.regex.*;
  *
  * @author Rod Johnson
  * @since 1.1
- * @see com.example.spring.provider.spring1_5.aop.support.AbstractRegexpMethodPointcut
+ * @see org.springframework.aop.support.AbstractRegexpMethodPointcut
  */
 public class Perl5RegexpMethodPointcut extends AbstractRegexpMethodPointcut { 
 	

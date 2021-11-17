@@ -20,8 +20,8 @@ import java.io.IOException;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.mock.web.MockServletContext;
-import com.example.spring.provider.spring1_5.web.context.support.ServletContextResource;
+import org.springframework.mock.web.MockServletContext;
+import org.springframework.web.context.support.ServletContextResource;
 
 /**
  * @author Juergen Hoeller

@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core.io;
+package org.springframework.core.io;
 
-import com.example.spring.provider.spring1_5.util.Assert;
+import org.springframework.util.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -98,8 +98,8 @@ public class DefaultResourceLoader implements ResourceLoader {
 	 * @param path path to the resource
 	 * @return Resource handle
 	 * @see ClassPathResource
-	 * @see com.example.spring.provider.spring1_5.context.support.FileSystemXmlApplicationContext#getResourceByPath
-	 * @see com.example.spring.provider.spring1_5.web.context.support.XmlWebApplicationContext#getResourceByPath
+	 * @see org.springframework.context.support.FileSystemXmlApplicationContext#getResourceByPath
+	 * @see org.springframework.web.context.support.XmlWebApplicationContext#getResourceByPath
 	 */
 	protected Resource getResourceByPath(String path) {
 		return new ClassPathResource(path, getClassLoader());

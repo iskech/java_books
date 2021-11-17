@@ -14,16 +14,16 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.BeanCreationException;
 
 /**
  * Exception thrown when a bean instance has been requested for a bean
  * which has been defined as abstract
  * @author Juergen Hoeller
  * @since 1.1
- * @see com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition#setAbstract
+ * @see org.springframework.beans.factory.support.AbstractBeanDefinition#setAbstract
  */
 public class BeanIsAbstractException extends BeanCreationException {
 

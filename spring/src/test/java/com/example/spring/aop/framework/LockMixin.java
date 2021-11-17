@@ -17,7 +17,7 @@
 package com.example.spring.aop.framework;
 
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.aop.support.DelegatingIntroductionInterceptor;
+import org.springframework.aop.support.DelegatingIntroductionInterceptor;
 
 
 /**
@@ -42,7 +42,7 @@ public class LockMixin extends DelegatingIntroductionInterceptor implements Lock
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AopProxyTests.Lockable#locked()
+	 * @see org.springframework.aop.framework.AopProxyTests.Lockable#locked()
 	 */
 	public boolean locked() {
 		return this.locked;

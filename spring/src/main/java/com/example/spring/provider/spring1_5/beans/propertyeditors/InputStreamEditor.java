@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.ResourceEditor;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceEditor;
 
 import java.beans.PropertyEditorSupport;
 import java.io.IOException;

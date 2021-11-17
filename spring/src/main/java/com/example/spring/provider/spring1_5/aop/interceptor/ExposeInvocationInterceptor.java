@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.interceptor;
+package org.springframework.aop.interceptor;
 
 import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInterceptor;

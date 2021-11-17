@@ -19,7 +19,7 @@ package com.example.spring.aop.framework;
 import junit.framework.TestCase;
 
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
+import org.springframework.beans.ITestBean;
 
 
 /**

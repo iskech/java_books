@@ -22,14 +22,14 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.IndexedTestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.StaticListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
-import com.example.spring.provider.spring1_5.web.servlet.HandlerAdapter;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.IndexedTestBean;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.StaticListableBeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.web.servlet.HandlerAdapter;
 
 /**
  * @author Rod Johnson

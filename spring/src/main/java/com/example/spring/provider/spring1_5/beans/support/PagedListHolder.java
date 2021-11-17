@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
-import com.example.spring.provider.spring1_5.beans.support.MutableSortDefinition;
-import com.example.spring.provider.spring1_5.beans.support.PropertyComparator;
-import com.example.spring.provider.spring1_5.beans.support.SortDefinition;
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
+import org.springframework.beans.support.SortDefinition;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ import java.util.List;
  * @author Juergen Hoeller
  * @since 19.05.2003
  * @see #getPageList
- * @see com.example.spring.provider.spring1_5.beans.support.RefreshablePagedListHolder
+ * @see org.springframework.beans.support.RefreshablePagedListHolder
  * @see MutableSortDefinition
  */
 public class PagedListHolder implements Serializable {

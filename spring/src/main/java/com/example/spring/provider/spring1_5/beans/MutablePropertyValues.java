@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
-import com.example.spring.provider.spring1_5.beans.PropertyValues;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.PropertyValues;
+import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public class MutablePropertyValues implements PropertyValues, Serializable {
 	 * @return this object to allow creating objects, adding multiple PropertyValues
 	 * in a single statement
 	 */
-	public com.example.spring.provider.spring1_5.beans.MutablePropertyValues addPropertyValues(PropertyValues source) {
+	public org.springframework.beans.MutablePropertyValues addPropertyValues(PropertyValues source) {
 		if (source != null) {
 			PropertyValue[] pvs = source.getPropertyValues();
 			for (int i = 0; i < pvs.length; i++) {
@@ -119,7 +119,7 @@ public class MutablePropertyValues implements PropertyValues, Serializable {
 	 * @return this object to allow creating objects, adding multiple
 	 * PropertyValues in a single statement
 	 */
-	public com.example.spring.provider.spring1_5.beans.MutablePropertyValues addPropertyValues(Map source) {
+	public org.springframework.beans.MutablePropertyValues addPropertyValues(Map source) {
 		if (source != null) {
 			Iterator it = source.entrySet().iterator();
 			while (it.hasNext()) {
@@ -138,7 +138,7 @@ public class MutablePropertyValues implements PropertyValues, Serializable {
 	 * @return this object to allow creating objects, adding multiple
 	 * PropertyValues in a single statement
 	 */
-	public com.example.spring.provider.spring1_5.beans.MutablePropertyValues addPropertyValue(PropertyValue pv) {
+	public org.springframework.beans.MutablePropertyValues addPropertyValue(PropertyValue pv) {
 		for (int i = 0; i < this.propertyValueList.size(); i++) {
 			PropertyValue currentPv = (PropertyValue) this.propertyValueList.get(i);
 			if (currentPv.getName().equals(pv.getName())) {
@@ -206,7 +206,7 @@ public class MutablePropertyValues implements PropertyValues, Serializable {
 	}
 
 	public PropertyValues changesSince(PropertyValues old) {
-		com.example.spring.provider.spring1_5.beans.MutablePropertyValues changes = new com.example.spring.provider.spring1_5.beans.MutablePropertyValues();
+		org.springframework.beans.MutablePropertyValues changes = new org.springframework.beans.MutablePropertyValues();
 		if (old == this) {
 			return changes;
 		}

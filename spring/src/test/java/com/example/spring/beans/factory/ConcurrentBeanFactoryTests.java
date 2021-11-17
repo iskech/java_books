@@ -27,9 +27,9 @@ import junit.framework.TestCase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactory;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomDateEditor;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Guillaume Poirier

@@ -3,57 +3,57 @@
 
 <beans>
 
-	<bean id="rod1" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean"
+	<bean id="rod1" class="org.springframework.beans.factory.xml.DependenciesBean"
 		autowire="byType"
 		dependency-check="objects">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod1a" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean"
+	<bean id="rod1a" class="org.springframework.beans.factory.xml.DependenciesBean"
 		autowire="autodetect"
 		dependency-check="objects">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod2" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean"
+	<bean id="rod2" class="org.springframework.beans.factory.xml.DependenciesBean"
 		autowire="byName"
 		dependency-check="objects">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod3" class="com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorDependenciesBean"
+	<bean id="rod3" class="org.springframework.beans.factory.xml.ConstructorDependenciesBean"
 		autowire="constructor"
 		dependency-check="objects">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod3a" class="com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorDependenciesBean"
+	<bean id="rod3a" class="org.springframework.beans.factory.xml.ConstructorDependenciesBean"
 		autowire="autodetect"
 		dependency-check="objects">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod4" class="com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorDependenciesBean"
+	<bean id="rod4" class="org.springframework.beans.factory.xml.ConstructorDependenciesBean"
 		singleton="false"
 		dependency-check="objects">
 		<!-- Should not pick up spouse automatically -->
 	</bean>
 
-	<bean id="rod5" class="com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean"
+	<bean id="rod5" class="org.springframework.beans.factory.xml.DependenciesBean"
 		singleton="false"
 		autowire="constructor">
 		<!-- Should pick up spouse automatically -->
 	</bean>
 
-	<bean id="other" class="com.example.spring.provider.spring1_5.beans.IndexedTestBean"/>
+	<bean id="other" class="org.springframework.beans.IndexedTestBean"/>
 
-	<bean id="parentAppCtx" class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+	<bean id="parentAppCtx" class="org.springframework.context.support.ClassPathXmlApplicationContext">
 		<constructor-arg>
 			<value>/org/springframework/beans/factory/xml/collections.xml</value>
 		</constructor-arg>
 	</bean>
 
-	<bean id="childAppCtx" class="com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext">
+	<bean id="childAppCtx" class="org.springframework.context.support.ClassPathXmlApplicationContext">
 		<constructor-arg>
 			<list>
 				<value>/org/springframework/beans/factory/xml/constructor-arg.xml</value>

@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.aop.ProxyMethodInvocation;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
+import org.springframework.aop.ProxyMethodInvocation;
+import org.springframework.aop.support.AopUtils;
 
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Method;

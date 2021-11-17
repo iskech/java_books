@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
-import com.example.spring.provider.spring1_5.util.NumberUtils;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.util.NumberUtils;
+import org.springframework.util.StringUtils;
 
 import java.beans.PropertyEditorSupport;
 import java.text.NumberFormat;
@@ -39,9 +39,9 @@ import java.text.NumberFormat;
  *
  * @author Juergen Hoeller
  * @since 06.06.2003
- * @see com.example.spring.provider.spring1_5.validation.DataBinder#registerCustomEditor
- * @see com.example.spring.provider.spring1_5.web.servlet.mvc.BaseCommandController#initBinder
- * @see com.example.spring.provider.spring1_5.web.bind.BindInitializer#initBinder
+ * @see org.springframework.validation.DataBinder#registerCustomEditor
+ * @see org.springframework.web.servlet.mvc.BaseCommandController#initBinder
+ * @see org.springframework.web.bind.BindInitializer#initBinder
  */
 public class CustomNumberEditor extends PropertyEditorSupport {
 

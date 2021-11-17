@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.aop.AspectException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
+import org.springframework.aop.ClassFilter;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

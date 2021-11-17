@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean name="logicTwo" class="com.example.spring.provider.spring1_5.context.support.Logic">
+	<bean name="logicTwo" class="org.springframework.context.support.Logic">
 		<!--<property name="assembler"><ref bean="assemblerOne"/></property>-->
 		<property name="assembler"><ref bean="wrappedAssemblerOne"/></property>
 	</bean>

@@ -20,7 +20,7 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author Juergen Hoeller

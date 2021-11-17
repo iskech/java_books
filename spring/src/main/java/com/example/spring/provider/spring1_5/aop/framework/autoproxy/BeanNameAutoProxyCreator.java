@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy;
+package org.springframework.aop.framework.autoproxy;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
+import org.springframework.aop.TargetSource;
 
 import java.util.Arrays;
 import java.util.Iterator;

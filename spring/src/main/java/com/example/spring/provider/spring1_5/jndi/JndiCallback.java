@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.jndi;
+package org.springframework.jndi;
 
 import javax.naming.Context;
 import javax.naming.NamingException;
@@ -30,7 +30,7 @@ import javax.naming.NamingException;
  * convenience methods.
  *
  * @see JndiTemplate
- * @see com.example.spring.provider.spring1_5.jdbc.core.JdbcTemplate
+ * @see org.springframework.jdbc.core.JdbcTemplate
  * @author Rod Johnson
  */
 public interface JndiCallback {

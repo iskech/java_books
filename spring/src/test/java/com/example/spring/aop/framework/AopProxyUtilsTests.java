@@ -21,7 +21,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.ITestBean;
+import org.springframework.beans.ITestBean;
 
 /**
  * 

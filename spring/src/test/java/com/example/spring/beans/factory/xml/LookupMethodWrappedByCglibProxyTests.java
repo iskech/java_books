@@ -16,9 +16,9 @@
 
 package com.example.spring.beans.factory.xml;
 
-import com.example.spring.provider.spring1_5.aop.interceptor.DebugInterceptor;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.test.AbstractDependencyInjectionSpringContextTests;
+import org.springframework.aop.interceptor.DebugInterceptor;
+import org.springframework.beans.ITestBean;
+import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
 /**
  * Tests lookup methods wrapped by a CGLIB proxy (see SPR-391).
@@ -27,7 +27,7 @@ import com.example.spring.provider.spring1_5.test.AbstractDependencyInjectionSpr
 public class LookupMethodWrappedByCglibProxyTests extends AbstractDependencyInjectionSpringContextTests {
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.test.AbstractDependencyInjectionSpringContextTests#getConfigLocations()
+	 * @see org.springframework.test.AbstractDependencyInjectionSpringContextTests#getConfigLocations()
 	 */
 	protected String[] getConfigLocations() {
 		return new String[] {"/org/springframework/beans/factory/xml/overloadOverrides.xml"};

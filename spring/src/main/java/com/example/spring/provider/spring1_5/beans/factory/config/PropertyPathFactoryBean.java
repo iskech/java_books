@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.FactoryBean;
 
 /**
  * FactoryBean that evaluates a property path on a given target object.
@@ -33,19 +33,19 @@ import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
  *
  * <pre>
  * // target bean to be referenced by name
- * &lt;bean id="tb" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false"&gt;
+ * &lt;bean id="tb" class="org.springframework.beans.TestBean" singleton="false"&gt;
  *   &lt;property name="age"&gt;&lt;value&gt;10&lt;/value&gt;&lt;/property&gt;
  *   &lt;property name="spouse"&gt;
- *     &lt;bean class="com.example.spring.provider.spring1_5.beans.TestBean"&gt;
+ *     &lt;bean class="org.springframework.beans.TestBean"&gt;
  *       &lt;property name="age"&gt;&lt;value&gt;11&lt;/value&gt;&lt;/property&gt;
  *     &lt;/bean&gt;
  *   &lt;/property&gt;
  * &lt;/bean&gt;
  *
  * // will result in 12, which is the value of property 'age' of the inner bean
- * &lt;bean id="propertyPath1" class="com.example.spring.provider.spring1_5.beans.factory.config.PropertyPathFactoryBean"&gt;
+ * &lt;bean id="propertyPath1" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"&gt;
  *   &lt;property name="targetObject"&gt;
- *     &lt;bean class="com.example.spring.provider.spring1_5.beans.TestBean"&gt;
+ *     &lt;bean class="org.springframework.beans.TestBean"&gt;
  *       &lt;property name="age"&gt;&lt;value&gt;12&lt;/value&gt;&lt;/property&gt;
  *     &lt;/bean&gt;
  *   &lt;/property&gt;
@@ -53,13 +53,13 @@ import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
  * &lt;/bean&gt;
  *
  * // will result in 11, which is the value of property 'spouse.age' of bean 'tb'
- * &lt;bean id="propertyPath2" class="com.example.spring.provider.spring1_5.beans.factory.config.PropertyPathFactoryBean"&gt;
+ * &lt;bean id="propertyPath2" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"&gt;
  *   &lt;property name="targetBeanName"&gt;&lt;value&gt;tb&lt;/value&gt;&lt;/property&gt;
  *   &lt;property name="propertyPath"&gt;&lt;value&gt;spouse.age&lt;/value&gt;&lt;/property&gt;
  * &lt;/bean&gt;
  *
  * // will result in 10, which is the value of property 'age' of bean 'tb'
- * &lt;bean id="tb.age" class="com.example.spring.provider.spring1_5.beans.factory.config.PropertyPathFactoryBean"/&gt;</pre>
+ * &lt;bean id="tb.age" class="org.springframework.beans.factory.config.PropertyPathFactoryBean"/&gt;</pre>
  *
  * Thanks to Matthias Ernst for the suggestion and initial prototype!
  *

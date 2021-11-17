@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.metadata;
+package org.springframework.aop.framework.autoproxy.metadata;
 
-import com.example.spring.provider.spring1_5.aop.framework.autoproxy.target.AbstractPrototypeBasedTargetSourceCreator;
-import com.example.spring.provider.spring1_5.aop.target.AbstractPrototypeBasedTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.ThreadLocalTargetSource;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.metadata.Attributes;
+import org.springframework.aop.framework.autoproxy.target.AbstractPrototypeBasedTargetSourceCreator;
+import org.springframework.aop.target.AbstractPrototypeBasedTargetSource;
+import org.springframework.aop.target.ThreadLocalTargetSource;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.metadata.Attributes;
 
 import java.util.Collection;
 
@@ -28,7 +28,7 @@ import java.util.Collection;
  * PrototypeTargetSourceCreator driven by metadata. Creates a ThreadLocalTargetSource
  * only if there's a ThreadLocalAttribute associated with the class.
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.target.ThreadLocalTargetSource
+ * @see org.springframework.aop.target.ThreadLocalTargetSource
  */
 public class AttributesThreadLocalTargetSourceCreator extends AbstractPrototypeBasedTargetSourceCreator {
 

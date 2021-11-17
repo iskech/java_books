@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io.support;
+package org.springframework.core.io.support;
 
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.ResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 import java.io.IOException;
 
@@ -43,9 +43,9 @@ import java.io.IOException;
  * @since 1.0.2
  * @see #CLASSPATH_URL_PREFIX
  * @see PathMatchingResourcePatternResolver
- * @see com.example.spring.provider.spring1_5.core.io.Resource
- * @see com.example.spring.provider.spring1_5.context.ApplicationContext
- * @see com.example.spring.provider.spring1_5.context.ResourceLoaderAware
+ * @see org.springframework.core.io.Resource
+ * @see org.springframework.context.ApplicationContext
+ * @see org.springframework.context.ResourceLoaderAware
  */
 public interface ResourcePatternResolver extends ResourceLoader {
 
@@ -54,7 +54,7 @@ public interface ResourcePatternResolver extends ResourceLoader {
 	 * This differs from ResourceLoader's classpath URL prefix in that it
 	 * retrieves all matching resources for a given name (e.g. "/beans.xml"),
 	 * for example in the root of all deployed JAR files.
-	 * @see com.example.spring.provider.spring1_5.core.io.ResourceLoader#CLASSPATH_URL_PREFIX
+	 * @see org.springframework.core.io.ResourceLoader#CLASSPATH_URL_PREFIX
 	 */
 	String CLASSPATH_URL_PREFIX = "classpath*:";
 

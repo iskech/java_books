@@ -21,9 +21,9 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.context.MessageSourceResolvable;
-import com.example.spring.provider.spring1_5.context.NoSuchMessageException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.context.MessageSourceResolvable;
+import org.springframework.context.NoSuchMessageException;
 
 /**
  * @author Juergen Hoeller

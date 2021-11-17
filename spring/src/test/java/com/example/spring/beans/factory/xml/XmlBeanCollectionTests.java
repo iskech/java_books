@@ -30,12 +30,12 @@ import java.util.TreeSet;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.HasMap;
-import com.example.spring.provider.spring1_5.beans.factory.config.ListFactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.MapFactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.SetFactoryBean;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.HasMap;
+import org.springframework.beans.factory.config.ListFactoryBean;
+import org.springframework.beans.factory.config.MapFactoryBean;
+import org.springframework.beans.factory.config.SetFactoryBean;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * Tests for collections in XML bean definitions.

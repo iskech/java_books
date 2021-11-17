@@ -18,8 +18,8 @@ package com.example.spring.aop.framework;
 
 import javax.servlet.ServletException;
 
-import com.example.spring.provider.spring1_5.aop.ThrowsAdvice;
-import com.example.spring.provider.spring1_5.dao.DataAccessException;
+import org.springframework.aop.ThrowsAdvice;
+import org.springframework.dao.DataAccessException;
 
 /**
  * 

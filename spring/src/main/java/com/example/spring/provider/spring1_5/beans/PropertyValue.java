@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.PropertyValues;
-import com.example.spring.provider.spring1_5.util.ObjectUtils;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.PropertyValues;
+import org.springframework.util.ObjectUtils;
 
 import java.io.Serializable;
 
@@ -81,10 +81,10 @@ public class PropertyValue implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof com.example.spring.provider.spring1_5.beans.PropertyValue)) {
+		if (!(other instanceof org.springframework.beans.PropertyValue)) {
 			return false;
 		}
-		com.example.spring.provider.spring1_5.beans.PropertyValue otherPv = (com.example.spring.provider.spring1_5.beans.PropertyValue) other;
+		org.springframework.beans.PropertyValue otherPv = (org.springframework.beans.PropertyValue) other;
 		return (this.name.equals(otherPv.name) && ObjectUtils.nullSafeEquals(this.value, otherPv.value));
 	}
 

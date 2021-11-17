@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanNotOfRequiredTypeException;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
+import org.springframework.beans.factory.BeanNotOfRequiredTypeException;
+import org.springframework.beans.factory.FactoryBean;
 
 /**
  * Exception thrown when a bean is not a factory, but a user tries to get

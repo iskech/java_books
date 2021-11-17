@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 /**
  * Interface that can be implemented by exceptions etc that are error coded.
@@ -24,7 +24,7 @@ package com.example.spring.provider.spring1_5.core;
  * <p>An error code can be resolved by a MessageSource, for example.
  *
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.context.MessageSource
+ * @see org.springframework.context.MessageSource
  */
 public interface ErrorCoded {
 	

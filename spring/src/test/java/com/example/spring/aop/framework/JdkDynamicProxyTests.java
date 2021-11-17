@@ -20,11 +20,11 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.easymock.MockControl;
 
-import com.example.spring.provider.spring1_5.aop.interceptor.ExposeInvocationInterceptor;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.beans.IOther;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.aop.interceptor.ExposeInvocationInterceptor;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.beans.IOther;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * @author Rod Johnson

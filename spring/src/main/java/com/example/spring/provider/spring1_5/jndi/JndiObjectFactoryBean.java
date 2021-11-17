@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.jndi;
+package org.springframework.jndi;
 
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.beans.factory.FactoryBean;
 
 import javax.naming.NamingException;
 
@@ -52,8 +52,8 @@ import javax.naming.NamingException;
  * @see #setCache
  * @see JndiObjectTargetSource
  * @see javax.sql.DataSource
- * @see com.example.spring.provider.spring1_5.jdbc.core.JdbcTemplate#setDataSource
- * @see com.example.spring.provider.spring1_5.jdbc.datasource.DriverManagerDataSource
+ * @see org.springframework.jdbc.core.JdbcTemplate#setDataSource
+ * @see org.springframework.jdbc.datasource.DriverManagerDataSource
  */
 public class JndiObjectFactoryBean extends JndiObjectLocator implements FactoryBean {
 

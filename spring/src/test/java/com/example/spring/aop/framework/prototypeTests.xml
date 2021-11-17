@@ -8,12 +8,12 @@
 <beans>
 
 	<!-- Simple target -->
-	<bean id="test" class="com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean">
+	<bean id="test" class="org.springframework.aop.interceptor.SideEffectBean">
 		<property name="count"><value>10</value></property>
 	</bean>
 	
 	
-	<bean id="prototypeTarget" class="com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean"
+	<bean id="prototypeTarget" class="org.springframework.aop.interceptor.SideEffectBean"
 		singleton="false">	
 		<property name="count"><value>10</value></property>
 	</bean>
@@ -21,11 +21,11 @@
 	
 	
 	
-	<bean id="debugInterceptor" class="com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor">
+	<bean id="debugInterceptor" class="org.springframework.aop.interceptor.NopInterceptor">
 	</bean>
 	
 	<bean id="singleton" 
-			class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"
+			class="org.springframework.aop.framework.ProxyFactoryBean"
 	>	
 		<property name="interceptorNames"><value>debugInterceptor,test</value></property>		
 		
@@ -33,13 +33,13 @@
 	
 
 	<bean id="prototype"
-		class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="interceptorNames"><value>debugInterceptor,prototypeTarget</value></property>
 		<property name="singleton"><value>false</value></property>
 	</bean>
 	
 	<bean id="cglibPrototype"
-		class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+		class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="interceptorNames"><value>debugInterceptor,prototypeTarget</value></property>
 		<property name="singleton"><value>false</value></property>
 		

@@ -4,7 +4,7 @@
 <beans>
 
 	<bean id="overrideOneMethod" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethod">
+		class="org.springframework.beans.factory.xml.OverrideOneMethod">
 		
 		<lookup-method name="getPrototypeDependency" bean="jenny" />
 		
@@ -16,7 +16,7 @@
 		Test that overrides work on an inherited method
 	-->
 	<bean id="overrideInheritedMethod" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethodSubclass">
+		class="org.springframework.beans.factory.xml.OverrideOneMethodSubclass">
 		
 		<lookup-method name="getPrototypeDependency" bean="jenny" />
 		
@@ -31,7 +31,7 @@
 	-->
 	<bean id="overrideOnPrototype" 
 		singleton="false"
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethod">
+		class="org.springframework.beans.factory.xml.OverrideOneMethod">
 		
 		<lookup-method name="getPrototypeDependency" bean="jenny" />
 		
@@ -44,7 +44,7 @@
 		Effect of overrides is swapped
 	-->
 	<bean id="overrideOneMethodSwappedReturnValues" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.OverrideOneMethod">
+		class="org.springframework.beans.factory.xml.OverrideOneMethod">
 		
 		<lookup-method name="getPrototypeDependency" bean="david" />
 		
@@ -53,7 +53,7 @@
 	</bean>
 	
 	
-	<bean id="jenny" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="jenny" class="org.springframework.beans.TestBean"
 		singleton="false">	
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
@@ -63,7 +63,7 @@
 		</property>
 	</bean>
 	
-	<bean id="david" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="david" class="org.springframework.beans.TestBean"
 		singleton="true">	
 		<description>
 			Simple bean, without any collections.

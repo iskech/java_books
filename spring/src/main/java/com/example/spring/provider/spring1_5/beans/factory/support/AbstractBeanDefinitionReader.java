@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionReaderUtils;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionRegistry;
-import com.example.spring.provider.spring1_5.core.io.DefaultResourceLoader;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.core.io.ResourceLoader;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 /**
  * Abstract base class for bean definition readers which implement
@@ -84,7 +84,7 @@ public abstract class AbstractBeanDefinitionReader implements BeanDefinitionRead
 	 * <p>Setting this to null suggests that absolute resource loading
 	 * is not available for this bean definition reader.
 	 * @see DefaultResourceLoader
-	 * @see com.example.spring.provider.spring1_5.core.io.support.ResourcePatternResolver
+	 * @see org.springframework.core.io.support.ResourcePatternResolver
 	 */
 	public void setResourceLoader(ResourceLoader resourceLoader) {
 		this.resourceLoader = resourceLoader;

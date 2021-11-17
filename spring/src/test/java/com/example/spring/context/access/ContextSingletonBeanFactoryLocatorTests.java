@@ -18,13 +18,13 @@ package com.example.spring.context.access;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryLocator;
-import com.example.spring.provider.spring1_5.beans.factory.access.BeanFactoryReference;
-import com.example.spring.provider.spring1_5.beans.factory.access.SingletonBeanFactoryLocatorTests;
-import com.example.spring.provider.spring1_5.beans.factory.access.TestBean;
-import com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext;
-import com.example.spring.provider.spring1_5.util.ClassUtils;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.access.BeanFactoryLocator;
+import org.springframework.beans.factory.access.BeanFactoryReference;
+import org.springframework.beans.factory.access.SingletonBeanFactoryLocatorTests;
+import org.springframework.beans.factory.access.TestBean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.ClassUtils;
 
 /**
  * @author Colin Sampaleanu

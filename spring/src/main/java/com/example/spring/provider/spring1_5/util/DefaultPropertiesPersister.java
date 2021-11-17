@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 import java.io.*;
 import java.util.Date;
@@ -46,9 +46,9 @@ import java.util.Properties;
  * @see Properties
  * @see Properties#load
  * @see Properties#store
- * @see com.example.spring.provider.spring1_5.context.support.ReloadableResourceBundleMessageSource#setPropertiesPersister
- * @see com.example.spring.provider.spring1_5.context.support.ReloadableResourceBundleMessageSource#setDefaultEncoding
- * @see com.example.spring.provider.spring1_5.context.support.ReloadableResourceBundleMessageSource#setFileEncodings
+ * @see org.springframework.context.support.ReloadableResourceBundleMessageSource#setPropertiesPersister
+ * @see org.springframework.context.support.ReloadableResourceBundleMessageSource#setDefaultEncoding
+ * @see org.springframework.context.support.ReloadableResourceBundleMessageSource#setFileEncodings
  */
 public class DefaultPropertiesPersister implements PropertiesPersister {
 

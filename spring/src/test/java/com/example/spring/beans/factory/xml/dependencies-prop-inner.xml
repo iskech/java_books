@@ -3,17 +3,17 @@
 
 <beans>
 
-	<bean id="holdingBean" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$HoldingBean">
+	<bean id="holdingBean" class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$HoldingBean">
 		<property name="dependingBean">
-			<bean id="dependingBean" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$DependingBean">
+			<bean id="dependingBean" class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$DependingBean">
 				<property name="bean1"><ref local="preparingBean1"/></property>
 				<property name="bean2"><ref local="preparingBean2"/></property>
 			</bean>
 		</property>
 	</bean>
 
-	<bean id="preparingBean1" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$PreparingBean1"/>
+	<bean id="preparingBean1" class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$PreparingBean1"/>
 
-	<bean id="preparingBean2" class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$PreparingBean2"/>
+	<bean id="preparingBean2" class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$PreparingBean2"/>
 
 </beans>

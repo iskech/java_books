@@ -18,13 +18,13 @@ package com.example.spring.context;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.context.event.EventPublicationInterceptor;
-import com.example.spring.provider.spring1_5.context.support.StaticApplicationContext;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.context.event.EventPublicationInterceptor;
+import org.springframework.context.support.StaticApplicationContext;
 
 /** 
  * @author Dmitriy Kopylenko

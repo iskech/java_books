@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io;
+package org.springframework.core.io;
 
 /**
  * ResourceLoader implementation that resolves paths as file system resources
@@ -25,7 +25,7 @@ package com.example.spring.provider.spring1_5.core.io;
  *
  * @author Juergen Hoeller
  * @since 1.1.3
- * @see com.example.spring.provider.spring1_5.context.support.FileSystemXmlApplicationContext
+ * @see org.springframework.context.support.FileSystemXmlApplicationContext
  */
 public class FileSystemResourceLoader extends DefaultResourceLoader {
 
@@ -37,7 +37,7 @@ public class FileSystemResourceLoader extends DefaultResourceLoader {
 	 * @param path path to the resource
 	 * @return Resource handle
 	 * @see FileSystemResource
-	 * @see com.example.spring.provider.spring1_5.web.context.support.ServletContextResourceLoader#getResourceByPath
+	 * @see org.springframework.web.context.support.ServletContextResourceLoader#getResourceByPath
 	 */
 	protected Resource getResourceByPath(String path) {
 		if (path != null && path.startsWith("/")) {

@@ -18,7 +18,7 @@ package com.example.spring.beans;
 
 import java.io.Serializable;
 
-import com.example.spring.provider.spring1_5.util.ObjectUtils;
+import org.springframework.util.ObjectUtils;
 
 /**
  * Serializable implementation of the Person interface.

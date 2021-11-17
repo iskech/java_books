@@ -16,8 +16,8 @@
 
 package com.example.spring.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Simple test of BeanFactory initialization and lifecycle callbacks.

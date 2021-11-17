@@ -18,15 +18,15 @@ package com.example.spring.aop.support;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.framework.Advised;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.aop.interceptor.SerializableNopInterceptor;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.Person;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext;
-import com.example.spring.provider.spring1_5.util.SerializationTestUtils;
+import org.springframework.aop.framework.Advised;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.aop.interceptor.SerializableNopInterceptor;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.Person;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.util.SerializationTestUtils;
 
 /**
  * @author Rod Johnson

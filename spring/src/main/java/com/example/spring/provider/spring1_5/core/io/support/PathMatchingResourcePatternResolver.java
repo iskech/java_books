@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io.support;
+package org.springframework.core.io.support;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.core.io.*;
-import com.example.spring.provider.spring1_5.util.Assert;
-import com.example.spring.provider.spring1_5.util.PathMatcher;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.core.io.*;
+import org.springframework.util.Assert;
+import org.springframework.util.PathMatcher;
+import org.springframework.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -70,8 +70,8 @@ import java.util.jar.JarFile;
  * @author Juergen Hoeller
  * @since 1.0.2
  * @see #CLASSPATH_URL_PREFIX
- * @see com.example.spring.provider.spring1_5.util.PathMatcher
- * @see com.example.spring.provider.spring1_5.core.io.ResourceLoader#getResource
+ * @see org.springframework.util.PathMatcher
+ * @see org.springframework.core.io.ResourceLoader#getResource
  */
 public class PathMatchingResourcePatternResolver implements ResourcePatternResolver {
 
@@ -86,7 +86,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 * Create a new PathMatchingResourcePatternResolver with a DefaultResourceLoader.
 	 * <p>ClassLoader access will happen via the thread context class loader on actual
 	 * access (applying to the thread that does the "getResources" call)
-	 * @see com.example.spring.provider.spring1_5.core.io.DefaultResourceLoader
+	 * @see org.springframework.core.io.DefaultResourceLoader
 	 */
 	public PathMatchingResourcePatternResolver() {
 		this.resourceLoader = new DefaultResourceLoader();
@@ -97,7 +97,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 * @param classLoader the ClassLoader to load classpath resources with,
 	 * or null for using the thread context class loader on actual access
 	 * (applying to the thread that does the "getResources" call)
-	 * @see com.example.spring.provider.spring1_5.core.io.DefaultResourceLoader
+	 * @see org.springframework.core.io.DefaultResourceLoader
 	 */
 	public PathMatchingResourcePatternResolver(ClassLoader classLoader) {
 		this.resourceLoader = new DefaultResourceLoader(classLoader);
@@ -209,7 +209,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 * @throws IOException in case of I/O errors
 	 * @see #doFindPathMatchingJarResources
 	 * @see #doFindPathMatchingFileResources
-	 * @see com.example.spring.provider.spring1_5.util.PathMatcher
+	 * @see org.springframework.util.PathMatcher
 	 */
 	protected Resource[] findPathMatchingResources(String locationPattern) throws IOException {
 		String rootDirPath = determineRootDir(locationPattern);
@@ -266,7 +266,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 * @return the List of matching Resource instances
 	 * @throws IOException in case of I/O errors
 	 * @see JarURLConnection
-	 * @see com.example.spring.provider.spring1_5.util.PathMatcher
+	 * @see org.springframework.util.PathMatcher
 	 */
 	protected List doFindPathMatchingJarResources(Resource rootDirResource, String subPattern) throws IOException {
 		URLConnection con = rootDirResource.getURL().openConnection();
@@ -302,7 +302,7 @@ public class PathMatchingResourcePatternResolver implements ResourcePatternResol
 	 * @return the List of matching Resource instances
 	 * @throws IOException in case of I/O errors
 	 * @see #retrieveMatchingFiles
-	 * @see com.example.spring.provider.spring1_5.util.PathMatcher
+	 * @see org.springframework.util.PathMatcher
 	 */
 	protected List doFindPathMatchingFileResources(Resource rootDirResource, String subPattern) throws IOException {
 		File rootDir = rootDirResource.getFile().getAbsoluteFile();

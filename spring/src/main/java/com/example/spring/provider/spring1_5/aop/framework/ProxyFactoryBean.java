@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapterRegistry;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.UnknownAdviceTypeException;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
-import com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.*;
-import com.example.spring.provider.spring1_5.core.OrderComparator;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.TargetSource;
+import org.springframework.aop.framework.adapter.AdvisorAdapterRegistry;
+import org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry;
+import org.springframework.aop.framework.adapter.UnknownAdviceTypeException;
+import org.springframework.aop.support.AopUtils;
+import org.springframework.aop.target.SingletonTargetSource;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.*;
+import org.springframework.core.OrderComparator;
 
 import java.util.*;
 
@@ -70,8 +70,8 @@ import java.util.*;
  * @see #setInterceptorNames
  * @see #setProxyInterfaces
  * @see org.aopalliance.intercept.MethodInterceptor
- * @see com.example.spring.provider.spring1_5.aop.framework.Advised
- * @see com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource
+ * @see org.springframework.aop.framework.Advised
+ * @see org.springframework.aop.target.SingletonTargetSource
  */
 public class ProxyFactoryBean extends AdvisedSupport
     implements FactoryBean, BeanFactoryAware, AdvisedSupportListener {
@@ -155,9 +155,9 @@ public class ProxyFactoryBean extends AdvisedSupport
 	 * property is set, in which case the interceptorNames array must contain
 	 * only Advice/Advisor bean names.
 	 * @see org.aopalliance.intercept.MethodInterceptor
-	 * @see com.example.spring.provider.spring1_5.aop.Advisor
+	 * @see org.springframework.aop.Advisor
 	 * @see org.aopalliance.aop.Advice
-	 * @see com.example.spring.provider.spring1_5.aop.target.SingletonTargetSource
+	 * @see org.springframework.aop.target.SingletonTargetSource
 	 */
 	public void setInterceptorNames(String[] interceptorNames) {
 		this.interceptorNames = interceptorNames;
@@ -178,7 +178,7 @@ public class ProxyFactoryBean extends AdvisedSupport
 	/**
 	 * Specify the AdvisorAdapterRegistry to use.
 	 * Default is the global AdvisorAdapterRegistry.
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.GlobalAdvisorAdapterRegistry
+	 * @see org.springframework.aop.framework.adapter.GlobalAdvisorAdapterRegistry
 	 */
 	public void setAdvisorAdapterRegistry(AdvisorAdapterRegistry advisorAdapterRegistry) {
 		this.advisorAdapterRegistry = advisorAdapterRegistry;
@@ -215,7 +215,7 @@ public class ProxyFactoryBean extends AdvisedSupport
 	/**
 	 * Return the type of the proxy. Will check the singleton instance if
 	 * already created, falling back to the TargetSource's target class.
-	 * @see com.example.spring.provider.spring1_5.aop.TargetSource#getTargetClass
+	 * @see org.springframework.aop.TargetSource#getTargetClass
 	 */
 	public Class getObjectType() {
 		return (this.singletonInstance != null ?
@@ -467,7 +467,7 @@ public class ProxyFactoryBean extends AdvisedSupport
 
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AdvisedSupportListener#activated
+	 * @see org.springframework.aop.framework.AdvisedSupportListener#activated
 	 */
 	public void activated(AdvisedSupport advisedSupport) {
 		// Nothing to do.
@@ -475,7 +475,7 @@ public class ProxyFactoryBean extends AdvisedSupport
 
 	/**
 	 * Blow away and recache singleton on an advice change.
-	 * @see com.example.spring.provider.spring1_5.aop.framework.AdvisedSupportListener#adviceChanged
+	 * @see org.springframework.aop.framework.AdvisedSupportListener#adviceChanged
 	 */
 	public void adviceChanged(AdvisedSupport advisedSupport) {
 		if (this.singleton) {

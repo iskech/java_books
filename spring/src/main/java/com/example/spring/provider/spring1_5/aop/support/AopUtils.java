@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.aop.AspectException;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.IntroductionAdvisor;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
-import com.example.spring.provider.spring1_5.aop.PointcutAdvisor;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.IntroductionAdvisor;
+import org.springframework.aop.Pointcut;
+import org.springframework.aop.PointcutAdvisor;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

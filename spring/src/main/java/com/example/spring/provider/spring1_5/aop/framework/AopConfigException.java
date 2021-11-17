@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
-import com.example.spring.provider.spring1_5.core.NestedRuntimeException;
+import org.springframework.core.NestedRuntimeException;
 
 /**
  * Exception that gets thrown on illegal AOP configuration arguments.

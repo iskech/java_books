@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeanUtils;
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.*;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.DestructionAwareBeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractAutowireCapableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.util.Assert;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.beans.factory.config.DestructionAwareBeanPostProcessor;
+import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
+import org.springframework.beans.factory.support.ChildBeanDefinition;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.util.Assert;
 
 import java.beans.PropertyEditor;
 import java.lang.reflect.InvocationTargetException;
@@ -63,7 +63,7 @@ import java.util.*;
  * @since 15 April 2001
  * @see #getBeanDefinition
  * @see #createBean
- * @see com.example.spring.provider.spring1_5.beans.factory.HierarchicalBeanFactory
+ * @see org.springframework.beans.factory.HierarchicalBeanFactory
  * @see DisposableBean
  * @see RootBeanDefinition
  * @see ChildBeanDefinition
@@ -179,9 +179,9 @@ public abstract class AbstractBeanFactory implements ConfigurableBeanFactory {
 			}
 			catch (NoSuchBeanDefinitionException ex) {
 				// Not found -> check parent.
-				if (this.parentBeanFactory instanceof com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) {
+				if (this.parentBeanFactory instanceof org.springframework.beans.factory.support.AbstractBeanFactory) {
 					// Delegation to parent with args only possible for AbstractBeanFactory.
-					return ((com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) this.parentBeanFactory).getBean(name, requiredType, args);
+					return ((org.springframework.beans.factory.support.AbstractBeanFactory) this.parentBeanFactory).getBean(name, requiredType, args);
 				}
 				else if (this.parentBeanFactory != null && args == null) {
 					// No args -> delegate to standard getBean method.
@@ -568,8 +568,8 @@ public abstract class AbstractBeanFactory implements ConfigurableBeanFactory {
 			return getMergedBeanDefinition(beanName, getBeanDefinition(beanName));
 		}
 		catch (NoSuchBeanDefinitionException ex) {
-			if (includingAncestors && getParentBeanFactory() instanceof com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) {
-				return ((com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) getParentBeanFactory()).getMergedBeanDefinition(beanName, true);
+			if (includingAncestors && getParentBeanFactory() instanceof org.springframework.beans.factory.support.AbstractBeanFactory) {
+				return ((org.springframework.beans.factory.support.AbstractBeanFactory) getParentBeanFactory()).getMergedBeanDefinition(beanName, true);
 			}
 			else {
 				throw ex;
@@ -598,8 +598,8 @@ public abstract class AbstractBeanFactory implements ConfigurableBeanFactory {
 				pbd = getMergedBeanDefinition(cbd.getParentName(), true);
 			}
 			else {
-				if (getParentBeanFactory() instanceof com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) {
-					com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory parentFactory = (com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory) getParentBeanFactory();
+				if (getParentBeanFactory() instanceof org.springframework.beans.factory.support.AbstractBeanFactory) {
+					org.springframework.beans.factory.support.AbstractBeanFactory parentFactory = (org.springframework.beans.factory.support.AbstractBeanFactory) getParentBeanFactory();
 					pbd = parentFactory.getMergedBeanDefinition(cbd.getParentName(), true);
 				}
 				else {
@@ -955,7 +955,7 @@ public abstract class AbstractBeanFactory implements ConfigurableBeanFactory {
 	 * @param beanName the name of the bean to look for
 	 * @return if this bean factory contains a bean definition with the given name
 	 * @see #containsBean
-	 * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory#containsBeanDefinition
+	 * @see org.springframework.beans.factory.ListableBeanFactory#containsBeanDefinition
 	 */
 	protected abstract boolean containsBeanDefinition(String beanName);
 
@@ -976,7 +976,7 @@ public abstract class AbstractBeanFactory implements ConfigurableBeanFactory {
 	 * @throws BeansException in case of errors
 	 * @see RootBeanDefinition
 	 * @see ChildBeanDefinition
-	 * @see com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory#getBeanDefinition
+	 * @see org.springframework.beans.factory.config.ConfigurableListableBeanFactory#getBeanDefinition
 	 */
 	protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
 

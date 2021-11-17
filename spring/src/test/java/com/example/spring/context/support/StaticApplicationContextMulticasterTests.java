@@ -20,16 +20,16 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.context.ACATest;
-import com.example.spring.provider.spring1_5.context.AbstractApplicationContextTests;
-import com.example.spring.provider.spring1_5.context.ApplicationEvent;
-import com.example.spring.provider.spring1_5.context.BeanThatListens;
-import com.example.spring.provider.spring1_5.context.ConfigurableApplicationContext;
-import com.example.spring.provider.spring1_5.context.event.SimpleApplicationEventMulticaster;
-import com.example.spring.provider.spring1_5.core.io.ClassPathResource;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.context.ACATest;
+import org.springframework.context.AbstractApplicationContextTests;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.context.BeanThatListens;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.event.SimpleApplicationEventMulticaster;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * Tests for static application context with custom application event multicaster.

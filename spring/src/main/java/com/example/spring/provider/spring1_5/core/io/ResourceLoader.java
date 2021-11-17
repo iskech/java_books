@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io;
+package org.springframework.core.io;
 
 /**
  * Interface to be implemented by objects that can load resources.
@@ -32,9 +32,9 @@ package com.example.spring.provider.spring1_5.core.io;
  * @since 10.03.2004
  * @see DefaultResourceLoader
  * @see ResourceEditor
- * @see com.example.spring.provider.spring1_5.core.io.support.ResourcePatternResolver
- * @see com.example.spring.provider.spring1_5.context.ApplicationContext
- * @see com.example.spring.provider.spring1_5.context.ResourceLoaderAware
+ * @see org.springframework.core.io.support.ResourcePatternResolver
+ * @see org.springframework.context.ApplicationContext
+ * @see org.springframework.context.ResourceLoaderAware
  */
 public interface ResourceLoader {
 
@@ -57,8 +57,8 @@ public interface ResourceLoader {
 	 * @param location the resource location
 	 * @return a corresponding Resource handle
 	 * @see #CLASSPATH_URL_PREFIX
-	 * @see com.example.spring.provider.spring1_5.core.io.Resource#exists
-	 * @see com.example.spring.provider.spring1_5.core.io.Resource#getInputStream
+	 * @see org.springframework.core.io.Resource#exists
+	 * @see org.springframework.core.io.Resource#getInputStream
 	 */
 	Resource getResource(String location);
 

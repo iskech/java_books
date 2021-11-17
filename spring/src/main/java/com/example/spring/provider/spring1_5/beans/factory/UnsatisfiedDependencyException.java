@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.BeanCreationException;
 
 /**
  * Exception thrown when a bean depends on other beans or simple properties that were not

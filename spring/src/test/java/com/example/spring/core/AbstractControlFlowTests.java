@@ -36,8 +36,8 @@ public abstract class AbstractControlFlowTests extends TestCase {
 	/*
 	public void testUnderPackage() {
 		ControlFlow cflow = new ControlFlow();
-		assertFalse(cflow.underPackage("com.example.spring.provider.spring1_5.aop"));
-		assertTrue(cflow.underPackage("com.example.spring.provider.spring1_5.aop.support"));
+		assertFalse(cflow.underPackage("org.springframework.aop"));
+		assertTrue(cflow.underPackage("org.springframework.aop.support"));
 		assertFalse(cflow.underPackage("com.interface21"));
 	}
 	*/

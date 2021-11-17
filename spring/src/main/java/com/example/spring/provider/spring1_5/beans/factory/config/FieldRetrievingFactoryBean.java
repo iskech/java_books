@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.InitializingBean;
-import com.example.spring.provider.spring1_5.util.ClassUtils;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.util.ClassUtils;
 
 import java.lang.reflect.Field;
 
@@ -31,12 +31,12 @@ import java.lang.reflect.Field;
  *
  * <pre>
  * // standard definition for exposing a static field, specifying the "staticField" property
- * &lt;bean id="myField" class="com.example.spring.provider.spring1_5.beans.factory.config.FieldRetrievingFactoryBean"&gt;
+ * &lt;bean id="myField" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean"&gt;
  *   &lt;property name="staticField"&gt;&lt;value&gt;java.sql.Connection.TRANSACTION_SERIALIZABLE&lt;/value&gt;&lt;/property&gt;
  * &lt;/bean&gt;
  *
  * // convenience version that specifies a static field pattern as bean name
- * &lt;bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE" class="com.example.spring.provider.spring1_5.beans.factory.config.FieldRetrievingFactoryBean"/&gt;</pre>
+ * &lt;bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean"/&gt;</pre>
  * </pre>
  *
  * @author Juergen Hoeller

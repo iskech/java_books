@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io;
+package org.springframework.core.io;
 
-import com.example.spring.provider.spring1_5.util.Assert;
-import com.example.spring.provider.spring1_5.util.ResourceUtils;
+import org.springframework.util.Assert;
+import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.IOException;

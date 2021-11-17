@@ -16,10 +16,10 @@
 
 package com.example.spring.aop;
 
-import com.example.spring.provider.spring1_5.aop.Advisor;
+import org.springframework.aop.Advisor;
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapter;
+import org.springframework.aop.framework.adapter.AdvisorAdapter;
 
 /**
  * 
@@ -28,14 +28,14 @@ import com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapte
 public class SimpleBeforeAdviceAdapter implements AdvisorAdapter {
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapter#supportsAdvice(Object)
+	 * @see org.springframework.aop.framework.adapter.AdvisorAdapter#supportsAdvice(Object)
 	 */
 	public boolean supportsAdvice(Advice advice) {
 		return advice instanceof SimpleBeforeAdvice;
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapter#getInterceptor(com.example.spring.provider.spring1_5.aop.Advisor)
+	 * @see org.springframework.aop.framework.adapter.AdvisorAdapter#getInterceptor(org.springframework.aop.Advisor)
 	 */
 	public Interceptor getInterceptor(Advisor advisor) {
 		SimpleBeforeAdvice advice = (SimpleBeforeAdvice) advisor.getAdvice();

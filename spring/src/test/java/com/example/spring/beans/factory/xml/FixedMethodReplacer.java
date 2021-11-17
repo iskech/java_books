@@ -18,7 +18,7 @@ package com.example.spring.beans.factory.xml;
 
 import java.lang.reflect.Method;
 
-import com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer;
+import org.springframework.beans.factory.support.MethodReplacer;
 
 /**
  * Fixed method replacer for String return types
@@ -29,7 +29,7 @@ public class FixedMethodReplacer implements MethodReplacer {
 	public static final String VALUE = "fixedMethodReplacer";
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer#reimplement(Object, Method, Object[])
+	 * @see org.springframework.beans.factory.support.MethodReplacer#reimplement(Object, Method, Object[])
 	 */
 	public Object reimplement(Object o, Method m, Object[] args) throws Throwable {
 		return VALUE;

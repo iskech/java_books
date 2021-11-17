@@ -16,9 +16,9 @@
 
 package com.example.spring.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 
 /**
  * Simple factory to allow testing of FactoryBean 
@@ -70,7 +70,7 @@ public class DummyFactory implements FactoryBean, BeanNameAware, BeanFactoryAwar
 
 	/**
 	 * Return if the bean managed by this factory is a singleton.
-	 * @see com.example.spring.provider.spring1_5.beans.factory.FactoryBean#isSingleton()
+	 * @see org.springframework.beans.factory.FactoryBean#isSingleton()
 	 */
 	public boolean isSingleton() {
 		return this.singleton;
@@ -138,7 +138,7 @@ public class DummyFactory implements FactoryBean, BeanNameAware, BeanFactoryAwar
 	/**
 	 * Return the managed object, supporting both singleton
 	 * and prototype mode.
-	 * @see com.example.spring.provider.spring1_5.beans.factory.FactoryBean#getObject()
+	 * @see org.springframework.beans.factory.FactoryBean#getObject()
 	 */
 	public Object getObject() throws BeansException {
 		if (isSingleton()) {

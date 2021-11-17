@@ -3,7 +3,7 @@
 
 <beans>
 
-	<bean id="default" class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+	<bean id="default" class="org.springframework.beans.factory.xml.FactoryMethods"
 		factory-method="defaultInstance">
 		<!-- No constructor-arg elements -->
 		
@@ -12,12 +12,12 @@
 
 	<bean id="defaultTestBean" factory-bean="default" factory-method="getTestBean"/> 
 
-	<bean id="testBeanOnly" class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+	<bean id="testBeanOnly" class="org.springframework.beans.factory.xml.FactoryMethods"
 		factory-method="newInstance">
 		<constructor-arg><ref local="juergen"/></constructor-arg>
 	</bean>
 
-	<bean id="full" class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+	<bean id="full" class="org.springframework.beans.factory.xml.FactoryMethods"
 			factory-method="newInstance">
 		<constructor-arg index="0"><ref local="juergen"/></constructor-arg>
 		<constructor-arg index="1"><value>27</value></constructor-arg>
@@ -25,7 +25,7 @@
 	</bean>
 	
 	<bean id="defaultPrototype" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+		class="org.springframework.beans.factory.xml.FactoryMethods"
 		singleton="false"
 		factory-method="defaultInstance">
 		<!-- No constructor-arg elements -->
@@ -34,7 +34,7 @@
 	</bean>
 
 	<bean id="testBeanOnlyPrototype" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+		class="org.springframework.beans.factory.xml.FactoryMethods"
 		factory-method="newInstance"
 		singleton="false"
 	>
@@ -44,7 +44,7 @@
 	</bean>
 
 	<bean id="fullPrototype" 
-			class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+			class="org.springframework.beans.factory.xml.FactoryMethods"
 			factory-method="newInstance"
 			singleton="false"
 		>
@@ -54,7 +54,7 @@
 	</bean>
 	
 	<bean id="noMatchPrototype" 
-			class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+			class="org.springframework.beans.factory.xml.FactoryMethods"
 			factory-method="newInstance"
 			singleton="false"
 		>
@@ -64,7 +64,7 @@
 		<constructor-arg index="3"><value>bogus</value></constructor-arg>
 	</bean>
 
-	<bean id="juergen" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="juergen" class="org.springframework.beans.TestBean">
 		<property name="name"><value>Juergen</value></property>
 	</bean>
 
@@ -72,11 +72,11 @@
 		The class is the factory class, not the created class.
 	-->
 	<bean id="externalFactoryMethodWithoutArgs" 
-			class="com.example.spring.provider.spring1_5.beans.factory.xml.TestBeanCreator"
+			class="org.springframework.beans.factory.xml.TestBeanCreator"
 			factory-method="createTestBean">
 	</bean>
 	
-	<bean id="externalFactoryMethodWithArgs" class="com.example.spring.provider.spring1_5.beans.factory.xml.TestBeanCreator"
+	<bean id="externalFactoryMethodWithArgs" class="org.springframework.beans.factory.xml.TestBeanCreator"
 			factory-method="createTestBean">
 		<constructor-arg index="0"><value>Rod</value></constructor-arg>
 		<constructor-arg index="1"><value>33</value></constructor-arg>
@@ -88,7 +88,7 @@
 			factory-method="defaultInstance">
 	</bean>
 	
-	<bean id="instanceFactory" class="com.example.spring.provider.spring1_5.beans.factory.xml.InstanceFactory" singleton="false">
+	<bean id="instanceFactory" class="org.springframework.beans.factory.xml.InstanceFactory" singleton="false">
 		<property name="factoryBeanProperty"><value>instanceFactory</value></property>
 	</bean>
 

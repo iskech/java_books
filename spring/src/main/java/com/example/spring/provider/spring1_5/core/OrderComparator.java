@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 import java.util.Comparator;
 
@@ -28,13 +28,13 @@ import java.util.Comparator;
  *
  * @author Juergen Hoeller
  * @since 07.04.2003
- * @see com.example.spring.provider.spring1_5.core.Ordered
+ * @see org.springframework.core.Ordered
  */
 public class OrderComparator implements Comparator {
 
   public int compare(Object o1, Object o2) {
-    int i1 = (o1 instanceof com.example.spring.provider.spring1_5.core.Ordered ? ((com.example.spring.provider.spring1_5.core.Ordered) o1).getOrder() : Integer.MAX_VALUE);
-	  int i2 = (o2 instanceof com.example.spring.provider.spring1_5.core.Ordered ? ((com.example.spring.provider.spring1_5.core.Ordered) o2).getOrder() : Integer.MAX_VALUE);
+    int i1 = (o1 instanceof org.springframework.core.Ordered ? ((org.springframework.core.Ordered) o1).getOrder() : Integer.MAX_VALUE);
+	  int i2 = (o2 instanceof org.springframework.core.Ordered ? ((org.springframework.core.Ordered) o2).getOrder() : Integer.MAX_VALUE);
 
 	  // direct evaluation instead of Integer.compareTo to avoid unnecessary object creation
 	  if (i1 < i2)

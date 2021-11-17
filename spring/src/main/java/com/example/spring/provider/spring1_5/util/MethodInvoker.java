@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.util;
+package org.springframework.util;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -37,8 +37,8 @@ import java.lang.reflect.Modifier;
  * @since 19.02.2004
  * @see #prepare
  * @see #invoke
- * @see com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBean
- * @see com.example.spring.provider.spring1_5.scheduling.quartz.MethodInvokingJobDetailFactoryBean
+ * @see org.springframework.beans.factory.config.MethodInvokingFactoryBean
+ * @see org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean
  */
 public class MethodInvoker {
 

@@ -16,8 +16,8 @@
 
 package com.example.spring.beans.factory.xml;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.DummyFactory;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.DummyFactory;
 
 /**
  * @author Juergen Hoeller

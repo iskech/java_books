@@ -4,15 +4,15 @@
 <beans>
 
 	<!-- Simple target -->
-	<bean id="test" class="com.example.spring.provider.spring1_5.beans.TestBean">
+	<bean id="test" class="org.springframework.beans.TestBean">
 		<property name="name"><value>custom</value></property>
 		<property name="age"><value>666</value></property>
 	</bean>
 
-	<bean id="debugInterceptor" class="com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor"/>
+	<bean id="debugInterceptor" class="org.springframework.aop.interceptor.NopInterceptor"/>
 
-	<bean id="test1" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="interfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+	<bean id="test1" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="target"><ref local="test"/></property>
 		<property name="interceptorNames"><value>debugInterceptor</value></property>		
 	</bean>
@@ -21,13 +21,13 @@
 		Check that invoker is automatically added to wrap target.
 		Non pointcut bean name should be wrapped in invoker.
 	-->
-	<bean id="autoInvoker" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+	<bean id="autoInvoker" class="org.springframework.aop.framework.ProxyFactoryBean">
 
 		<!--
 			Aspect interfaces don't need to be included here.
 			They may, for example, be added by global interceptors.
 		 -->
-		<property name="interfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+		<property name="interfaces"><value>org.springframework.beans.ITestBean</value></property>
 		
 		<!--
 			Note that "test" is a target. An InvokerInterceptor
@@ -37,24 +37,24 @@
 		
 	</bean>
 	
-	<bean id="prototype" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="interfaces"><value> com.example.spring.provider.spring1_5.beans.ITestBean </value></property>
+	<bean id="prototype" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces"><value> org.springframework.beans.ITestBean </value></property>
 		<property name="singleton"><value>false</value></property>
 		<property name="interceptorNames"><value>test</value></property>
 	</bean>
 	
-	<bean id="test2" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces"><value> com.example.spring.provider.spring1_5.beans.ITestBean </value></property>
+	<bean id="test2" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"><value> org.springframework.beans.ITestBean </value></property>
 		<property name="singleton"><value>false</value></property>
 		<property name="interceptorNames"><value>test</value></property>
 	</bean>
 	
-	<bean id="pointcuts" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+	<bean id="pointcuts" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="interceptorNames"><value>pointcutForVoid,test</value></property>
 	</bean>
 	
-	<bean id="pointcutForVoid" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBeanTests$PointcutForVoid"/>
+	<bean id="pointcutForVoid" class="org.springframework.aop.framework.ProxyFactoryBeanTests$PointcutForVoid"/>
 
 	<!--
 		Invalid test for global pointcuts.
@@ -62,24 +62,24 @@
 	-->
 	<!--
 	<bean id="noInterceptorNamesWithoutTarget" 
-			class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"
+			class="org.springframework.aop.framework.ProxyFactoryBean"
 	>	
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+		<property name="proxyInterfaces"><value>org.springframework.beans.ITestBean</value></property>
 		
 	</bean>
 	
 	<bean id="noInterceptorNamesWithTarget" 
-			class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"
+			class="org.springframework.aop.framework.ProxyFactoryBean"
 	>	
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+		<property name="proxyInterfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="target"><ref local="test"/></property>					
 		
 	</bean>
 	-->
 	
 	<!-- Same effect as noInterceptor names: also invalid -->
-	<bean id="emptyInterceptorNames" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="interfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+	<bean id="emptyInterceptorNames" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="interceptorNames"><value></value></property>
 	</bean>
 
@@ -87,32 +87,32 @@
 		Invalid test for global pointcuts.
 		Must have target after *.
 	-->
-	<bean id="globalsWithoutTarget" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="interfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+	<bean id="globalsWithoutTarget" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="interceptorNames"><value>global*</value></property>
 	</bean>
 
-	<bean id="validGlobals" singleton="true" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="proxyInterfaces"><value>com.example.spring.provider.spring1_5.context.ApplicationListener</value></property>
+	<bean id="validGlobals" singleton="true" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces"><value>org.springframework.context.ApplicationListener</value></property>
 		<property name="interceptorNames"><value>debugInterceptor,global*,target2</value></property>
 	</bean>
 
 	<!--
 		Global debug interceptor
 	-->
-	<bean id="global_debug" class="com.example.spring.provider.spring1_5.aop.interceptor.DebugInterceptor"/>
+	<bean id="global_debug" class="org.springframework.aop.interceptor.DebugInterceptor"/>
 
 	<!--
 		Will add aspect interface to all beans exposing globals
 	-->
-	<bean id="global_aspectInterface" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBeanTests$GlobalIntroductionAdvice"/>
+	<bean id="global_aspectInterface" class="org.springframework.aop.framework.ProxyFactoryBeanTests$GlobalIntroductionAdvice"/>
 
-	<bean id="prototypeLockMixinAdvisor" class="com.example.spring.provider.spring1_5.aop.framework.LockMixinAdvisor" singleton="false"/>
+	<bean id="prototypeLockMixinAdvisor" class="org.springframework.aop.framework.LockMixinAdvisor" singleton="false"/>
 
-	<bean id="prototypeTestBean" class="com.example.spring.provider.spring1_5.beans.TestBean" singleton="false"/>
+	<bean id="prototypeTestBean" class="org.springframework.beans.TestBean" singleton="false"/>
 
-	<bean id="prototypeTestBeanProxy" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
-		<property name="interfaces"><value>com.example.spring.provider.spring1_5.beans.ITestBean</value></property>
+	<bean id="prototypeTestBeanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces"><value>org.springframework.beans.ITestBean</value></property>
 		<property name="singleton"><value>false</value></property>
 		<property name="interceptorNames">
 			<list>
@@ -122,13 +122,13 @@
 		</property>
 	</bean>
 
-	<bean id="prototypeLockMixinInterceptor" class="com.example.spring.provider.spring1_5.aop.framework.LockMixin" singleton="false"/>
+	<bean id="prototypeLockMixinInterceptor" class="org.springframework.aop.framework.LockMixin" singleton="false"/>
 
-	<bean id="prototypeTestBeanProxySingletonTarget" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean">
+	<bean id="prototypeTestBeanProxySingletonTarget" class="org.springframework.aop.framework.ProxyFactoryBean">
 		<property name="interfaces">
 			<list>
-				<value>com.example.spring.provider.spring1_5.beans.ITestBean</value>
-				<value>com.example.spring.provider.spring1_5.aop.framework.Lockable</value>
+				<value>org.springframework.beans.ITestBean</value>
+				<value>org.springframework.aop.framework.Lockable</value>
 			</list>
 		</property>
 		<property name="singleton"><value>false</value></property>

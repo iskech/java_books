@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
-import com.example.spring.provider.spring1_5.core.CollectionFactory;
+import org.springframework.core.CollectionFactory;
 
 import java.beans.PropertyEditorSupport;
 import java.lang.reflect.Array;

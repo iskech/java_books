@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.core.io.support;
+package org.springframework.core.io.support;
 
-import com.example.spring.provider.spring1_5.core.io.AbstractPathResolvingPropertyEditor;
+import org.springframework.core.io.AbstractPathResolvingPropertyEditor;
 
 import java.io.IOException;
 
@@ -35,7 +35,7 @@ import java.io.IOException;
  * @since 1.1.2
  * @see #PLACEHOLDER_PREFIX
  * @see #PLACEHOLDER_SUFFIX
- * @see com.example.spring.provider.spring1_5.core.io.Resource
+ * @see org.springframework.core.io.Resource
  * @see ResourcePatternResolver
  * @see PathMatchingResourcePatternResolver
  * @see System#getProperty(String)

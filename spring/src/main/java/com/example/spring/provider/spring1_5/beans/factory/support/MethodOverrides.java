@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.factory.support.MethodOverride;
+import org.springframework.beans.factory.support.MethodOverride;
 
 import java.lang.reflect.Method;
 import java.util.HashSet;
@@ -46,14 +46,14 @@ public class MethodOverrides {
 	/**
 	 * Deep copy constructor.
 	 */
-	public MethodOverrides(com.example.spring.provider.spring1_5.beans.factory.support.MethodOverrides other) {
+	public MethodOverrides(org.springframework.beans.factory.support.MethodOverrides other) {
 		addOverrides(other);
 	}
 
 	/**
 	 * Copy all given method overrides into this object.
 	 */
-	public void addOverrides(com.example.spring.provider.spring1_5.beans.factory.support.MethodOverrides other) {
+	public void addOverrides(org.springframework.beans.factory.support.MethodOverrides other) {
 		if (other != null) {
 			this.overrides.addAll(other.getOverrides());
 			this.overloadedMethodNames.addAll(other.overloadedMethodNames);

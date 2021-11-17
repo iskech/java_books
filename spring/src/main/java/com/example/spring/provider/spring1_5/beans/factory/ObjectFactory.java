@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.FactoryBean;
 
 /**
  * <p>Interface defining a factory which can return an Object instance

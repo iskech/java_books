@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework;
+package org.springframework.aop.framework;
 
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.support.AopUtils;
+import org.springframework.aop.support.AopUtils;
 
 /**
  * Factory for AOP proxies for programmatic use, rather than via a bean

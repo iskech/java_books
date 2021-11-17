@@ -18,11 +18,11 @@ package com.example.spring.aop.support;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.Pointcut;
-import com.example.spring.provider.spring1_5.aop.framework.ProxyFactory;
-import com.example.spring.provider.spring1_5.aop.interceptor.NopInterceptor;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.aop.Pointcut;
+import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.interceptor.NopInterceptor;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * 

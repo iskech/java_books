@@ -14,23 +14,23 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.target;
+package org.springframework.aop.framework.autoproxy.target;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.aop.framework.autoproxy.TargetSourceCreator;
-import com.example.spring.provider.spring1_5.aop.target.AbstractPrototypeBasedTargetSource;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.aop.TargetSource;
+import org.springframework.aop.framework.autoproxy.TargetSourceCreator;
+import org.springframework.aop.target.AbstractPrototypeBasedTargetSource;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 /**
  * Convenient superclass for TargetSourceCreators that require creating
  * multiple instances of a prototype bean.
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.target.AbstractPrototypeBasedTargetSource
+ * @see org.springframework.aop.target.AbstractPrototypeBasedTargetSource
  */
 public abstract class AbstractPrototypeBasedTargetSourceCreator implements TargetSourceCreator {
 

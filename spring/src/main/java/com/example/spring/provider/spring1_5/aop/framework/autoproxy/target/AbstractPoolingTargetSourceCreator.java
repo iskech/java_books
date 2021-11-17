@@ -14,18 +14,18 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy.target;
+package org.springframework.aop.framework.autoproxy.target;
 
-import com.example.spring.provider.spring1_5.aop.target.AbstractPoolingTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.AbstractPrototypeBasedTargetSource;
-import com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
+import org.springframework.aop.target.AbstractPoolingTargetSource;
+import org.springframework.aop.target.AbstractPrototypeBasedTargetSource;
+import org.springframework.aop.target.CommonsPoolTargetSource;
+import org.springframework.beans.factory.BeanFactory;
 
 /**
  * Convenient superclass for TargetSource creators that create pooling TargetSources.
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.target.AbstractPoolingTargetSource
- * @see com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource
+ * @see org.springframework.aop.target.AbstractPoolingTargetSource
+ * @see org.springframework.aop.target.CommonsPoolTargetSource
  */
 public abstract class AbstractPoolingTargetSourceCreator extends AbstractPrototypeBasedTargetSourceCreator {
 
@@ -45,7 +45,7 @@ public abstract class AbstractPoolingTargetSourceCreator extends AbstractPrototy
 	 * Create a new AbstractPoolingTargetSource. This implementation creates
 	 * a CommonsPoolTargetSource, but subclasses may wish to override that
 	 * behaviour. Don't need to set bean name or call setBeanFactory.
-	 * @see com.example.spring.provider.spring1_5.aop.target.CommonsPoolTargetSource
+	 * @see org.springframework.aop.target.CommonsPoolTargetSource
 	 */
 	protected AbstractPoolingTargetSource newPoolingTargetSource(PoolingAttribute poolingAttribute) {
 		AbstractPoolingTargetSource poolingTargetSource = new CommonsPoolTargetSource();

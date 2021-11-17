@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 /**
  * This class is retained for backward compatibility. As of Spring 1.1,

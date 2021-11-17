@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinitionHolder;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionRegistry;
-import com.example.spring.provider.spring1_5.beans.factory.support.ChildBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.util.StringUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.ChildBeanDefinition;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.util.StringUtils;
 
 /**
  * Utility methods that are useful for bean definition readers implementations.
  * @author Juergen Hoeller
  * @since 1.1
  * @see PropertiesBeanDefinitionReader
- * @see com.example.spring.provider.spring1_5.beans.factory.xml.DefaultXmlBeanDefinitionParser
+ * @see org.springframework.beans.factory.xml.DefaultXmlBeanDefinitionParser
  */
 public class BeanDefinitionReaderUtils {
 

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
 import net.sf.cglib.proxy.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.MethodReplacer;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.support.MethodReplacer;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -77,7 +77,7 @@ public class CglibSubclassingInstantiationStrategy extends SimpleInstantiationSt
 	 */
 	private static class CglibSubclassCreator {
 
-		private static final Log logger = LogFactory.getLog(com.example.spring.provider.spring1_5.beans.factory.support.CglibSubclassingInstantiationStrategy.class);
+		private static final Log logger = LogFactory.getLog(org.springframework.beans.factory.support.CglibSubclassingInstantiationStrategy.class);
 
 		private final RootBeanDefinition beanDefinition;
 

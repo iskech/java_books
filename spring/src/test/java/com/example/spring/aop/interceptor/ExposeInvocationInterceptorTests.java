@@ -18,8 +18,8 @@ package com.example.spring.aop.interceptor;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.ITestBean;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Non-XML tests are in AbstractAopProxyTests

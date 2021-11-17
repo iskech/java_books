@@ -21,11 +21,11 @@ import java.util.StringTokenizer;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.PropertyAccessExceptionsException;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.PropertyAccessExceptionsException;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.support.AbstractBeanFactory;
 
 /**
  * Subclasses must implement setUp() to initialize bean factory

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitionValidationException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionValidationException;
 
 /** 
  * Root bean definitions are the most common type of bean definition.
@@ -33,7 +33,7 @@ import com.example.spring.provider.spring1_5.beans.factory.support.BeanDefinitio
  *
  * @author Rod Johnson
  * @author Juergen Hoeller
- * @see com.example.spring.provider.spring1_5.beans.factory.config.AutowireCapableBeanFactory
+ * @see org.springframework.beans.factory.config.AutowireCapableBeanFactory
  */
 public class RootBeanDefinition extends AbstractBeanDefinition {
 
@@ -82,7 +82,7 @@ public class RootBeanDefinition extends AbstractBeanDefinition {
 		setBeanClass(beanClass);
 		setAutowireMode(autowireMode);
 		if (dependencyCheck && getResolvedAutowireMode() != AUTOWIRE_CONSTRUCTOR) {
-			setDependencyCheck(com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition.DEPENDENCY_CHECK_OBJECTS);
+			setDependencyCheck(org.springframework.beans.factory.support.RootBeanDefinition.DEPENDENCY_CHECK_OBJECTS);
 		}
 	}
 
@@ -140,7 +140,7 @@ public class RootBeanDefinition extends AbstractBeanDefinition {
 	 * bean definition.
 	 * @param original the original bean definition to copy from
 	 */
-	public RootBeanDefinition(com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition original) {
+	public RootBeanDefinition(org.springframework.beans.factory.support.RootBeanDefinition original) {
 		super(original);
 	}
 

@@ -14,11 +14,11 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.adapter;
+package org.springframework.aop.framework.adapter;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.aop.AfterReturningAdvice;
+import org.springframework.aop.AfterReturningAdvice;
 
 import java.io.Serializable;
 

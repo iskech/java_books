@@ -4,7 +4,7 @@
 <beans>
 
 	<bean id="constructorOverrides" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorInjectedOverrides"
+		class="org.springframework.beans.factory.xml.ConstructorInjectedOverrides"
 		autowire="autodetect">
 		
 		<!--
@@ -18,14 +18,14 @@
 	</bean>
 	
 	
-	<bean id="jenny" class="com.example.spring.provider.spring1_5.beans.TestBean"
+	<bean id="jenny" class="org.springframework.beans.TestBean"
 		singleton="true">	
 		<property name="name"><value>Jenny</value></property>
 		<property name="age"><value>30</value></property>
 	</bean>
 	
 	<bean id="factoryMethods" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.FactoryMethods"
+		class="org.springframework.beans.factory.xml.FactoryMethods"
 		factory-method="newInstance"
 		singleton="false">	
 		<constructor-arg index="0"><ref local="jenny"/></constructor-arg>

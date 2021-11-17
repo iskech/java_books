@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory;
+package org.springframework.beans.factory;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryUtils;
-import com.example.spring.provider.spring1_5.beans.factory.FactoryBean;
-import com.example.spring.provider.spring1_5.beans.factory.HierarchicalBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryUtils;
+import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.HierarchicalBeanFactory;
 
 import java.util.Map;
 
@@ -53,7 +53,7 @@ import java.util.Map;
  * @since 16 April 2001
  * @see HierarchicalBeanFactory
  * @see BeanFactoryUtils
- * @see com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableBeanFactory#registerSingleton
+ * @see org.springframework.beans.factory.config.ConfigurableBeanFactory#registerSingleton
  */
 public interface ListableBeanFactory extends BeanFactory {
 
@@ -90,7 +90,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * other means than bean definitions.
 	 * @return the names of all beans defined in this factory,
 	 * or an empty array if none defined
-	 * @see BeanFactoryUtils#beanNamesIncludingAncestors(com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory)
+	 * @see BeanFactoryUtils#beanNamesIncludingAncestors(org.springframework.beans.factory.ListableBeanFactory)
 	 */
 	String[] getBeanDefinitionNames();
 
@@ -110,7 +110,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * @return the names of beans matching the given object type
 	 * (including subclasses), or an empty array if none
 	 * @see #getBeanNamesForType
-	 * @see BeanFactoryUtils#beanNamesIncludingAncestors(com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory, Class)
+	 * @see BeanFactoryUtils#beanNamesIncludingAncestors(org.springframework.beans.factory.ListableBeanFactory, Class)
 	 */
 	String[] getBeanDefinitionNames(Class type);
 
@@ -129,7 +129,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * @return the names of beans (or objects created by FactoryBeans) matching
 	 * the given object type (including subclasses), or an empty array if none
 	 * @see FactoryBean#getObjectType
-	 * @see BeanFactoryUtils#beanNamesForTypeIncludingAncestors(com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory, Class)
+	 * @see BeanFactoryUtils#beanNamesForTypeIncludingAncestors(org.springframework.beans.factory.ListableBeanFactory, Class)
 	 */
 	String[] getBeanNamesForType(Class type);
 
@@ -153,7 +153,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * @throws BeansException if a bean could not be created
 	 * @since 1.1.2
 	 * @see FactoryBean#getObjectType
-	 * @see BeanFactoryUtils#beansOfTypeIncludingAncestors(com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory, Class)
+	 * @see BeanFactoryUtils#beansOfTypeIncludingAncestors(org.springframework.beans.factory.ListableBeanFactory, Class)
 	 */
 	Map getBeansOfType(Class type) throws BeansException;
 
@@ -177,7 +177,7 @@ public interface ListableBeanFactory extends BeanFactory {
 	 * keys and the corresponding bean instances as values
 	 * @throws BeansException if a bean could not be created
 	 * @see FactoryBean#getObjectType
-	 * @see BeanFactoryUtils#beansOfTypeIncludingAncestors(com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory, Class, boolean, boolean)
+	 * @see BeanFactoryUtils#beansOfTypeIncludingAncestors(org.springframework.beans.factory.ListableBeanFactory, Class, boolean, boolean)
 	 */
 	Map getBeansOfType(Class type, boolean includePrototypes, boolean includeFactoryBeans)
 	    throws BeansException;

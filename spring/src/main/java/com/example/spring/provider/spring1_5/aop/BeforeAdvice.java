@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop;
+package org.springframework.aop;
 
 import org.aopalliance.aop.Advice;
 
@@ -23,7 +23,7 @@ import org.aopalliance.aop.Advice;
  * advice. Although this is unlikely to change, this API is designed to
  * allow field advice in future if desired.
  * @author Rod Johnson
- * @see com.example.spring.provider.spring1_5.aop.MethodBeforeAdvice
+ * @see org.springframework.aop.MethodBeforeAdvice
  */
 public interface BeforeAdvice extends Advice {
 

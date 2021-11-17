@@ -23,23 +23,23 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.aop.interceptor.SideEffectBean;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.ITestBean;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.NestedTestBean;
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.config.AutowireCapableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.RuntimeBeanReference;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.PropertiesBeanDefinitionReader;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.xml.ConstructorDependenciesBean;
-import com.example.spring.provider.spring1_5.beans.factory.xml.DependenciesBean;
-import com.example.spring.provider.spring1_5.beans.propertyeditors.CustomNumberEditor;
+import org.springframework.aop.interceptor.SideEffectBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.ITestBean;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.NestedTestBean;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.RuntimeBeanReference;
+import org.springframework.beans.factory.support.AbstractBeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import org.springframework.beans.factory.support.PropertiesBeanDefinitionReader;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.beans.factory.xml.ConstructorDependenciesBean;
+import org.springframework.beans.factory.xml.DependenciesBean;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 
 /**
  * This largely tests properties population.
@@ -119,7 +119,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 	public void testPropertiesPopulationWithNullPrefix() throws Exception {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty("test.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("test.class", "org.springframework.beans.TestBean");
 		p.setProperty("test.name", "Tony");
 		p.setProperty("test.age", "48");
 		//p.setProperty("
@@ -132,7 +132,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 		String PREFIX = "beans.";
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty(PREFIX + "test.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty(PREFIX + "test.class", "org.springframework.beans.TestBean");
 		p.setProperty(PREFIX + "test.name", "Tony");
 		p.setProperty(PREFIX + "test.age", "48");
 		//p.setProperty("
@@ -146,11 +146,11 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
 
-		p.setProperty(PREFIX + "rod.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty(PREFIX + "rod.class", "org.springframework.beans.TestBean");
 		p.setProperty(PREFIX + "rod.name", "Rod");
 
-		p.setProperty(PREFIX + "kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
-		p.setProperty(PREFIX + "kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty(PREFIX + "kerry.class", "org.springframework.beans.TestBean");
+		p.setProperty(PREFIX + "kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty(PREFIX + "kerry.name", "Kerry");
 		p.setProperty(PREFIX + "kerry.age", "35");
 		p.setProperty(PREFIX + "kerry.spouse(ref)", "rod");
@@ -169,7 +169,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
 
-		p.setProperty("tb.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("tb.class", "org.springframework.beans.TestBean");
 		p.setProperty("tb.someMap[my.key]", "my.value");
 
 		int count = (new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
@@ -186,8 +186,8 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 		Properties p = new Properties();
 
 		try {
-			p.setProperty(PREFIX + "kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
-			p.setProperty(PREFIX + "kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+			p.setProperty(PREFIX + "kerry.class", "org.springframework.beans.TestBean");
+			p.setProperty(PREFIX + "kerry.class", "org.springframework.beans.TestBean");
 			p.setProperty(PREFIX + "kerry.name", "Kerry");
 			p.setProperty(PREFIX + "kerry.age", "35");
 			p.setProperty(PREFIX + "kerry.spouse(ref)", "rod");
@@ -214,7 +214,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 	public void testPrototype() throws Exception {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty("kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty("kerry.age", "35");
 		(new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
 		TestBean kerry1 = (TestBean) lbf.getBean("kerry");
@@ -224,7 +224,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 
 		lbf = new DefaultListableBeanFactory();
 		p = new Properties();
-		p.setProperty("kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty("kerry.(singleton)", "false");
 		p.setProperty("kerry.age", "35");
 		(new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
@@ -235,7 +235,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 
 		lbf = new DefaultListableBeanFactory();
 		p = new Properties();
-		p.setProperty("kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty("kerry.(singleton)", "true");
 		p.setProperty("kerry.age", "35");
 		(new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
@@ -248,7 +248,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 	public void testPrototypeExtendsPrototype() throws Exception {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty("wife.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("wife.class", "org.springframework.beans.TestBean");
 		p.setProperty("wife.name", "kerry");
 
 		p.setProperty("kerry.parent", "wife");
@@ -262,7 +262,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 
 		lbf = new DefaultListableBeanFactory();
 		p = new Properties();
-		p.setProperty("wife.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("wife.class", "org.springframework.beans.TestBean");
 		p.setProperty("wife.name", "kerry");
 		p.setProperty("wife.(singleton)", "false");
 		p.setProperty("kerry.parent", "wife");
@@ -277,7 +277,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 
 		lbf = new DefaultListableBeanFactory();
 		p = new Properties();
-		p.setProperty("kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty("kerry.(singleton)", "true");
 		p.setProperty("kerry.age", "35");
 		(new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
@@ -290,7 +290,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 	public void testNameAlreadyBound() throws Exception {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty("kerry.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("kerry.class", "org.springframework.beans.TestBean");
 		p.setProperty("kerry.age", "35");
 		(new PropertiesBeanDefinitionReader(lbf)).registerBeanDefinitions(p);
 		try {
@@ -376,7 +376,7 @@ public class DefaultListableBeanFactoryTests extends TestCase {
 	public void testRegisterExistingSingletonWithReference() {
 		DefaultListableBeanFactory lbf = new DefaultListableBeanFactory();
 		Properties p = new Properties();
-		p.setProperty("test.class", "com.example.spring.provider.spring1_5.beans.TestBean");
+		p.setProperty("test.class", "org.springframework.beans.TestBean");
 		p.setProperty("test.name", "Tony");
 		p.setProperty("test.age", "48");
 		p.setProperty("test.spouse(ref)", "singletonObject");

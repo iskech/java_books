@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.MutablePropertyValues;
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
-import com.example.spring.provider.spring1_5.beans.factory.BeanDefinitionStoreException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactoryAware;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinition;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanDefinitionHolder;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyOverrideConfigurer;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyResourceConfigurer;
-import com.example.spring.provider.spring1_5.beans.factory.config.RuntimeBeanReference;
-import com.example.spring.provider.spring1_5.core.Constants;
-import com.example.spring.provider.spring1_5.util.ObjectUtils;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.factory.BeanDefinitionStoreException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinitionHolder;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.ConstructorArgumentValues;
+import org.springframework.beans.factory.config.PropertyOverrideConfigurer;
+import org.springframework.beans.factory.config.PropertyResourceConfigurer;
+import org.springframework.beans.factory.config.RuntimeBeanReference;
+import org.springframework.core.Constants;
+import org.springframework.util.ObjectUtils;
 
 import java.util.*;
 
@@ -47,7 +47,7 @@ import java.util.*;
  * <p>Example XML context definition:
  *
  * <pre>
- * &lt;bean id="dataSource" class="com.example.spring.provider.spring1_5.jdbc.datasource.DriverManagerDataSource"&gt;
+ * &lt;bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"&gt;
  *   &lt;property name="driverClassName"&gt;&lt;value&gt;${driver}&lt;/value&gt;&lt;/property&gt;
  *   &lt;property name="url"&gt;&lt;value&gt;jdbc:${dbname}&lt;/value&gt;&lt;/property&gt;
  * &lt;/bean&gt;</pre>
@@ -123,7 +123,7 @@ public class PropertyPlaceholderConfigurer extends PropertyResourceConfigurer
 	public static final int SYSTEM_PROPERTIES_MODE_OVERRIDE = 2;
 
 
-	private static final Constants constants = new Constants(com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer.class);
+	private static final Constants constants = new Constants(org.springframework.beans.factory.config.PropertyPlaceholderConfigurer.class);
 
 	private String placeholderPrefix = DEFAULT_PLACEHOLDER_PREFIX;
 
@@ -197,7 +197,7 @@ public class PropertyPlaceholderConfigurer extends PropertyResourceConfigurer
 	 * The latter case can happen with placeholders for system properties in
 	 * resource locations.
 	 * @see #setLocations
-	 * @see com.example.spring.provider.spring1_5.core.io.ResourceEditor
+	 * @see org.springframework.core.io.ResourceEditor
 	 */
 	public void setBeanName(String beanName) {
 		this.beanName = beanName;
@@ -209,7 +209,7 @@ public class PropertyPlaceholderConfigurer extends PropertyResourceConfigurer
 	 * The latter case can happen with placeholders for system properties in
 	 * resource locations.
 	 * @see #setLocations
-	 * @see com.example.spring.provider.spring1_5.core.io.ResourceEditor
+	 * @see org.springframework.core.io.ResourceEditor
 	 */
 	public void setBeanFactory(BeanFactory beanFactory) {
 		this.beanFactory = beanFactory;

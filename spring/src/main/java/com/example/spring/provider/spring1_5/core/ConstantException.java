@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.core;
+package org.springframework.core;
 
 /**
  * Exception thrown when the Constants class is asked for an invalid
  * constant name.
  * @author Rod Johnson
  * @since 28-Apr-2003
- * @see com.example.spring.provider.spring1_5.core.Constants
+ * @see org.springframework.core.Constants
  */
 public class ConstantException extends IllegalArgumentException {
 	

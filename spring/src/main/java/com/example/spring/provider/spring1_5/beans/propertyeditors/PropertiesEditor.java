@@ -14,7 +14,7 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.propertyeditors;
+package org.springframework.beans.propertyeditors;
 
 import java.beans.PropertyEditorSupport;
 import java.io.ByteArrayInputStream;

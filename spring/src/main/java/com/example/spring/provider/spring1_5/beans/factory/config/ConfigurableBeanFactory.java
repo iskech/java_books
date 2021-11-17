@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.HierarchicalBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.HierarchicalBeanFactory;
+import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 import java.beans.PropertyEditor;
 
@@ -37,7 +37,7 @@ import java.beans.PropertyEditor;
  * @author Juergen Hoeller
  * @since 03.11.2003
  * @see BeanFactory
- * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory
+ * @see org.springframework.beans.factory.ListableBeanFactory
  * @see ConfigurableListableBeanFactory
  */
 public interface ConfigurableBeanFactory extends HierarchicalBeanFactory {
@@ -73,7 +73,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory {
 	 * implementation should synchronize alias access.
 	 * @param beanName name of the bean
 	 * @param alias alias that will behave the same as the bean name
-	 * @throws com.example.spring.provider.spring1_5.beans.factory.NoSuchBeanDefinitionException
+	 * @throws org.springframework.beans.factory.NoSuchBeanDefinitionException
 	 * if there is no bean with the given name
 	 * @throws BeansException if the alias is already in use
 	 */
@@ -97,9 +97,9 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory {
 	 * @param beanName name of the bean
 	 * @param singletonObject the existing object
 	 * @throws BeansException if the singleton could not be registered
-	 * @see com.example.spring.provider.spring1_5.beans.factory.InitializingBean#afterPropertiesSet
-	 * @see com.example.spring.provider.spring1_5.beans.factory.DisposableBean#destroy
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.DefaultListableBeanFactory#registerBeanDefinition
+	 * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet
+	 * @see org.springframework.beans.factory.DisposableBean#destroy
+	 * @see org.springframework.beans.factory.support.DefaultListableBeanFactory#registerBeanDefinition
 	 */
 	void registerSingleton(String beanName, Object singletonObject) throws BeansException;
 
@@ -121,7 +121,7 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory {
 	 * @return if this bean factory contains a singleton instance with the given name
 	 * @see #registerSingleton
 	 * @see BeanFactory#containsBean
-	 * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory#containsBeanDefinition
+	 * @see org.springframework.beans.factory.ListableBeanFactory#containsBeanDefinition
 	 */
 	boolean containsSingleton(String beanName);
 

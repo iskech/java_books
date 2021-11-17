@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.autoproxy;
+package org.springframework.aop.framework.autoproxy;
 
-import com.example.spring.provider.spring1_5.aop.TargetSource;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
+import org.springframework.aop.TargetSource;
+import org.springframework.beans.factory.BeanFactory;
 
 /**
  * Implementations can create special target sources, such as pooling target

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans;
+package org.springframework.beans;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.FatalBeanException;
-import com.example.spring.provider.spring1_5.beans.PropertyValue;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.FatalBeanException;
+import org.springframework.beans.PropertyValue;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
@@ -248,8 +248,8 @@ public abstract class BeanUtils {
 	 * Check if the given class represents a "simple" property,
 	 * i.e. a primitive, a String, a Class, or a corresponding array.
 	 * Used to determine properties to check for a "simple" dependency-check.
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition#DEPENDENCY_CHECK_SIMPLE
-	 * @see com.example.spring.provider.spring1_5.beans.factory.support.AbstractAutowireCapableBeanFactory#dependencyCheck
+	 * @see org.springframework.beans.factory.support.RootBeanDefinition#DEPENDENCY_CHECK_SIMPLE
+	 * @see org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory#dependencyCheck
 	 */
 	public static boolean isSimpleProperty(Class clazz) {
 		return clazz.isPrimitive() || isPrimitiveArray(clazz) || isPrimitiveWrapperArray(clazz) ||

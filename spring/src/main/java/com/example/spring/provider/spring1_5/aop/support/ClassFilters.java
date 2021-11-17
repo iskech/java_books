@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
+import org.springframework.aop.ClassFilter;
 
 import java.io.Serializable;
 

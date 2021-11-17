@@ -16,9 +16,9 @@
 
 package com.example.spring.context.support;
 
-import com.example.spring.provider.spring1_5.context.MessageSource;
-import com.example.spring.provider.spring1_5.context.MessageSourceAware;
-import com.example.spring.provider.spring1_5.core.io.Resource;
+import org.springframework.context.MessageSource;
+import org.springframework.context.MessageSourceAware;
+import org.springframework.core.io.Resource;
 
 /**
  * @author Alef Arendsen

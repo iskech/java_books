@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.util.MethodInvoker;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.util.MethodInvoker;
 
 import java.beans.PropertyEditor;
 
@@ -37,7 +37,7 @@ public class ArgumentConvertingMethodInvoker extends MethodInvoker {
 	 * of the given type.
 	 * @param requiredType type of the property
 	 * @param propertyEditor editor to register
-	 * @see com.example.spring.provider.spring1_5.beans.BeanWrapper#registerCustomEditor
+	 * @see org.springframework.beans.BeanWrapper#registerCustomEditor
 	 */
 	public void registerCustomEditor(Class requiredType, PropertyEditor propertyEditor) {
 		this.beanWrapper.registerCustomEditor(requiredType, propertyEditor);

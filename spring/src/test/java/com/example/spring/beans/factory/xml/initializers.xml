@@ -4,26 +4,26 @@
 <beans>
 
 	<bean id="init-method1" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$DoubleInitializer"
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$DoubleInitializer"
 		init-method="init"
 	>
 		<property name="num"><value>7</value></property>
 	</bean>
 	
 	<bean id="init-method2" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$BadInitializer"
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$BadInitializer"
 		init-method="init2"
 		singleton="false"
 	/>
 
 	<bean id="init-method3" 
-		class="com.example.spring.provider.spring1_5.beans.TestBean"
+		class="org.springframework.beans.TestBean"
 		init-method="init"
 		singleton="false"
 	/>
 
 	<bean id="init-and-ib" 
-		class="com.example.spring.provider.spring1_5.beans.factory.xml.XmlBeanFactoryTests$InitAndIB"
+		class="org.springframework.beans.factory.xml.XmlBeanFactoryTests$InitAndIB"
 		lazy-init="true" 
 		init-method="customInit"
 		destroy-method="customDestroy"

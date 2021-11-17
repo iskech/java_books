@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.adapter;
+package org.springframework.aop.framework.adapter;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.support.DefaultPointcutAdvisor;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
-import com.example.spring.provider.spring1_5.aop.ClassFilter;
-import com.example.spring.provider.spring1_5.aop.MethodMatcher;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
-import com.example.spring.provider.spring1_5.core.ControlFlow;
-import com.example.spring.provider.spring1_5.core.ControlFlowFactory;
+import org.springframework.aop.ClassFilter;
+import org.springframework.aop.MethodMatcher;
+import org.springframework.aop.Pointcut;
+import org.springframework.core.ControlFlow;
+import org.springframework.core.ControlFlowFactory;
 
 import java.io.Serializable;
 import java.lang.reflect.Method;
@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
  * Pointcut and method matcher for use in simple <b>cflow</b>-style pointcut.
  * Note that evaluating such pointcuts is 10-15 times slower than evaluating
  * normal pointcuts, but they are useful in some cases.
- * @see com.example.spring.provider.spring1_5.core.ControlFlow
+ * @see org.springframework.core.ControlFlow
  * @author Rod Johnson
  */
 public class ControlFlowPointcut implements Pointcut, ClassFilter, MethodMatcher, Serializable {

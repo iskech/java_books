@@ -16,7 +16,7 @@
 
 package com.example.spring.beans.factory.xml;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * @author Rod Johnson

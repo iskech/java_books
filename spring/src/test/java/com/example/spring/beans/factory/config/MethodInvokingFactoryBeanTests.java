@@ -22,9 +22,9 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.TypeMismatchException;
-import com.example.spring.provider.spring1_5.beans.support.ArgumentConvertingMethodInvoker;
-import com.example.spring.provider.spring1_5.util.MethodInvoker;
+import org.springframework.beans.TypeMismatchException;
+import org.springframework.beans.support.ArgumentConvertingMethodInvoker;
+import org.springframework.util.MethodInvoker;
 
 /**
  * @author Colin Sampaleanu
@@ -70,7 +70,7 @@ public class MethodInvokingFactoryBeanTests extends TestCase {
 		// non-singleton, static
 		TestClass1._staticField1 = 0;
 		mcfb = new MethodInvokingFactoryBean();
-		mcfb.setStaticMethod("com.example.spring.provider.spring1_5.beans.factory.config.MethodInvokingFactoryBeanTests$TestClass1.staticMethod1");
+		mcfb.setStaticMethod("org.springframework.beans.factory.config.MethodInvokingFactoryBeanTests$TestClass1.staticMethod1");
 		mcfb.setSingleton(false);
 		mcfb.afterPropertiesSet();
 		i = (Integer) mcfb.getObject();

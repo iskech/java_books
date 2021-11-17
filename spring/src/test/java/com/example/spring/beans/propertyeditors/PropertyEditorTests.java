@@ -24,7 +24,7 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * Test the conversion of Strings to java.util.Properties objects,
@@ -147,16 +147,16 @@ public class PropertyEditorTests extends TestCase {
 
 	public void testClassEditor() {
 		PropertyEditor classEditor = new ClassEditor();
-		classEditor.setAsText("com.example.spring.provider.spring1_5.beans.TestBean");
+		classEditor.setAsText("org.springframework.beans.TestBean");
 		assertEquals(TestBean.class, classEditor.getValue());
-		assertEquals("com.example.spring.provider.spring1_5.beans.TestBean", classEditor.getAsText());
+		assertEquals("org.springframework.beans.TestBean", classEditor.getAsText());
 	}
 
 	public void testClassEditorWithArray() {
 		PropertyEditor classEditor = new ClassEditor();
-		classEditor.setAsText("com.example.spring.provider.spring1_5.beans.TestBean[]");
+		classEditor.setAsText("org.springframework.beans.TestBean[]");
 		assertEquals(TestBean[].class, classEditor.getValue());
-		assertEquals("com.example.spring.provider.spring1_5.beans.TestBean[]", classEditor.getAsText());
+		assertEquals("org.springframework.beans.TestBean[]", classEditor.getAsText());
 	}
 
 	public void testFileEditor() {

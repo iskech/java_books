@@ -16,7 +16,7 @@
 
 package com.example.spring.beans.factory.xml;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
+import org.springframework.beans.TestBean;
 
 /**
  * Test class for Spring's ability to create

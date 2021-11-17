@@ -14,10 +14,10 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.aop.Advice;
-import com.example.spring.provider.spring1_5.aop.Pointcut;
+import org.springframework.aop.Pointcut;
 
 import java.io.Serializable;
 

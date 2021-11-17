@@ -18,9 +18,9 @@ package com.example.spring.beans.factory.access;
 
 import junit.framework.TestCase;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.mock.jndi.SimpleNamingContextBuilder;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.mock.jndi.SimpleNamingContextBuilder;
 
 /**
  * @author Rod Johnson

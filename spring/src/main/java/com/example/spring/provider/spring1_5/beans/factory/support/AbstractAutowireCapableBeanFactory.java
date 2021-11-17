@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.beans.factory.support;
+package org.springframework.beans.factory.support;
 
-import com.example.spring.provider.spring1_5.beans.*;
-import com.example.spring.provider.spring1_5.beans.factory.*;
-import com.example.spring.provider.spring1_5.beans.factory.config.*;
-import com.example.spring.provider.spring1_5.beans.factory.support.AbstractBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.support.CglibSubclassingInstantiationStrategy;
-import com.example.spring.provider.spring1_5.beans.factory.support.ManagedList;
-import com.example.spring.provider.spring1_5.beans.factory.support.RootBeanDefinition;
-import com.example.spring.provider.spring1_5.core.CollectionFactory;
+import org.springframework.beans.*;
+import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.config.*;
+import org.springframework.beans.factory.support.AbstractBeanFactory;
+import org.springframework.beans.factory.support.CglibSubclassingInstantiationStrategy;
+import org.springframework.beans.factory.support.ManagedList;
+import org.springframework.beans.factory.support.RootBeanDefinition;
+import org.springframework.core.CollectionFactory;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
@@ -61,7 +61,7 @@ import java.util.*;
  * @see AbstractBeanFactory#createBean
  * @see RootBeanDefinition
  * @see DefaultListableBeanFactory
- * @see com.example.spring.provider.spring1_5.beans.factory.ListableBeanFactory
+ * @see org.springframework.beans.factory.ListableBeanFactory
  * @see BeanDefinitionRegistry
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory
@@ -111,8 +111,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 	 * For further types to ignore, invoke this method for each type.
 	 * @see BeanFactory
 	 * @see BeanFactoryAware
-	 * @see com.example.spring.provider.spring1_5.context.ApplicationContext
-	 * @see com.example.spring.provider.spring1_5.context.ApplicationContextAware
+	 * @see org.springframework.context.ApplicationContext
+	 * @see org.springframework.context.ApplicationContextAware
 	 */
 	public void ignoreDependencyType(Class type) {
 		this.ignoreDependencyTypes.add(type);

@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.intercept.MethodInvocation;
-import com.example.spring.provider.spring1_5.aop.DynamicIntroductionAdvice;
-import com.example.spring.provider.spring1_5.aop.IntroductionInterceptor;
-import com.example.spring.provider.spring1_5.aop.ProxyMethodInvocation;
-import com.example.spring.provider.spring1_5.util.Assert;
+import org.springframework.aop.DynamicIntroductionAdvice;
+import org.springframework.aop.IntroductionInterceptor;
+import org.springframework.aop.ProxyMethodInvocation;
+import org.springframework.util.Assert;
 
 /**
  * Convenient implementation of the IntroductionInterceptor interface.

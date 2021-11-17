@@ -18,10 +18,10 @@ package com.example.spring.context;
 
 import java.util.Locale;
 
-import com.example.spring.provider.spring1_5.beans.TestBean;
-import com.example.spring.provider.spring1_5.beans.factory.AbstractListableBeanFactoryTests;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.LifecycleBean;
+import org.springframework.beans.TestBean;
+import org.springframework.beans.factory.AbstractListableBeanFactoryTests;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.LifecycleBean;
 
 /**
  * @author Rod Johnson

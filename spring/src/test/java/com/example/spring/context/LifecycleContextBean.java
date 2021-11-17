@@ -16,9 +16,9 @@
 
 package com.example.spring.context;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.LifecycleBean;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.LifecycleBean;
 
 /**
  * Simple bean to test ApplicationContext lifecycle methods for beans

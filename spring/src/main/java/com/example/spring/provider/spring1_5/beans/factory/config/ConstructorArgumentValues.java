@@ -14,9 +14,9 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 
 import java.util.*;
 
@@ -43,14 +43,14 @@ public class ConstructorArgumentValues {
 	/**
 	 * Deep copy constructor.
 	 */
-	public ConstructorArgumentValues(com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues other) {
+	public ConstructorArgumentValues(org.springframework.beans.factory.config.ConstructorArgumentValues other) {
 		addArgumentValues(other);
 	}
 
 	/**
 	 * Copy all given argument values into this object.
 	 */
-	public void addArgumentValues(com.example.spring.provider.spring1_5.beans.factory.config.ConstructorArgumentValues other) {
+	public void addArgumentValues(org.springframework.beans.factory.config.ConstructorArgumentValues other) {
 		if (other != null) {
 			this.genericArgumentValues.addAll(other.genericArgumentValues);
 			this.indexedArgumentValues.putAll(other.indexedArgumentValues);

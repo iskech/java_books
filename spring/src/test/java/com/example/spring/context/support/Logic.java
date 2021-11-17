@@ -18,7 +18,7 @@ package com.example.spring.context.support;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.BeanNameAware;
 
 
 public class Logic implements BeanNameAware {
@@ -32,7 +32,7 @@ public class Logic implements BeanNameAware {
 	}
 	
 	/* (non-Javadoc)
-	 * @see com.example.spring.provider.spring1_5.beans.factory.BeanNameAware#setBeanName(java.lang.String)
+	 * @see org.springframework.beans.factory.BeanNameAware#setBeanName(java.lang.String)
 	 */
 	public void setBeanName(String name) {
 		this.name = name;

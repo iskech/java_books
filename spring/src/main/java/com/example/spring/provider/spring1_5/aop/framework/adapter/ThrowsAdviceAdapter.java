@@ -14,12 +14,12 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.framework.adapter;
+package org.springframework.aop.framework.adapter;
 
 import org.aopalliance.aop.Advice;
 import org.aopalliance.intercept.Interceptor;
-import com.example.spring.provider.spring1_5.aop.Advisor;
-import com.example.spring.provider.spring1_5.aop.ThrowsAdvice;
+import org.springframework.aop.Advisor;
+import org.springframework.aop.ThrowsAdvice;
 
 /**
  * @author Rod Johnson
@@ -27,14 +27,14 @@ import com.example.spring.provider.spring1_5.aop.ThrowsAdvice;
 class ThrowsAdviceAdapter implements AdvisorAdapter {
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapter#supportsAdvice
+	 * @see org.springframework.aop.framework.adapter.AdvisorAdapter#supportsAdvice
 	 */
 	public boolean supportsAdvice(Advice advice) {
 		return advice instanceof ThrowsAdvice;
 	}
 
 	/**
-	 * @see com.example.spring.provider.spring1_5.aop.framework.adapter.AdvisorAdapter#getInterceptor
+	 * @see org.springframework.aop.framework.adapter.AdvisorAdapter#getInterceptor
 	 */
 	public Interceptor getInterceptor(Advisor advisor) {
 		return new ThrowsAdviceInterceptor(advisor.getAdvice());

@@ -14,21 +14,21 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.factory.config;
+package org.springframework.beans.factory.config;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.factory.BeanInitializationException;
-import com.example.spring.provider.spring1_5.beans.factory.config.BeanFactoryPostProcessor;
-import com.example.spring.provider.spring1_5.beans.factory.config.ConfigurableListableBeanFactory;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyOverrideConfigurer;
-import com.example.spring.provider.spring1_5.beans.factory.config.PropertyPlaceholderConfigurer;
-import com.example.spring.provider.spring1_5.core.Ordered;
-import com.example.spring.provider.spring1_5.core.io.Resource;
-import com.example.spring.provider.spring1_5.util.DefaultPropertiesPersister;
-import com.example.spring.provider.spring1_5.util.ObjectUtils;
-import com.example.spring.provider.spring1_5.util.PropertiesPersister;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanInitializationException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.PropertyOverrideConfigurer;
+import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
+import org.springframework.core.Ordered;
+import org.springframework.core.io.Resource;
+import org.springframework.util.DefaultPropertiesPersister;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.PropertiesPersister;
 
 import java.io.IOException;
 import java.io.InputStream;

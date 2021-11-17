@@ -14,13 +14,13 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.aop.support;
+package org.springframework.aop.support;
 
 import org.aopalliance.aop.AspectException;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.aop.IntroductionInfo;
+import org.springframework.aop.IntroductionInfo;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -63,7 +63,7 @@ public class IntroductionInfoSupport implements IntroductionInfo, Serializable {
 
 	/**
 	 * Implementation of IntroductionAdvice method
-	 * @see com.example.spring.provider.spring1_5.aop.DynamicIntroductionAdvice#implementsInterface(Class)
+	 * @see org.springframework.aop.DynamicIntroductionAdvice#implementsInterface(Class)
 	 */
 	public boolean implementsInterface(Class intf) {
 		for (Iterator it = this.publishedInterfaces.iterator(); it.hasNext();) {

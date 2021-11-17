@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.spring.provider.spring1_5.aop.target;
+package org.springframework.aop.target;
 
-import com.example.spring.provider.spring1_5.beans.BeansException;
+import org.springframework.beans.BeansException;
 
 /**
  * TargetSource that lazily accesses a singleton from a BeanFactory.
@@ -31,9 +31,9 @@ import com.example.spring.provider.spring1_5.beans.BeansException;
  *   ...
  * &lt;/bean&gt;
  *
- * &lt;bean id="service" class="com.example.spring.provider.spring1_5.aop.framework.ProxyFactoryBean"&gt;
+ * &lt;bean id="service" class="org.springframework.aop.framework.ProxyFactoryBean"&gt;
  *   &lt;property name="targetSource"&gt;
- *     &lt;bean class="com.example.spring.provider.spring1_5.aop.target.LazyInitTargetSource"&gt;
+ *     &lt;bean class="org.springframework.aop.target.LazyInitTargetSource"&gt;
  *       &lt;property name="targetBeanName"&gt;&lt;idref local="serviceTarget"/&gt;&lt;/property&gt;
  *     &lt;/bean&gt;
  *   &lt;/property&gt;

@@ -14,14 +14,14 @@
  * limitations under the License.
  */ 
 
-package com.example.spring.provider.spring1_5.beans.support;
+package org.springframework.beans.support;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.example.spring.provider.spring1_5.beans.BeanWrapper;
-import com.example.spring.provider.spring1_5.beans.BeanWrapperImpl;
-import com.example.spring.provider.spring1_5.beans.BeansException;
-import com.example.spring.provider.spring1_5.beans.support.SortDefinition;
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.support.SortDefinition;
 
 import java.util.*;
 
@@ -116,7 +116,7 @@ public class PropertyComparator implements Comparator {
 	 * @throws IllegalArgumentException in case of a missing propertyName
 	 */
 	public static void sort(List source, SortDefinition sortDefinition) throws BeansException {
-		Collections.sort(source, new com.example.spring.provider.spring1_5.beans.support.PropertyComparator(sortDefinition));
+		Collections.sort(source, new org.springframework.beans.support.PropertyComparator(sortDefinition));
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class PropertyComparator implements Comparator {
 	 * @throws IllegalArgumentException in case of a missing propertyName
 	 */
 	public static void sort(Object[] source, SortDefinition sortDefinition) throws BeansException {
-		Arrays.sort(source, new com.example.spring.provider.spring1_5.beans.support.PropertyComparator(sortDefinition));
+		Arrays.sort(source, new org.springframework.beans.support.PropertyComparator(sortDefinition));
 	}
 
 }
