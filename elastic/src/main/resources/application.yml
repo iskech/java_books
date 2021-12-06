@@ -1,0 +1,11 @@
+server:
+    port: 9130
+    servlet:
+     context-path: /ems
+
+spring:
+  elasticsearch:
+   rest:
+    uris: http://localhost:9200
+    username: elastic
+    password: 123456
