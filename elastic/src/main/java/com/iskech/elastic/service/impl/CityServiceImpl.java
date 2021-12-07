@@ -28,7 +28,9 @@ public class CityServiceImpl implements ICityService {
   }
 
   @Override
-  public void update(City city) {}
+  public void update(City city) {
+    cityRepository.save(city);
+  }
 
   @Override
   public void saveAll(List<City> list) {}

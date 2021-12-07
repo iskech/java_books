@@ -19,8 +19,8 @@ public class CityModelConsumer extends CanalBinlogBaseConsumer<City> {
   @Resource private ICityService cityService;
 
   @KafkaListener(
-      topics = {KafkaTopicContant.EXAMPLE_TOPIC},
-      groupId = "canal")
+      topics = {KafkaTopicContant.MYBATIS_CITY_TOPIC},
+      groupId = "canal_es")
   @Override
   public void onMessage(String message) {
     super.onMessage(message);
@@ -37,9 +37,14 @@ public class CityModelConsumer extends CanalBinlogBaseConsumer<City> {
   }
 
   @Override
-  public void update(List<City> data, List<City> old, List<Set> fields) {
-
-    System.out.println(data);
+  public void update(List<City> data, List<City> old, List<Set<String>> fields) {
+    if(CollectionUtils.isEmpty(data)||CollectionUtils.isEmpty(old)||CollectionUtils.isEmpty(fields)){
+      return;
+    }
+    for (City datum : data) {
+      //排除没有更新的字段
+      cityService.update(datum);
+    }
   }
 
   @Override

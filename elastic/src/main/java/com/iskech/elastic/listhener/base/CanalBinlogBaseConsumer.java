@@ -26,7 +26,7 @@ public abstract class CanalBinlogBaseConsumer<T> {
 
   public abstract void insert(List<T> data);
 
-  public abstract void update(List<T> data, List<T> old, List<Set> fields);
+  public abstract void update(List<T> data, List<T> old, List<Set<String>> fields);
 
   public abstract void delete(List<T> data);
 
@@ -46,10 +46,10 @@ public abstract class CanalBinlogBaseConsumer<T> {
     if (binlog.getType() == Binlog.BinlogEnum.INSERT) {
       insert(binlog.getData());
     } else if (binlog.getType() == Binlog.BinlogEnum.UPDATE) {
-      Map map = JSON.parseObject(message, Map.class);
-      List<Set> sets = new ArrayList<>();
+      Map<String,Object> map = JSON.parseObject(message, Map.class);
+      List<Set<String>> sets = new ArrayList<>();
       if (map != null) {
-        List<Map> results = (List<Map>) map.get("old");
+        List<Map<String,Object>> results = (List<Map<String,Object>>) map.get("old");
         if (!CollectionUtils.isEmpty(results)) {
           sets = results.stream().map(o -> o.keySet()).collect(Collectors.toList());
         }
