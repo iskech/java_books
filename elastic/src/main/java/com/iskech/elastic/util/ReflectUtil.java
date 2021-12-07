@@ -11,7 +11,8 @@ import java.util.Set;
 public class ReflectUtil {
 
   /**
-   * 获取类型
+   * 获取类型 kafka-server-start.bat D:\\worksoft\\kafka_2.12-2.8.1\\config\\server.properties
+   * zookeeper-server-start.bat D:\\worksoft\\kafka_2.12-2.8.1\\config\\zookeeper.properties
    *
    * @param clazz
    * @param index

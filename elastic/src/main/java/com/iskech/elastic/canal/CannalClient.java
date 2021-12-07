@@ -17,8 +17,10 @@ import javax.annotation.Resource;
 import java.net.InetSocketAddress;
 import java.util.List;
 
-
-@Component
+/**
+ * tcp
+ */
+//@Component
 public class CannalClient implements InitializingBean {
     @Resource
     private CanalBinlogBaseConsumer canalBinlogBaseConsumer;

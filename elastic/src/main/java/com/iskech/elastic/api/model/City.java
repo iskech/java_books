@@ -24,7 +24,7 @@ public class City {
   @Field(name = "city.district", type = FieldType.Keyword)
   private String district;
 
-  @Field(name = "city.countryCode", type = FieldType.Text, analyzer = "ik_max_word")
+  @Field(name = "city.countryCode", type = FieldType.Text)
   private String countryCode;
 
   @Field(name = "city.population", type = FieldType.Long)
